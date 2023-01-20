@@ -1,0 +1,218 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Procedure creation |
+	{{ TypeEntreprise}}
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fuild section-navigation p-4">
+		<div class="row">
+			<div class="col-lg-10 m-auto">
+
+				<p class="is-text-primary text-uppercase text-center size-6 fw-3 mt-4">
+					Création de votre société
+
+				</p>
+				<p class="text-center pb-4 size-5">
+					Categorie :
+					<b>{{TypeEntreprise}}</b>
+				</p>
+
+				<ul class="stepper d-flex no-style justify-content-center">
+					<li class="stepper-active" id="step-1">
+						<div></div>
+					</li>
+					<li id="step-2">
+						<div></div>
+					</li>
+					<li id="step-3">
+						<div></div>
+					</li>
+					<li id="step-4">
+						<div></div>
+					</li>
+
+
+				</ul>
+
+
+				<div class="container-fluid">
+					<div
+						class="row">
+						<!-- content-step-1 -->
+						<div class="col-lg-6 m-auto" id="content-step-1">
+							<p class="text-dark text-center py-4 size-6 fw-4">Dans quel délai souhaitez-vous créer votre société ?</p>
+
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-lg-5 m-auto">
+										<div class="m-1 border rounded text-center p-3 selectable-box" onclick="suivant(2)">
+											<img src="{{ asset('images/13.svg')}}" alt="" srcset="">
+											<p class="pt-2">
+												<b class="text-dark size-3">
+													Dès que possible
+												</b>
+											</p>
+										</div>
+
+									</div>
+
+									<div class="col-lg-5 m-auto">
+										<div class="m-1 border rounded text-center p-4 selectable-box selectable-box-selected" onclick="suivant(2)">
+											<img src="{{ asset('images/14.svg')}}" alt="" srcset="">
+											<p class="pt-2">
+												<b class="text-dark size-3">
+													Dans la semaine
+												</b>
+											</p>
+										</div>
+									</div>
+
+									<div class="col-lg-5 m-auto">
+										<div class="m-1 border rounded text-center p-4 selectable-box" onclick="suivant(2)">
+											<img src="{{ asset('images/14.svg')}}" alt="" srcset="">
+											<p class="pt-2">
+												<b class="text-dark size-3">
+													Dans le mois
+												</b>
+											</p>
+										</div>
+									</div>
+
+									<div class="col-lg-5 m-auto">
+										<div class="m-1 border rounded text-center p-4 selectable-box" onclick="suivant(2)">
+											<img src="{{ asset('images/15.svg')}}" alt="" srcset="">
+											<p class="pt-2">
+												<b class="text-dark size-3">
+													Je ne sais pas
+												</b>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- content-step-2 -->
+						<div class="col-lg-7 m-auto d-none" id="content-step-2">
+							<p class="navlink" onclick="arriere(1)">
+								<i class="mdi mdi-chevron-left size-6"></i>
+								<u>Retour</u>
+							</p>
+							<p class="text-dark text-center py-4 pb-2 size-6 fw-4">
+								Si vous avez déjà choisi le nom commercial de votre société</p>
+
+							<div class="container-fluid  border rounded">
+								<div class="row pt-1">
+									<div class="col-lg-12 m-auto">
+										<div class="m-1 p-4 pb-2">
+											<p class=" pb-2"></p>
+											<p class="text-dark size-4 m-0 my-3">Renseignez-le ici
+											</p>
+											<input type="text" class="form-control size-4" placeholder="Ex: jvgo consulting">
+										</p>
+
+										<div class="my-4">
+											<a class="button-effect-3 size-4 p-2 p-lg-2  px-5" onclick="suivant(3)">
+												<span>
+													Continuer
+													<i class="mdi mdi-chevron-right"></i>
+												</span>
+											</a>
+											<span class="text-dark text-center py-4 px-3  pt-2 size-5 navlink" onclick="suivant(3)">
+												Saisir plus tard
+												<i class="mdi mdi-chevron-right"></i>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- content-step-3 -->
+					<div class="col-lg-7 m-auto d-none" id="content-step-3">
+						<p class="navlink" onclick="arriere(2)">
+							<i class="mdi mdi-chevron-left size-8"></i>
+							<u>Retour</u>
+						</p>
+						<p class="text-dark text-center py-2 size-6 fw-4">Vos informations</p>
+
+						<div class="container-fluid py-lg-3 border rounded">
+							<div class="row">
+								<div class="col-lg-12 m-auto">
+									<div class="m-1 p-lg-4 pt-2">
+
+										<div class="container-fluid p-0">
+											<div class="row">
+
+												<div class="col-lg-6 m-auto ">
+													<div class="rounded border pl-4">
+														<div class="form-check px-3 py-2 form-check-inline">
+															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+															<label class="form-check-label is-pointer" for="inlineRadio1">Madame</label>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-6 m-auto ">
+													<div class="rounded border pl-4">
+														<div class="form-check px-3 py-2 form-check-inline">
+															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+															<label class="form-check-label is-pointer" for="inlineRadio2">Monsieur</label>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre Nom
+										</p>
+										<input type="text" class="form-control size-4">
+
+										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Prenom
+										</p>
+										<input type="text" class="form-control size-4">
+
+										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Email
+										</p>
+										<input type="email" class="form-control size-4">
+
+										<div class="text-center mt-4">
+                                            <a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="suivant(4)">
+												<span>
+													Continuer
+													<i class="mdi mdi-chevron-right"></i>
+												</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- content-step-4 -->
+					<div class="col-lg-7 m-auto d-none" id="content-step-4">
+						<p class="navlink" onclick="arriere(3)">
+							<i class="mdi mdi-chevron-left size-8"></i>
+							<u>Retour</u>
+						</p>
+						<p class="text-dark text-center py-2 size-6 fw-4">Félicitations</p>
+
+						<div class="container-fluid py-3 alert alert-success border-success rounded">
+							<div class="row">
+								<div class="col-lg-12 m-auto">
+									<div class="m-1 p-4 pt-2">
+										Notre collaborateur vous contactera dans les plus brefs délais pour procéder démarrer la première étape et vous communiquera les modalités de notre pack création
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Procedure deleguer ma compta |
+	{{ typeUser}}
+{% endblock %}
+
+{% block body %}
+
+	
+	<div class="container">
+		<div
+			class="row">
+			<!-- content-step-3 -->
+			<div class="col-lg-7 m-auto">
+
+            <p class="is-text-primary text-uppercase text-center size-6 fw-3 mt-4">
+					Je veux déléguer ma comptabilité
+				</p>
+				<p class="text-center pb-4 size-5">
+					Categorie :
+					<b>{{typeUser}}</b>
+				</p>
+
+                <p class="navlink" onclick="pageArriere()">
+								<i class="mdi mdi-chevron-left size-6"></i>
+								<u>Retour</u>
+							</p>
+
+			
+				<p class="text-dark text-center py-2 size-6 fw-4">Vos informations</p>
+
+				<div class="container-fluid py-lg-3 border rounded mb-4">
+					<div class="row">
+						<div class="col-lg-12 m-auto">
+							<div class="m-1 p-lg-4 pt-2">
+
+                            {% if UserController == 1 %}
+
+								<div class="container-fluid p-0">
+									<div class="row">
+
+										<div class="col-lg-6 m-auto ">
+											<div class="rounded border pl-4">
+												<div class="form-check px-3 py-2 form-check-inline">
+													<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+													<label class="form-check-label is-pointer" for="inlineRadio1">Madame</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-lg-6 m-auto ">
+											<div class="rounded border pl-4">
+												<div class="form-check px-3 py-2 form-check-inline">
+													<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+													<label class="form-check-label is-pointer" for="inlineRadio2">Monsieur</label>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+                                {% else %}
+
+                                <p class="text-dark size-4 m-0 my-1 mt-3">Renseignez le Nom de l'entreprise 
+								</p>
+								<input type="text" class="form-control size-4">
+
+                                {% endif %}
+								<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre Nom
+								</p>
+								<input type="text" class="form-control size-4">
+
+								<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Prenom
+								</p>
+								<input type="text" class="form-control size-4">
+
+								<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Email
+								</p>
+								<input type="email" class="form-control size-4">
+
+								<div class="text-center mt-4">
+									<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5">
+										<span>
+											Valider la souscription
+											<i class="mdi mdi-chevron-right"></i>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
