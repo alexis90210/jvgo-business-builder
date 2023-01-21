@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tableau de board | JVGO
+{% endblock %}
+{% block div %}{% endblock %}
+{% block body %}
+
+	<style>
+		body {
+			overflow: hidden
+		}
+	</style>
+
+	<div class="container-fluid p-0 font-ubuntu overflow-hidden">
+		<div class="row p-0 m-0">
+			<div class="col-lg-2 bg-dark vh-100 overflow-hidden d-sm-none d-md-block" id="toggle-menu-mobile">
+				<p class="d-flex justify-content-end d-sm-block d-md-block d-lg-none d-xl-none ">
+					<span class="size-3 px-1 pt-4 text-dark fw-1" onclick="closeMenu()">
+						<i class="mdi mdi-close size-7 text-violet"></i>
+						MENU</span>
+				</p>
+				<div class="mt-5 p-3">
+					<a href="/"><img src="{{ asset('images/jbvo.png')}}" width="160px"></a>
+					<br><br>
+					<div class="py-4 px-2 fw-2">
+						<p>
+							<a class="size-3 px-1 text-light fw-1" href="/dashboard">
+								<i class="mdi mdi-circle size-2 text-primary"></i>
+								&nbsp; &nbsp; TABLEAU DE BORD</a>
+						</p>
+						<p>
+							<a class="size-3 px-1 text-light fw-1" href="/dashboard/demandes">
+								<i class="mdi mdi-circle size-2 text-primary"></i>
+								&nbsp; &nbsp; DEMANDES</a>
+						</p>
+						<p>
+							<a class="size-3 px-1 text-light fw-1" href="/">
+								<i class="mdi mdi-circle size-2 text-primary"></i>
+								&nbsp; &nbsp; ACCEUIL JVGO</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-10 p-0 vh-100 overflow-scroll">
+				<div class="d-flex justify-content-end p-3 pt-5 align-items-center d-sm-none d-lg-block  d-xl-block">
+					<div class="d-flex justify-content-end flex-nowrap">
+						<a class="size-3 px-1 text-dark fw-1" href="/">
+							<i class="mdi mdi-logout size-7 text-violet"></i>
+							DECONNEXION</a>
+					</div>
+				</div>
+				{# Mobile view  #}
+				<div class="d-flex justify-content-between p-3 pt-5 align-items-center d-sm-block d-md-block d-lg-none d-xl-none ">
+					<div class="d-flex justify-content-between flex-nowrap">
+						<span class="size-3 px-1 text-dark fw-1" onclick="openMenu()">
+							<i class="mdi mdi-menu size-7 text-violet"></i>
+							MENU</span>
+						<a class="size-3 px-1 text-dark fw-1" href="/">
+							<i class="mdi mdi-logout size-7 text-violet"></i>
+							DECONNEXION</a>
+					</div>
+				</div>
+
+				<div
+					class="p-0 rounded p-3 pt-0">
+
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-12 py-3 px-lg-4 ">
+
+								<p class="">Details de la
+									<span class="text-primary">demande
+									</span>.</p>
+
+								<div class="container-fluid p-0">
+									<div class="row p-0">
+										<div class="col-lg-4">
+											<div class="mt-1 border rounded">
+												<div class="card">
+													<div class="card-header">
+														Informations generales
+													</div>
+													<div class=" card-body">
+														<p class="size-5">
+															<b>Nom complet :
+															</b>
+															John doe (Mr.)
+														</p>
+														<p class="size-5">
+															<b>Email :
+															</b>
+															John@doe.com
+														</p>
+														<p class="size-5">
+															<b>Societe :
+															</b>
+															John corps <span class="text-primary">(Societe)</span>
+														</p>
+
+													</div>
+												</div>
+											</div>
+										</div>
+                                        <div class="col-lg-4">
+											<div class="mt-1 border rounded">
+												<div class="card">
+													<div class="card-header">
+														Pack 
+													</div>
+													<div class=" card-body">
+														<p class="size-5">
+															<b>Type : 
+															</b>
+															Comptabilite
+														</p>
+														<p class="size-5">
+															<b>Extra :
+															</b>
+															Sans accès logiciel comptable
+														</p>
+														<p class="size-5">
+															<b>Montant :
+															</b>
+															45 Euros <span class="text-primary">(TTC/mois)</span> 
+														</p>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+                                <div class="col-lg-10 m-2">
+                                								<p class="pt-4">Reponse a la 
+									<span class="text-primary">demande
+									</span>.</p>
+
+
+                                <textarea name="" id="" cols="30" placeholder="Ecrivez votre message de reponse ici" class="form-control" rows="5"></textarea>
+
+                                <button class="btn btn-primary my-3">Transmettre la reponse</button>
+                                </div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="{{ asset('js/custom/dashboard.js')}}"></script>
+{% endblock %}
+{% block footer %}{% endblock %}

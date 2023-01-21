@@ -1,10 +1,12 @@
 var host = "http://127.0.0.1:8000/images/jbvo.png"
 
+try {
+
 // ----------------------------------------------------------------------------
 // Nav autoplacing
 // ----------------------------------------------------------------------------
 
-let headerWidth=document.querySelector(".header-bar").getBoundingClientRect().height,nav=document.querySelector(".section-navigation");nav.style=`margin-top:${headerWidth}px  !important`;
+let headerWidth=document.querySelector(".header-bar")?.getBoundingClientRect().height,nav=document.querySelector(".section-navigation");nav.style=`margin-top:${headerWidth}px  !important`;
 
 // ----------------------------------------------------------------------------
 // Loader
@@ -52,4 +54,10 @@ document.querySelector(".hamburger-btn").addEventListener("click",(e=>{document.
 
 function pageArriere() {
     window.history.back()
+}
+
+    
+} catch (error) {
+    
+    console.log( error);
 }
