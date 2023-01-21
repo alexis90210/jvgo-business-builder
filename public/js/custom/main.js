@@ -56,6 +56,16 @@ function pageArriere() {
     window.history.back()
 }
 
+
+function newPage( route ) {
+    window.location.href = route
+}
+
+
+function print(){
+    window.print() 
+}
+ 
     
 } catch (error) {
     

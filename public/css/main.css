@@ -448,3 +448,7 @@ body {
 .text-violet {
   color: #6610f2;
 }
+
+.rounded-full {
+  border-radius: 50%;
+}
