@@ -322,29 +322,34 @@ a {
   text-align: center;
   border: 2px solid transparent;
   cursor: pointer;
+  opacity: 1;
 }
 .button-effect-3 > a > span {
-    color: var(--light) !important;
-    opacity: .9;
+    color: #fff !important;
+    opacity: 1;
 }
 
 .button-effect-3 > span {
-    color: var(--light) !important;
-    opacity: .9;
+    color: #fff !important;
+    opacity: 1;
 }
 
 
-.button-effect-3:hover {
+.button-effect-3:hover,
+.actived-btn 
+ {
   border: 2px solid var(--dark);
   background-color: transparent;
   transition: var(--transition);
 }
 
-.button-effect-3:hover > a > span {
+.button-effect-3:hover > a > span,
+.actived-btn > a > span  {
     color: var(--dark) !important;
 }
 
-.button-effect-3:hover > span {
+.button-effect-3:hover > span, 
+.actived-btn > span  {
     color: var(--dark) !important;
 }
 
@@ -442,13 +447,5 @@ body {
   height: 100vh;
 }
 .border-blue {
-  border:1px solid #6610f2;
-}
-
-.text-violet {
-  color: #6610f2;
-}
-
-.rounded-full {
-  border-radius: 50%;
+  border:1px solid var(--light);
 }
