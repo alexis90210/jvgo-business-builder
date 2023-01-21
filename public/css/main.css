@@ -427,3 +427,19 @@ body {
   background-color: #ffffff;
   opacity: 1;
 }
+
+.border-primary {
+  border-color: var(--primary) !important;
+}
+.bar-line {
+  width:70%; 
+  height:4px; 
+  border-radius:10px; 
+  background-color:#0b2859;
+}
+
+.is-badge {
+  background-color: rgba(255, 255, 255, 0.926);
+  border-radius: 10px;
+  padding: 5px;
+}
