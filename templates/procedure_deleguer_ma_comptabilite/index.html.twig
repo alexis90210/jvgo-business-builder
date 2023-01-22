@@ -6,93 +6,256 @@
 
 {% block body %}
 
-	
+
 	<div class="container">
 		<div
 			class="row">
 			<!-- content-step-3 -->
 			<div class="col-lg-7 m-auto">
 
-            <p class="is-text-primary text-uppercase text-center size-6 fw-3 mt-4">
+				<p class="is-text-primary text-uppercase text-center size-6 fw-3 mt-4">
 					Je veux déléguer ma comptabilité
 				</p>
-				<p class="text-center pb-4 size-5">
+				<p class="text-center pb-2 size-5">
 					Categorie :
-					<b>{{typeUser}}</b>
+					<b id="typeUser">{{typeUser}}</b>
+					<br>
+					<span class="opacity-0">
+						<b id="typePack">{{typePack}}</b>
+						/
+						<b id="TypeAbonnement">{{TypeAbonnement}}</b>/<b id="Prix">{{Prix}}</b>
+					</span>
+				</p>
+				
+
+				<p class="navlink" onclick="pageArriere()">
+					<i class="mdi mdi-chevron-left size-6"></i>
+					<u>Retour</u>
 				</p>
 
-                <p class="navlink" onclick="pageArriere()">
-								<i class="mdi mdi-chevron-left size-6"></i>
-								<u>Retour</u>
-							</p>
 
-			
-				<p class="text-dark text-center py-2 size-6 fw-4">Vos informations</p>
-
+				<p class="text-dark text-center py-2 size-6 fw-4" id="informations">Vos informations</p>
+				<p class="text-center size-5 fw-3 alert alert-danger d-none" id="error-display"></p>
 				<div class="container-fluid py-lg-3 border rounded mb-4">
 					<div class="row">
 						<div class="col-lg-12 m-auto">
 							<div class="m-1 p-lg-4 pt-2">
 
-                            {% if UserController == 1 %}
+								<div id="form-demande">
 
-								<div class="container-fluid p-0">
-									<div class="row">
+									{% if UserController == 1 %}
 
-										<div class="col-lg-6 m-auto ">
-											<div class="rounded border pl-4">
-												<div class="form-check px-3 py-2 form-check-inline">
-													<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-													<label class="form-check-label is-pointer" for="inlineRadio1">Madame</label>
+										<div class="container-fluid p-0">
+											<div class="row">
+
+												<div class="col-lg-6 m-auto ">
+													<div class="rounded border pl-4">
+														<div class="form-check px-3 py-2 form-check-inline">
+															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="radioMadame" value="option1">
+															<label class="form-check-label is-pointer" for="radioMadame">Madame</label>
+														</div>
+													</div>
 												</div>
+
+												<div class="col-lg-6 m-auto ">
+													<div class="rounded border pl-4">
+														<div class="form-check px-3 py-2 form-check-inline">
+															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="radioMonsieur" value="option2">
+															<label class="form-check-label is-pointer" for="radioMonsieur">Monsieur</label>
+														</div>
+													</div>
+												</div>
+
 											</div>
 										</div>
 
-										<div class="col-lg-6 m-auto ">
-											<div class="rounded border pl-4">
-												<div class="form-check px-3 py-2 form-check-inline">
-													<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-													<label class="form-check-label is-pointer" for="inlineRadio2">Monsieur</label>
-												</div>
-											</div>
-										</div>
+									{% else %}
 
+										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez le Nom de l'entreprise
+										</p>
+										<input type="text" class="form-control size-4" id="NomEntreprise">
+
+									{% endif %}
+									<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre Nom
+									</p>
+									<input type="text" class="form-control size-4" id="Nom">
+
+									<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Prenom
+									</p>
+									<input type="text" class="form-control size-4" id="Prenom">
+
+									<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Email
+									</p>
+									<input type="email" class="form-control size-4" id="Email">
+
+									<div class="text-center mt-4">
+										<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="selectInfo()">
+											<span>
+												Valider la souscription
+												<i class="mdi mdi-chevron-right"></i>
+											</span>
+										</a>
 									</div>
 								</div>
 
-                                {% else %}
 
-                                <p class="text-dark size-4 m-0 my-1 mt-3">Renseignez le Nom de l'entreprise 
-								</p>
-								<input type="text" class="form-control size-4">
+								<div class="proceess-init">
+									<center id="loading-indicator" class="d-none">
+										<img src="{{ asset('images/loader.svg')}}" width="200px">
+									</center>
 
-                                {% endif %}
-								<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre Nom
-								</p>
-								<input type="text" class="form-control size-4">
+									<div class="d-none" id="success-process">
+										<p class="text-dark text-center py-2 size-6 fw-4">Félicitations</p>
 
-								<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Prenom
-								</p>
-								<input type="text" class="form-control size-4">
-
-								<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Email
-								</p>
-								<input type="email" class="form-control size-4">
-
-								<div class="text-center mt-4">
-									<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5">
-										<span>
-											Valider la souscription
-											<i class="mdi mdi-chevron-right"></i>
-										</span>
-									</a>
+										<div class="container-fluid py-3 alert alert-success border-success rounded">
+											<div class="row">
+												<div class="col-lg-12 m-auto">
+													<div class="m-1 p-4 pt-2">
+														Notre collaborateur vous contactera dans les plus brefs délais pour procéder démarrer la première étape et vous communiquera les modalités de notre pack création
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
+
+
+<script>
+
+var data = {}
+
+data.typeUser = document.querySelector("#typeUser")?.innerText
+data.typePack = document.querySelector("#typePack")?.innerText
+data.Prix = document.querySelector("#Prix")?.innerText
+data.TypeAbonnement = document.querySelector("#TypeAbonnement")?.innerText
+
+function selectInfo() {
+
+	const Madame =  document.querySelector("#radioMadame")?.checked 
+	const Monsieur =  document.querySelector("#radioMonsieur")?.checked 
+	
+	data.Civilite = Monsieur ? "Monsieur" : ( Madame ? "Madame" : "" )
+	data.Nom = document.querySelector("#Nom")?.value
+	data.Prenom = document.querySelector("#Prenom")?.value
+	data.Email = document.querySelector("#Email")?.value
+	data.NomEntreprise = document.querySelector("#NomEntreprise")?.value
+
+
+	if ( !( Madame == true || Monsieur == true ) && data.typeUser == "Indépendant" ) {
+		
+		document.querySelector("#error-display").classList.remove('d-none')	    		
+		document.querySelector('#error-display').innerText = "Veuillez selectionner la civilité"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	} 
+
+	if ( !data.NomEntreprise && data.typeUser != "Indépendant" ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Nom Entreprise"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	}
+
+	if ( !data.Nom ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Nom"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	}
+
+	if ( !data.Prenom ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Prenom"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	} 
+
+	if ( !data.Email ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Email"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	} 
+
+	// hide form and show loader indicator
+
+	document.querySelector("#form-demande").classList.add('d-none')
+	document.querySelector("#informations").classList.add('d-none')
+	document.querySelector("#loading-indicator").classList.remove('d-none')
+
+	console.log( data );
+
+	axios.post('/save/deleguer-ma-comptabilite', {
+		...data
+	})
+	.then(function (response) {
+		console.log( response.data );
+
+		const api = response.data
+		document.querySelector('#loading-indicator').classList.add('d-none')
+		
+		if (api.code == "success" ) {
+			document.querySelector('#success-process').classList.remove('d-none')
+		} else {
+		
+			document.querySelector('#error-display').innerText = api.message
+			document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+			setTimeout( () => {
+				document.querySelector("#error-display").classList.add('d-none')
+			},8000)
+
+		}
+	})
+	.catch(function (error) {
+		console.log(error);
+
+		document.querySelector("#form-demande").classList.remove('d-none')
+		document.querySelector("#informations").classList.remove('d-none')
+		document.querySelector("#loading-indicator").classList.add('d-none')
+
+	});
+
+}
+
+</script>
+
+
 {% endblock %}

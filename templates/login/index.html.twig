@@ -20,15 +20,24 @@
 
 					<div class="border-top p-4 bg-white">
 
-						<input type="text" class="form-control my-3" placeholder="Identifiant">
-						<input type="password" class="form-control my-3" placeholder="Mot de passe" autocomplete="new-password">
+						<input type="text" class="form-control my-3" placeholder="Identifiant" id="Login">
+
+						<input type="password" class="form-control my-3" placeholder="Mot de passe" id="Password" autocomplete="new-password">
 					
-
-
 						<div class="text-center mt-2">
-							<button class="my-3 btn text-white rounded-pill bg-secondary" onclick="newPage('/dashboard')">Se connecter
+
+							<p class="text-center size-5 fw-3 alert alert-danger d-none" id="error-display"></p>
+
+							<button class="my-3 btn text-white rounded-pill bg-secondary" onclick="logIn()">Se connecter
+								
 								<i class="mdi mdi-lock text-white"></i>
+
 							</button>
+
+							<center id="loading-indicator" class="d-none">
+										<img src="{{ asset('images/loader.svg')}}" width="70px">
+							</center>
+
 						</div>
 					</div>
 				</div>
@@ -37,6 +46,69 @@
 		</div>
 	</div>
 
-<script src="{{ asset('js/custom/dashboard.js')}}"></script>
+<script src="{{ asset('js/custom/main.js')}}"></script>
+<script>
+
+var data = {}
+
+function logIn() {
+
+	data.Login = document.querySelector("#Login")?.value
+	data.Password = document.querySelector("#Password")?.value
+
+	if ( !data.Login ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Login"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	} 
+
+	if ( !data.Password ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Password"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	} 
+
+	axios.post('/login-admin', data)
+	.then(function (response) {
+		console.log( response.data );
+
+		const api = response.data
+		document.querySelector('#loading-indicator').classList.add('d-none')
+		
+		if (api.code == "success" ) {
+			localStorage.setItem('X-Reference-Id' , api.id )
+			window.location.href ='/dashboard'
+		} else {
+			document.querySelector("#error-display").classList.remove('d-none')		
+			document.querySelector('#error-display').innerText = api.message
+			document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+			setTimeout( () => {
+				document.querySelector("#error-display").classList.add('d-none')
+			},8000)
+
+		}
+	})
+	.catch(function (error) {
+		console.log(error);
+	});
+
+}
+
+</script>
 {% endblock %}
 {% block footer %}{% endblock %}

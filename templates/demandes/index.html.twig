@@ -29,9 +29,15 @@
 								&nbsp; &nbsp; TABLEAU DE BORD</a>
 						</p>
 						<p>
-							<a class="size-3 px-1 text-light fw-1" href="/dashboard/demandes">
-								<i class="mdi mdi-circle size-2 text-primary"></i>
-								&nbsp; &nbsp; DEMANDES</a>
+							<a class="size-3 px-1 text-light fw-1" href="/dashboard/demandes/1">
+								<i class="mdi mdi-circle size-2 is-text-primary"></i>
+								&nbsp; &nbsp; ENTREPRISE</a>
+						</p>
+
+						<p>
+							<a class="size-3 px-1 text-light fw-1" href="/dashboard/demandes/2">
+								<i class="mdi mdi-circle size-2 is-text-primary"></i>
+								&nbsp; &nbsp; COMPTABILITE</a>
 						</p>
 						<p>
 							<a class="size-3 px-1 text-light fw-1" href="/">
@@ -42,9 +48,13 @@
 				</div>
 			</div>
 			<div class="col-lg-10 p-0 vh-100 overflow-scroll">
-				<div class="d-flex justify-content-end p-3 pt-5 align-items-center d-sm-none d-lg-block  d-xl-block">
-					<div class="d-flex justify-content-end flex-nowrap">
-						<a class="size-3 px-1 text-dark fw-1" href="/">
+				<div class="d-flex justify-content-end p-3 pt-4 align-items-center d-sm-none d-lg-block  d-xl-block">
+					<div class="d-flex justify-content-between align-items-center  flex-nowrap">
+					<span class="size-3 px-1 text-dark fw-1 is-pointer">
+							<i class="mdi mdi-circle size-2 text-violet"></i>
+							
+					{% if switcher == 1 %} DEMANDE ENTREPRISE {% else %} DEMANDE COMPTABILITE {% endif %}</span>
+						<a class="size-3 px-1 text-dark fw-1 is-pointer" onclick="deconnexion()">
 							<i class="mdi mdi-logout size-7 text-violet"></i>
 							DECONNEXION</a>
 					</div>
@@ -52,24 +62,24 @@
 				{# Mobile view  #}
 				<div class="d-flex justify-content-between p-3 pt-5 align-items-center d-sm-block d-md-block d-lg-none d-xl-none ">
 					<div class="d-flex justify-content-between flex-nowrap">
-						<span class="size-3 px-1 text-dark fw-1" onclick="openMenu()">
+						<span class="size-3 px-1 text-dark fw-1 is-pointer" onclick="openMenu()">
 							<i class="mdi mdi-menu size-7 text-violet"></i>
 							MENU</span>
-						<a class="size-3 px-1 text-dark fw-1" href="/">
+						<a class="size-3 px-1 text-dark fw-1 is-pointer" onclick="deconnexion()">
 							<i class="mdi mdi-logout size-7 text-violet"></i>
 							DECONNEXION</a>
 					</div>
 				</div>
 
-				<div class="p-0 rounded p-3 pt-0">
+				<div class="p-0 rounded p-3 pt-0 box-table">
+				{% if switcher == 1 %} 
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-lg-12 py-3 px-lg-4 ">
+							<div class="col-lg-12 py-2 px-lg-4 ">
 
-								<p class="py-4">Toutes les
-									<span class="is-text-primary">demandes
+								<p class="pb-4 pt-2">Toutes les
+									<span class="is-text-primary">demandes ( entreprise )
 									</span>.</p>
-
 								<div class=" d-sm-none d-lg-block  d-xl-block">
 									<table class="table table-responsive-sm ">
 										<thead>
@@ -77,92 +87,235 @@
 												<th class="size-3 text-uppercase">N.</th>
 												<th class="size-3 text-uppercase">Nom</th>
 												<th class="size-3 text-uppercase">Prenom</th>
+												<th class="size-3 text-uppercase">Civilite</th>
+												<th class="size-3 text-uppercase">Email</th>
 												<th class="size-3 text-uppercase">Entreprise</th>
-												<th class="size-3 text-uppercase">Pack</th>
-												<th class="size-3 text-uppercase">Emit</th>
+												<th class="size-3 text-uppercase">Type</th>
+												<th class="size-3 text-uppercase">Emis</th>
 												<th class="size-3 text-uppercase">actions</th>
 											</tr>
 										</thead>
 										<tbody>
+
+										{% for demande in demandes %}									
+										
 											<tr>
-												<td class="py-2 size-4">1</td>
-												<td class="py-2 size-4">Mark</td>
-												<td class="py-2 size-4">Otto</td>
-												<td class="py-2 size-4">JVGO</td>
-												<td class="py-2 size-4">Comptabilité</td>
-												<td class="py-2 size-4">12/01/2023</td>
+												<td class="py-2 size-4">{{ demande.id }}</td>
+												<td class="py-2 size-4">{{ demande.nom }}</td>
+												<td class="py-2 size-4">{{ demande.prenom }}</td>
+												<td class="py-2 size-4">{{ demande.Civilite }}</td>
+												<td class="py-2 size-4">{{ demande.Email }}</td>
+												<td class="py-2 size-4">{{ demande.NomStructure}}</td>
+												<td class="py-2 size-4">{{ demande.TypeEntreprise}}</td>
+												<td class="py-2 size-4">{{ demande.DateCreation}}</td>
 												<td class="py-2 size-4 d-flex flex-nowrap">
-													<button onclick="newPage('/dashboard/detail-demande/1')" type="button" class="btn-sm d-flex flex-nowrap m-1 btn btn-secondary">
+													<button onclick="newPage('/dashboard/detail-demande/{{demande.id}}')" class="btn-sm d-flex flex-nowrap m-1 btn btn-secondary">
 														<i class="mdi mdi-eye"></i>
-														<span class="d-sm-none d-md-none d-lg-block d-xl-block">&nbsp; Consulter</span>
+														<span class="size-3 ">&nbsp; Consulter</span>
 													</button>
-													
 												</td>
 											</tr>
-											<tr>
-												<td class="py-2 size-4">2</td>
-												<td class="py-2 size-4">John</td>
-												<td class="py-2 size-4">Doe</td>
-												<td class="py-2 size-4">Independant</td>
-												<td class="py-2 size-4">Creation d'entreprise</td>
-												<td class="py-2 size-4">12/01/2023</td>
-												<td class="py-2 size-4 d-flex flex-nowrap">
-													<button onclick="newPage('/dashboard/detail-demande/1')" type="button" class="btn-sm d-flex flex-nowrap m-1 btn btn-secondary">
-														<i class="mdi mdi-eye"></i>
-														<span class="d-sm-none d-md-none d-lg-block d-xl-block">&nbsp; Consulter</span>
-													</button>
-													
-												</td>
-											</tr>
+											{% endfor %}
 										</tbody>
 									</table>
 								</div>
 
+								{# MOBILE VIEW #}
+								{% for demande in demandes %}	
 								<div class="card  d-sm-block d-md-block d-lg-none d-xl-none " style="width: 100%;">
 									<div class="card-header">
 										<b>N.
 										</b>
-										1
+										{{ demande.id }}
 									</div>
 									<ul class="list-group list-group-flush">
 										<li class="size-3 list-group-item">
 											<b>
 												Nom :
 											</b>
-											John</li>
+											{{ demande.nom }}</li>
 										<li class="size-3 list-group-item">
 											<b>
 												Prenom :
 											</b>
-											Doe</li>
+											{{ demande.prenom }}</li>
+										<li class="size-3 list-group-item">
+											<b>
+												Civilite :
+											</b>
+											{{ demande.Civilite }}</li>
+										<li class="size-3 list-group-item">
+											<b>
+												Email :
+											</b>
+											{{ demande.Email }}</li> 
+
 										<li class="size-3 list-group-item">
 											<b>
 												Entreprise :
 											</b>
-											John corps</li>
+											{{ demande.NomStructure}}</li>
+
 										<li class="size-3 list-group-item">
 											<b>
-												Pack :
+												Type Entreprise :
 											</b>
-											Comptabilité</li>
+											{{ demande.TypeEntreprise}}</li>
 										<li class="size-3 list-group-item">
 											<b>
-												Emit :
+												Date d'emission :
 											</b>
-											12/01/2023</li>
+											{{ demande.DateCreation}}</li>
 										<li class="size-3 list-group-item">
 											<b>
-												<button onclick="newPage('/dashboard/detail-demande/1')" type="button" class="btn-sm d-flex flex-nowrap m-1 btn btn-primary">
+												<button onclick="newPage('/dashboard/detail-demande/{{demande.id}}')" class="btn-sm d-flex flex-nowrap m-1 btn btn-secondary">
 													<i class="mdi mdi-eye"></i>
-													<span class="d-sm-none d-md-none d-lg-block d-xl-block">&nbsp; Consulter</span>
+													<span class="">&nbsp; Consulter</span>
 												</button>
+												
 											</li>
 										</li>
 									</ul>
 								</div>
+								{% endfor %}
 							</div>
 						</div>
 					</div>
+				 {% else %} 
+				<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-12 py-2 px-lg-4 ">
+
+								<p class="pb-4 pt-2">Toutes les
+									<span class="is-text-primary">demandes ( Comptabilité	)
+									</span>.</p>
+								<div class=" d-sm-none d-lg-block  d-xl-block">
+									<table class="table table-responsive-sm ">
+										<thead>
+											<tr>
+												<th class="size-3 text-uppercase">N.</th>
+												<th class="size-3 text-uppercase">Nom</th>
+												<th class="size-3 text-uppercase">Prenom</th>
+												<th class="size-3 text-uppercase">Civilite</th>
+												<th class="size-3 text-uppercase">Email</th>
+												{# <th class="size-3 text-uppercase">Structure </th> #}
+												{# <th class="size-3 text-uppercase">Nom Structure</th> #}
+												<th class="size-3 text-uppercase">Abonnement</th>
+												<th class="size-3 text-uppercase">Montant</th>
+												{# <th class="size-3 text-uppercase">Delai Creation</th> #}
+												<th class="size-3 text-uppercase">Emis</th>
+												<th class="size-3 text-uppercase">actions</th>
+											</tr>
+										</thead>
+										<tbody>
+
+										{% for demande in demandes %}									
+										
+											<tr>
+												<td class="py-2 size-4">{{ demande.id }}</td>
+												<td class="py-2 size-4">{{ demande.nom }}</td>
+												<td class="py-2 size-4">{{ demande.prenom }}</td>
+												<td class="py-2 size-4">{{ demande.Civilite }}</td>
+												<td class="py-2 size-4">{{ demande.Email }}</td>
+												{# <td class="py-2 size-4">{{ demande.Structure}}</td> #}
+												{# <td class="py-2 size-4">{{ demande.NomStructure}}</td> #}
+												<td class="py-2 size-4">{{ demande.TypeAbonnement}}</td>
+												<td class="py-2 size-4">{{ demande.Montant}}</td>
+												{# <td class="py-2 size-4">{{ demande.DelaiCreation}}</td> #}
+												<td class="py-2 size-4">{{ demande.DateCreation}}</td>
+												<td class="py-2 size-4 d-flex flex-nowrap">
+													<button onclick="newPage('/dashboard/detail-demande/{{demande.id}}')" class="btn-sm d-flex flex-nowrap m-1 btn btn-secondary">
+														<i class="mdi mdi-eye"></i>
+														<span class="size-3 ">&nbsp; Consulter</span>
+													</button>
+												</td>
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+
+								{# MOBILE VIEW #}
+								{% for demande in demandes %}	
+								<div class="card  d-sm-block d-md-block d-lg-none d-xl-none " style="width: 100%;">
+									<div class="card-header">
+										<b>N.
+										</b>
+										{{ demande.id }}
+									</div>
+									<ul class="list-group list-group-flush">
+										<li class="size-3 list-group-item">
+											<b>
+												Nom :
+											</b>
+											{{ demande.nom }}</li>
+										<li class="size-3 list-group-item">
+											<b>
+												Prenom :
+											</b>
+											{{ demande.prenom }}</li>
+										<li class="size-3 list-group-item">
+											<b>
+												Civilite :
+											</b>
+											{{ demande.Civilite }}</li> 
+											<li class="size-3 list-group-item">
+											<b>
+												Email :
+											</b>
+											{{ demande.Email }}</li> 
+											
+										<li class="size-3 list-group-item">
+											<b>
+												Structure :
+											</b>
+											{{ demande.Structure}}</li>
+										<li class="size-3 list-group-item">
+											<b>
+												Nom Structure :
+											</b>
+											{{ demande.NomStructure}}</li>
+
+										<li class="size-3 list-group-item">
+											<b>
+												Type d'Abonnement :
+											</b>
+											{{ demande.TypeAbonnement}}</li>
+										<li class="size-3 list-group-item">
+											<b>
+												Montant :
+											</b>
+											{{ demande.Montant}}</li>
+										<li class="size-3 list-group-item">
+											<b>
+												Delai de creation :
+											</b>
+											{{ demande.DelaiCreation}}</li>
+										<li class="size-3 list-group-item">
+											<b>
+												Date d'emission :
+											</b>
+											{{ demande.DateCreation}}</li>
+
+										<li class="size-3 list-group-item">
+											<b>
+												<button onclick="newPage('/dashboard/detail-demande/{{demande.id}}')" class="btn-sm d-flex flex-nowrap m-1 btn btn-secondary">
+													<i class="mdi mdi-eye"></i>
+													<span class="">&nbsp; Consulter</span>
+												</button>
+												
+											</li>
+										</li>
+									</ul>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				 
+				 {% endif %}
+
+				 <br><br>
 				</div>
 			</div>
 		</div>

@@ -16,8 +16,11 @@
 				</p>
 				<p class="text-center pb-4 size-5">
 					Categorie :
-					<b>{{TypeEntreprise}}</b>
-				</p>
+					<b id="TypeEntreprise">{{TypeEntreprise}}</b>
+						<p class="text-center size-5 fw-3 alert alert-danger d-none" id="error-display"></p>
+				</p> 
+
+			
 
 				<ul class="stepper d-flex no-style justify-content-center">
 					<li class="stepper-active" id="step-1">
@@ -47,7 +50,7 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-lg-5 m-auto">
-										<div class="m-1 border rounded text-center p-3 selectable-box" onclick="suivant(2)">
+										<div class="m-1 border rounded text-center p-3 selectable-box" onclick="selectDelai(2 , 'Dès que possible')">
 											<img src="{{ asset('images/13.svg')}}" alt="" srcset="">
 											<p class="pt-2">
 												<b class="text-dark size-3">
@@ -59,7 +62,7 @@
 									</div>
 
 									<div class="col-lg-5 m-auto">
-										<div class="m-1 border rounded text-center p-4 selectable-box selectable-box-selected" onclick="suivant(2)">
+										<div class="m-1 border rounded text-center p-4 selectable-box selectable-box-selected" onclick="selectDelai(2 , 'Dand la semaine')">
 											<img src="{{ asset('images/14.svg')}}" alt="" srcset="">
 											<p class="pt-2">
 												<b class="text-dark size-3">
@@ -70,7 +73,7 @@
 									</div>
 
 									<div class="col-lg-5 m-auto">
-										<div class="m-1 border rounded text-center p-4 selectable-box" onclick="suivant(2)">
+										<div class="m-1 border rounded text-center p-4 selectable-box" onclick="selectDelai(2 , 'Dans le mois')">
 											<img src="{{ asset('images/14.svg')}}" alt="" srcset="">
 											<p class="pt-2">
 												<b class="text-dark size-3">
@@ -81,7 +84,7 @@
 									</div>
 
 									<div class="col-lg-5 m-auto">
-										<div class="m-1 border rounded text-center p-4 selectable-box" onclick="suivant(2)">
+										<div class="m-1 border rounded text-center p-4 selectable-box" onclick="selectDelai(2 , 'Je ne sais pas')">
 											<img src="{{ asset('images/15.svg')}}" alt="" srcset="">
 											<p class="pt-2">
 												<b class="text-dark size-3">
@@ -96,7 +99,7 @@
 
 						<!-- content-step-2 -->
 						<div class="col-lg-7 m-auto d-none" id="content-step-2">
-							<p class="navlink" onclick="arriere(1)">
+							<p class="navlink" onclick="annulDelai(1)">
 								<i class="mdi mdi-chevron-left size-6"></i>
 								<u>Retour</u>
 							</p>
@@ -110,17 +113,17 @@
 											<p class=" pb-2"></p>
 											<p class="text-dark size-4 m-0 my-3">Renseignez-le ici
 											</p>
-											<input type="text" class="form-control size-4" placeholder="Ex: jvgo consulting">
+											<input type="text" id="NomEntreprise" class="form-control size-4" placeholder="Ex: jvgo consulting">
 										</p>
 
 										<div class="my-4">
-											<a class="button-effect-3 size-4 p-2 p-lg-2  px-5" onclick="suivant(3)">
+											<a class="button-effect-3 size-4 p-2 p-lg-2  px-5" onclick="selectNomEntreprise(3)">
 												<span>
 													Continuer
 													<i class="mdi mdi-chevron-right"></i>
 												</span>
 											</a>
-											<span class="text-dark text-center py-4 px-3  pt-2 size-5 navlink" onclick="suivant(3)">
+											<span class="text-dark text-center py-lg-4 px-3  pt-2 size-5 navlink p-sm-4" onclick="selectNomEntreprise(3)">
 												Saisir plus tard
 												<i class="mdi mdi-chevron-right"></i>
 											</span>
@@ -133,7 +136,7 @@
 
 					<!-- content-step-3 -->
 					<div class="col-lg-7 m-auto d-none" id="content-step-3">
-						<p class="navlink" onclick="arriere(2)">
+						<p class="navlink" onclick="annulNomEntreprise(2)">
 							<i class="mdi mdi-chevron-left size-8"></i>
 							<u>Retour</u>
 						</p>
@@ -150,8 +153,8 @@
 												<div class="col-lg-6 m-auto ">
 													<div class="rounded border pl-4">
 														<div class="form-check px-3 py-2 form-check-inline">
-															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-															<label class="form-check-label is-pointer" for="inlineRadio1">Madame</label>
+															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="radioMadame" value="option1">
+															<label class="form-check-label is-pointer" for="radioMadame">Madame</label>
 														</div>
 													</div>
 												</div>
@@ -159,8 +162,8 @@
 												<div class="col-lg-6 m-auto ">
 													<div class="rounded border pl-4">
 														<div class="form-check px-3 py-2 form-check-inline">
-															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-															<label class="form-check-label is-pointer" for="inlineRadio2">Monsieur</label>
+															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="radioMonsieur" value="option2">
+															<label class="form-check-label is-pointer" for="radioMonsieur">Monsieur</label>
 														</div>
 													</div>
 												</div>
@@ -169,18 +172,18 @@
 										</div>
 										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre Nom
 										</p>
-										<input type="text" class="form-control size-4">
+										<input type="text" class="form-control size-4" id="Nom">
 
 										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Prenom
 										</p>
-										<input type="text" class="form-control size-4">
+										<input type="text" class="form-control size-4" id="Prenom">
 
 										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Email
 										</p>
-										<input type="email" class="form-control size-4">
+										<input type="email" class="form-control size-4" id="Email">
 
 										<div class="text-center mt-4">
-                                            <a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="suivant(4)">
+                                            <a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="selectInfo(4)">
 												<span>
 													Continuer
 													<i class="mdi mdi-chevron-right"></i>
@@ -195,11 +198,18 @@
 
 					<!-- content-step-4 -->
 					<div class="col-lg-7 m-auto d-none" id="content-step-4">
-						<p class="navlink" onclick="arriere(3)">
+						
+						<p class="navlink" onclick="annulInfo(3)">
 							<i class="mdi mdi-chevron-left size-8"></i>
 							<u>Retour</u>
 						</p>
-						<p class="text-dark text-center py-2 size-6 fw-4">Félicitations</p>
+
+						<center id="loading-indicator">
+							<img src="{{ asset('images/loader.svg')}}" width="200px">
+						</center>
+
+						<div class="d-none" id="success-process">
+							<p class="text-dark text-center py-2 size-6 fw-4">Félicitations</p>
 
 						<div class="container-fluid py-3 alert alert-success border-success rounded">
 							<div class="row">
@@ -210,9 +220,159 @@
 								</div>
 							</div>
 						</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>{% endblock %}
+</div>
+
+<script>
+
+var data = {}
+
+data.TypeEntreprise = document.querySelector("#TypeEntreprise")?.innerText
+
+console.log( data )
+
+function selectDelai(page  , delai) {
+	data.Delai = delai
+	suivant( page )
+	console.log(data)
+
+}
+
+function annulDelai( page ) {
+	data.Delai = ""
+	arriere( page )
+	console.log(data)
+}
+
+function selectNomEntreprise( page ) {
+	data.NomEntreprise = document.querySelector("#NomEntreprise")?.value
+	suivant(page)
+	console.log(data)
+}
+
+
+function annulNomEntreprise( page  ) {
+	data.NomEntreprise = ""
+	arriere(page)
+	console.log(data)
+}
+
+
+function selectInfo( page ) {
+
+	const Madame =  document.querySelector("#radioMadame")?.checked 
+	const Monsieur =  document.querySelector("#radioMonsieur")?.checked 
+	
+	data.Civilite = Monsieur ? "Monsieur" : ( Madame ? "Madame" : "" )
+	data.Nom = document.querySelector("#Nom")?.value
+	data.Prenom = document.querySelector("#Prenom")?.value
+	data.Email = document.querySelector("#Email")?.value
+
+
+	if ( !( Madame == true || Monsieur == true ) ) {
+		
+		document.querySelector("#error-display").classList.remove('d-none')
+	    		
+		document.querySelector('#error-display').innerText = "Veuillez selectionner la civilité"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	} 
+
+	if ( !data.Nom ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Nom"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	}
+
+	if ( !data.Prenom ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Prenom"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	} 
+
+	if ( !data.Email ) {
+		document.querySelector("#error-display").classList.remove('d-none')
+		
+		document.querySelector('#error-display').innerText = "Veuillez renseigner le champ Email"
+		document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+		setTimeout( () => {
+			document.querySelector("#error-display").classList.add('d-none')
+		},4000)
+
+		return
+	} 
+
+	
+	axios.post('/save/creation-entreprise', {
+		...data
+	})
+	.then(function (response) {
+		console.log( response.data );
+
+		const api = response.data
+		document.querySelector('#loading-indicator').classList.add('d-none')
+		
+		if (api.code == "success" ) {
+			document.querySelector('#success-process').classList.remove('d-none')
+		} else {
+		
+			document.querySelector('#error-display').innerText = api.message
+			document.querySelector('#error-display').scrollIntoView({ behavior: 'smooth', block: 'end' })
+
+			setTimeout( () => {
+				document.querySelector("#error-display").classList.add('d-none')
+			},8000)
+
+		}
+	})
+	.catch(function (error) {
+		console.log(error);
+	});
+
+	suivant(page)
+	console.log(data)
+
+}
+
+
+function annulInfo( page ) {
+	
+	data.Civilite = "" 
+	data.Nom = ""
+	data.Prenom = ""
+	data.Email = ""
+
+	arriere(page)
+	console.log(data)
+	
+}
+
+
+</script>
+
+{% endblock %}
