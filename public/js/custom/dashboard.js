@@ -18,17 +18,6 @@ function newPage(route) {
   window.location.href = route;
 }
 
-setInterval(() => {
-  let ref = localStorage.getItem("X-Reference-Id");
-
-  if (!ref) newPage("/login");
-}, 100);
-
-
-function deconnexion() {
-  localStorage.removeItem("X-Reference-Id");
-}
-
 
 function reponseEmail() {
 

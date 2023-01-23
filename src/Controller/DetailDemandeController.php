@@ -14,9 +14,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class DetailDemandeController extends AbstractController
 {
     #[Route('/dashboard/detail-demande/{id}', name: 'app_detail_demande')]
-    public function index(string $id, ManagerRegistry $doctrine): Response
+    public function index(string $id, ManagerRegistry $doctrine, Request $request): Response
     {
         $orm = $doctrine->getManager();
+
+        $session = $request->getSession();
+
+        $authed = $session->get('auth');
+
+         if ( $authed != 1) {
+            return $this->redirect("/login");
+        }
+
 
         $maDemande = $orm->getRepository(Demandes::class)->find($id);
 
@@ -33,6 +42,14 @@ class DetailDemandeController extends AbstractController
     public function reponse_client(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer): Response
     {
         $data = json_decode($request->getContent(), false);
+
+        $session = $request->getSession();
+
+        $authed = $session->get('auth');
+
+         if ( $authed != 1) {
+            return $this->redirect("/login");
+        }
 
         if ($data) {
 

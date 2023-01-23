@@ -7,6 +7,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class LoginController extends AbstractController
@@ -18,6 +19,18 @@ class LoginController extends AbstractController
             'controller_name' => 'LoginController',
         ]);
     }
+
+    #[Route('/logout', name: 'app_logout')]
+    public function logout( Request $request): Response
+    {
+        $session = $request->getSession();
+
+        $session->remove('auth');
+
+        return $this->redirect("/login");
+
+    }
+
 
     #[Route('/login-admin', name: 'app_api_login' , methods:['POST'])]
     public function login( Request $request , ManagerRegistry $doctrine): Response
@@ -40,6 +53,10 @@ class LoginController extends AbstractController
                     'message' => 'Identifiant ou mot de passe incorrect'
                 ]);   
             }
+
+            $session = new Session();
+            $session->start();
+            $session->set('auth' , 1);
     
             return $this->json( [
                 'code' => 'success',

@@ -5,15 +5,25 @@ namespace App\Controller;
 use App\Entity\Demandes;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractController
 {
     #[Route('/dashboard', name: 'app_dashboard')]
-    public function index( ManagerRegistry $doctrine ): Response
+    public function index( ManagerRegistry $doctrine , Request $request ): Response
     {
         $orm = $doctrine->getManager();
+
+        $session = $request->getSession();
+
+        $authed = $session->get('auth');
+
+        if ( $authed != 1) {
+            return $this->redirect("/login");
+        }
 
         $demandes_entreprise = $orm->getRepository(Demandes::class)->findBy(
             [
