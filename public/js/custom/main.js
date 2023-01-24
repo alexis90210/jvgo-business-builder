@@ -133,17 +133,9 @@ try {
   // history navigation go back
   // ----------------------------------------------------------------------------
 
-  function pageArriere() {
-    window.history.back();
-  }
+  function pageArriere(){window.history.back()}function newPage(n){window.location.href=n}function print(){window.print()}
 
-  function newPage(route) {
-    window.location.href = route;
-  }
-
-  function print() {
-    window.print();
-  }
+  
 } catch (error) {
   console.log(error);
 }

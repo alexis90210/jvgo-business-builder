@@ -18,9 +18,9 @@ class DemandesController extends AbstractController
 
         $authed = $session->get('auth');
 
-        if ( $authed != 1) {
-            return $this->redirect("/login");
-        }
+        // if ( $authed != 1) {
+        //     return $this->redirect("/login");
+        // }
 
 
         $type = (int) $type;

@@ -1,3 +1,7 @@
+  // ----------------------------------------------------------------------------
+  // open menu
+  // ----------------------------------------------------------------------------
+
 function openMenu() {
   document.querySelector("#toggle-menu-mobile").classList.contains("d-sm-none")
     ? document
@@ -8,62 +12,65 @@ function openMenu() {
         .classList.remove("d-sm-none");
 }
 
+  // ----------------------------------------------------------------------------
+  //  menu 
+  // ----------------------------------------------------------------------------
+
+
 function closeMenu() {
-  !document.querySelector("#toggle-menu-mobile").classList.contains("d-sm-none")
-    ? document.querySelector("#toggle-menu-mobile").classList.add("d-sm-none")
-    : document.querySelector("#toggle-menu-mobile").classList.add("d-sm-none");
+  document.querySelector("#toggle-menu-mobile").classList.contains("d-sm-none"),
+    document.querySelector("#toggle-menu-mobile").classList.add("d-sm-none");
 }
 
-function newPage(route) {
-  window.location.href = route;
+  // ----------------------------------------------------------------------------
+  // launch new page
+  // ----------------------------------------------------------------------------
+
+
+function newPage(e) {
+  window.location.href = e;
 }
 
+  // ----------------------------------------------------------------------------
+  // reponse mail
+  // ----------------------------------------------------------------------------
 
 function reponseEmail() {
-
-	var message = document.querySelector('#message-reponse')?.value
-	var email = document.querySelector('#user-mail')?.innerText
-	var id = document.querySelector('#user-id')?.innerText
-	console.log( email )
-
-
-	if( !message || !email ) {
-		Swal.fire(
-				"JVGO Assistant!",
-				"Votre veillez renseigner le message de reponse",
-				"error"
-			)
-			return
-	}
-	document.querySelector('#loading-indicator').classList.remove('d-none')
-
-	axios.post("/reponse-client", { message: message , email: email , id: id })
-	
-	.then( ( reponse) => {
-
-		console.log(reponse.data);
-
-		document.querySelector('#loading-indicator').classList.add('d-none')
-
-		if ( reponse.data.code == "success") {
-
-			if(document.querySelector('#message-reponse')) document.querySelector('#message-reponse').value = ""
-
-			Swal.fire(
-				"JVGO Assistant!",
-				"Votre reponse a bien ete transmit",
-				"success"
-			)
-
-		} else {
-			Swal.fire(
-				"JVGO Assistant!",
-				"Votre reponse n'a pas ete transmit",
-				"error"
-			)
-		}
-
-	}).catch( error => {
-		console.log(error)
-	})
+  var e = document.querySelector("#message-reponse")?.value,
+    o = document.querySelector("#user-mail")?.innerText,
+    n = document.querySelector("#user-id")?.innerText;
+  console.log(o),
+    e && o
+      ? (document
+          .querySelector("#loading-indicator")
+          .classList.remove("d-none"),
+        axios
+          .post("/reponse-client", { message: e, email: o, id: n })
+          .then((e) => {
+            console.log(e.data),
+              document
+                .querySelector("#loading-indicator")
+                .classList.add("d-none"),
+              "success" == e.data.code
+                ? (document.querySelector("#message-reponse") &&
+                    (document.querySelector("#message-reponse").value = ""),
+                  Swal.fire(
+                    "JVGO Assistant!",
+                    "Votre reponse a bien ete transmit",
+                    "success"
+                  ))
+                : Swal.fire(
+                    "JVGO Assistant!",
+                    "Votre reponse n'a pas ete transmit",
+                    "error"
+                  );
+          })
+          .catch((e) => {
+            console.log(e);
+          }))
+      : Swal.fire(
+          "JVGO Assistant!",
+          "Votre veillez renseigner le message de reponse",
+          "error"
+        );
 }
