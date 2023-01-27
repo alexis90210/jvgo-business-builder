@@ -55,6 +55,9 @@ class ProcedureDeleguerMaComptabiliteController extends AbstractController
                 $demande->setTypeAbonnement($data->TypeAbonnement);
                 $demande->setEntrepriseOrCompta(2); // Pour deleguer la comptabilite
                 $demande->setStatus("Non repondu");
+                $demande->setMobile( $data->Mobile);
+
+                
                 $orm->persist($demande);
     
                 $orm->flush();

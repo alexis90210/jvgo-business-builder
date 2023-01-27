@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Comptabilité en ligne{% endblock %}
+{% block title %}Comptabilité en ligne
+{% endblock %}
 
 {% block body %}
-<style>
+	<style>
 		.not-immuable-on-mobile {
 			display: none !important;
 		}
 	</style>
-	{% block div %} {% endblock %}
+	{% block div %}{% endblock %}
 
 	{% block hamburger %}{% endblock %}
 
@@ -20,580 +21,702 @@
 			</div>
 		</div>
 	</div>
+	<br>
+	<!-- SECTION 1 -->
+	<div class="container-fluid section-1 px-3 mb-2">
+		<div class="row">
+			<div class="col-lg-8 size-10 pt-5 pt-4 pt-sm-4 m-auto">
+				<div class="text-center">
+					<p class="size-9 fs-5 font-ubuntu fw-3 pr-5 mt-4 mt-sm-2 mt-md-2 is-text-primary">
+						Nous proposons une large gamme de services adaptés aux besoins de nos clients,
+						<br class="d-sm-none d-md-none d-lg-block d-lg-block"><span class="text-dark">
+							qu'il s'agisse de TPE, de PME ou de grandes entreprises.
+						</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- SECTION 1 -->
-    <div class="container-fluid section-1 px-3 mb-2">
-      <div class="row">
-        <div class="col-lg-8 size-10 pt-5 pt-4 pt-sm-4 m-auto">
-          <div class="text-center">
-            <p class="size-9 fs-5 font-ubuntu fw-bolder pr-5 mt-4 mt-sm-2 mt-md-2 is-text-primary">
-              Les meilleurs outils de comptabilité digitale <br class="d-sm-none d-md-none d-lg-block d-lg-block"><span
-                class="text-dark"
-              >
-                mis à votre service par des conseillers proactifs
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+	{# MA COMPTA #}
 
-    <!-- SECTION 2 -->
+	<br>
+	<div class="container p-3" id="main-compta-box">
+		<div class="row">
+			<div class="col-lg-6  my-sm-1 my-md-1 m-lg-auto py-3 border rounded bg-light selectable-box">
+				<div class="m-1 p-2 p-lg-4 pt-2">
+					<p class="size-7 fw-bold font-merriweather">Pourquoi choisir votre notre pack compta pour votre entreprise ?</p>
+					<p class="size-5">
+						Nous proposons une large gamme de services		             adaptés aux besoins de nos clients, qu'il		             s'agisse de TPE, de PME ou de grandes		             entreprises.
+					</p>
+					<p class="size-5">
+						Pourquoi choisir votre notre pack compta pour		             votre entreprise?
+					</p>
+					<ol class="size-5 no-style p-0">
+						<li class="pb-3">
+							<i class="mdi mdi-check"></i>
+							. Un comptable
+																																																			            dédié et disponible pour répondre à toutes vos
+																																																			            sollicitations tout au long de l’année par
+																																																			            tchat, téléphone et même visioconférence.
+						</li>
+						<li class="pb-3">
+							<i class="mdi mdi-check"></i>
+							Des conseils
+																																																			            illimités avec notre juriste fiscalité et vos
+																																																			            déclarations d’impôt faites en toute sérénité
+																																																			            et à temps
+						</li>
+						<li class="pb-3">
+							<i class="mdi mdi-check"></i>
+							Un logiciel
+																																																            comptable intelligent qui vous permet de gérer
+																																																			            efficacement la comptabilité de votre
+																																																			            entreprise, de gagner du temps et d'optimiser
+																																																			            votre travail en automatisant certaines tâches
+																																																			            fastidieuses et répétitives
+						</li>
+					</ol>
 
-    <div class="container-fluid py-2 py-0 py-sm-0 pb-5">
-      <div class="row">
-        <div class="col-lg-12 m-auto">
-          <p class="size-6 pt-3 pb-2 py-1 py-sm-1 is-text-primary text-center">
-            Je veux déléguer ma comptabilité
-          </p>
-          <div class="mb-3">
-            <div class=" p-2">
-              
-              <div class="p-0 col-lg-6 m-auto border rounded">
-                
-                <p class="size-5 bg-light py-2 opacity-3 fw-normal text-center border-bottom">
-                   <b>JE SUIS</b>                 
-                </p>
+					<p class="text-center">
+						<a class="text-dark">
+							<button class="btn btn-outline-dark mt-4" onclick="showNextChoice()">
+								Je veux déléguer ma comptabilité
+							</button>
+						</a>
+					</p>
+				</div>
+			</div>
+      	<div class="col-lg-5  my-sm-1 my-md-1 m-lg-auto py-3 border rounded bg-light selectable-box">
+				<div class="m-1 p-2 p-lg-4 pt-2">
+					<p class="size-7 fw-bold font-merriweather">En plus ...</p>
+			
 
-                 <div class="container-fluid">
-                  <div class="row">
-                    <div
-                      class="col-md-12 col-sm-12 col-lg-6 rounded m-auto border-right"
-                    ></div>
-                    
+					Avec notre logiciel, en quelques clics vous
 
-                <div class="container-fluid">
-                  <div class="row">
-                    <div
-                      class="col-md-12 col-sm-12 col-lg-6 rounded m-auto border-right"
-                    >
-                      <button
-                        onclick="selectStructure(1 , 'Indépendant')"
-                        class="btn btn-secondary  text-light p-2 form-control"
-                      >
-                        Un indépendant
-                      </button>
+					<div class="py-3">
+						<ul class="size-5 no-style p-0">
+							<li class="pb-3">
+								<i class="mdi mdi-check"></i>
+								Enregistrer									                   et suivre toutes les opérations comptables									                   de votre entreprise (achats, ventes,									                   encaissements, etc.)
+							</li>
+							<li class="pb-3">
+								<i class="mdi mdi-check"></i>Etablir des						                   états financiers tels que le bilan et le						                   compte de résultat
+							</li>
+							<li class="pb-3">
+								<i class="mdi mdi-check"></i>
+								Gérer la									                   paie de vos employés et les déclarations									                   sociales associées
+							</li>
+							<li class="pb-3">
+								<i class="mdi mdi-check"></i>
+								Gérer la TVA									                   et les déclarations fiscales
+							</li>
+							<li class="pb-3">
+								<i class="mdi mdi-check"></i>
+								Analyser les									                   performances de votre entreprise et									                   prendre des décisions éclairées grâce à									                   des tableaux de bord et des rapports									                   financiers
+							</li>
+						</ul>
+						<button class="btn btn-outline-dark mt-4">
+							Testez Gratuitement notre logiciel de				                 comptabilité (sans engagement)
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- SECTION 2 -->
+
+	<div class="container-fluid py-2 py-0 py-sm-0 pb-5">
+		<div class="row">
+			<div class="col-lg-12 m-auto">
+			
+				<div class="mb-3 d-none" id="new-choice-compta">
+					<div class=" p-2">
+
+    
+               
+
+						<div class="p-0 col-lg-6 m-auto border rounded">
+               
+							<p class="size-5 bg-light py-2 opacity-3 fw-normal text-center border-bottom">
+								<b>JE SUIS</b>
+							</p>
+
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 col-sm-12 col-lg-6 rounded m-auto border-right"></div>
 
 
-                    </div>
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 col-sm-12 col-lg-6 rounded m-auto border-right">
+												<button onclick="selectStructure(1 , 'Indépendant')" class="btn btn-secondary  text-light p-2 form-control">
+													Un indépendant
+												</button>
 
-                    <div
-                      class="col-md-12 col-sm-12 col-lg-6 rounded p-2 p-lg-3 m-auto"
-                    >
-                      <div class="text-center m-1">
-                        <button
-                          onclick="selectStructure(2 , 'Société')"
-                          class="btn btn-secondary text-light p-2 form-control"
-                        >
-                          Une Société
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>                
-              </div>                
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- SECTION 3 -->
+											</div>
 
-    <br />
-    <div class="container-fluid bg-light py-2 d-none" id="independant">
-      <div class="row pt-5">
-        <div class="col-lg-10 m-auto">
-          <div class="container p-sm-0 p-md-0">
-            <div class="row">
-              <div class="col-lg-12">
-                <p class="size-8 font-ubuntu">
-                  <b>Choix de l’abonnement Indépendant </b>
-                </p>
-                <p class="size-5">
-                  Les meilleurs outils de comptabilité digitale mis à votre
-                  service par des conseillers proactifs
-                </p>
-              </div>
-            </div>
-          </div>
+											<div class="col-md-12 col-sm-12 col-lg-6 rounded p-2 p-lg-3 m-auto">
+												<div class="text-center m-1">
+													<button onclick="selectStructure(2 , 'Société')" class="btn btn-secondary text-light p-2 form-control">
+														Une Société
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                <p class="navlink pl-4" onclick="showPrevChoice()">
+						<i class="mdi mdi-chevron-left size-8"></i>
+						<u>Retour</u>
+					</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-          <div class="container p-sm-0 p-md-0">
-            <div class="row">
-              <div class="col-lg-12 m-auto">
-                <div class="container p-sm-0">
-                  <div class="row p-1">
-                    <div
-                      class="col-lg-4 p-2 m-auto "
-                    >
-                      <div class="container-fluid py-3 m-sm-2 m-md-2 border rounded border  selectable-box">
-                        <div class="row p-sm-0">
-                          <div class="col-lg-12 m-auto p-sm-0">
-                            <div class="m-1 p-sm-0 p-lg-4 pt-2">
-                              <p class="size-7 fw-bold">
-                                Sans accès logiciel comptable
-                              </p>
-                              <p class="size-5 text-center">
-                                <span class="size-10 text-dark-blue fw-bolder"
-                                  >45</span
-                                ><br />
-                                <span>Euros (TTC/mois)</span>
-                              </p>
-                              <ul class="size-5 no-style p-sm-0">
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Saisie et
-                                  enregistrement des opérations comptables
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Expert comptable
-                                  dédié
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Bilan comptable
-                                  et liasse fiscale
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Gestion des
-                                  paies et cotisations sociales
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Établissement de
-                                  toutes vos déclarations fiscales
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Conseils
-                                  illimités
-                                </li>
-                              </ul>
-                              <p class="text-center">
-                                <a onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Indépendant' , 'Sans accès logiciel comptable', '45' )" class="text-white">
-                                  <button class="btn btn-outline-secondary mt-4">
-                                    Je Choisi ce pack
-                                  </button>
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+			<!-- SECTION 3 -->
 
-                    <div
-                      class="col-lg-4 p-2 m-auto "
-                    >
-                      <div class="container-fluid  m-sm-2 m-md-2 py-3  bg-light border rounded border  selectable-box selectable-box-selected">
-                        <div class="row p-sm-0">
-                          <div class="col-lg-12 p-sm-0 m-auto">
-                            <div class="m-1 p-sm-0 p-lg-4 pt-2">
-                              <p class="size-7 fw-bold">
-                                Avec accès logiciel comptable (Basic)
-                              </p>
-                              <p class="size-5 text-center">
-                                <span class="size-10 text-dark-blue fw-bolder"
-                                  >70</span
-                                ><br />
-                                <span>Euros (TTC/mois)</span>
-                              </p>
-                              <ul class="size-5 no-style">
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Saisie et
-                                  enregistrement des opérations comptables
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Expert comptable
-                                  dédié
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Bilan comptable
-                                  et liasse fiscale
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Gestion des
-                                  paies et cotisations sociales
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Conseils
-                                  illimités
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Synchronisation
-                                  bancaire
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Suivi de
-                                  trésorerie
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Envoie devis et
-                                  factures
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Relances
-                                  factures impayées
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Attachement
-                                  automatique des justificatifs
-                                </li>
-                              </ul>
-                              <p class="text-center">
-                                <a
-                                onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Indépendant' , 'Avec accès logiciel comptable (Basic)', '70' )"                                
-                                 class="text-white">
-                                  <button class="btn btn-outline-secondary mt-4">
-                                    Je Choisi ce pack
-                                  </button>
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+			<br/>
+			<div class="container-fluid bg-light py-2 d-none" id="independant">
+				<div class="row pt-5">
+					<div class="col-lg-10 m-auto">
+						<div class="container p-sm-0 p-md-0">
+							<div class="row">
+								<div class="col-lg-12">
+									<p class="size-8 font-ubuntu">
+										<b>Choix de l’abonnement Indépendant
+										</b>
+									</p>
+									<p class="size-5">
+										Les meilleurs outils de comptabilité digitale mis à votre
+										                  service par des conseillers proactifs
+									</p>
+								</div>
+							</div>
+						</div>
 
-                    <div
-                      class="col-lg-4 p-2 m-auto "
-                    >
-                      <div class="container-fluid py-3  m-sm-2 m-md-2  border rounded border  selectable-box">
-                        <div class="row p-sm-0">
-                          <div class="col-lg-12 p-sm-0 m-auto">
-                            <div class="m-1 p-sm-0 p-lg-4 pt-2">
-                              <p class="size-7 fw-bold">
-                                Avec accès logiciel comptable (Pro)
-                              </p>
-                              <p class="size-5 text-center">
-                                <span class="size-10 text-dark-blue fw-bolder"
-                                  >99</span
-                                ><br />
-                                <span>Euros (TTC/mois)</span>
-                              </p>
-                              <ul class="size-5 no-style">
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Saisie et
-                                  enregistrement des opérations comptables
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Expert comptable
-                                  dédié
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Bilan comptable
-                                  et liasse fiscale
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Gestion des
-                                  paies et cotisations sociales
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Conseils
-                                  illimités
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Synchronisation
-                                  bancaire
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Suivi de
-                                  trésorerie
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Envoie devis et
-                                  factures
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Relances
-                                  factures impayées
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Attachement
-                                  automatique des justificatifs
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Suivi des
-                                  revenus et dépenses
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Suivi des ventes
-                                  et des taxes de vente
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Numérisation et
-                                  organisation des reçus
-                                </li>
-                              </ul>
-                              <p class="text-center">
-                                <a 
-                                onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Indépendant' , 'Avec accès logiciel comptable (Pro)', '99' )" class="text-white">
-                                  <button class="btn btn-outline-secondary mt-4">
-                                    Je Choisi ce pack
-                                  </button>
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+						<div class="container p-sm-0 p-md-0">
+							<div class="row">
+								<div class="col-lg-12 m-auto">
+									<div class="container p-sm-0">
+										<div class="row p-1">
+											<div class="col-lg-4 p-2  my-sm-1 my-md-1 m-lg-auto ">
+												<div class="container-fluid py-3 my-sm-2 my-md-2 border rounded border  selectable-box">
+													<div class="row p-sm-0">
+														<div class="col-lg-12 m-auto p-sm-0">
+															<div class="m-1 p-sm-0 p-lg-4 pt-2">
+																<p class="size-7 fw-bold d-flex justify-content-lg-center justify-content-sm-center justify-content-md-center text-center">
+																	Sans accès logiciel comptable
+																</p>
+																<p class="size-5 text-center">
+																	<span class="size-10 text-dark-blue fw-bolder">45</span><br/>
+																	<span>Euros (TTC/mois)</span>
+																</p>
+																<ul class="size-5 no-style p-sm-0">
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Saisie et
+																		                                  enregistrement des opérations comptables
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Expert comptable
+																		                                  dédié
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Bilan comptable
+																		                                  et liasse fiscale
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Gestion des
+																		                                  paies et cotisations sociales
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Établissement de
+																		                                  toutes vos déclarations fiscales
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Conseils
+																		                                  illimités
+																	</li>
+																</ul>
+																<p class="text-center">
+																	<a onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Indépendant' , 'Sans accès logiciel comptable', '45' )" class="text-white">
+																		<button class="btn btn-outline-secondary mt-4">
+																			Je Choisi ce pack
+																		</button>
+																	</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 
-    <!-- SECTION 3 -->
-    <br />
-    <div class="container-fluid bg-light py-2 d-none" id="societe">
-      <div class="row pt-5">
-        <div class="col-lg-10 m-auto">
-          <div class="container p-sm-0 p-md-0">
-            <div class="row">
-              <div class="col-lg-12">
-                <p class="size-8 font-ubuntu">
-                  <b>Choix de l’abonnement Société </b>
-                </p>
-                <p class="size-5">
-                  Les meilleurs outils de comptabilité digitale mis à votre
-                  service par des conseillers proactifs
-                </p>
-              </div>
-            </div>
-          </div>
+											<div class="col-lg-4 p-2  my-sm-1 my-md-1 m-lg-auto ">
+												<div class="container-fluid  my-sm-2 my-md-2 py-3  bg-light border rounded border  selectable-box selectable-box-selected">
+													<div class="row p-sm-0">
+														<div class="col-lg-12 p-sm-0 m-auto">
+															<div class="m-1 p-sm-0 p-lg-4 pt-2">
+																<p class="size-7 fw-bold d-flex justify-content-lg-center justify-content-sm-center justify-content-md-center text-center">
+																	Avec accès logiciel comptable (Basic)
+																</p>
+																<p class="size-5 text-center">
+																	<span class="size-10 text-dark-blue fw-bolder">70</span><br/>
+																	<span>Euros (TTC/mois)</span>
+																</p>
+																<ul class="size-5 no-style">
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Saisie et
+																		                                  enregistrement des opérations comptables
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Expert comptable
+																		                                  dédié
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Bilan comptable
+																		                                  et liasse fiscale
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Gestion des
+																		                                  paies et cotisations sociales
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Conseils
+																		                                  illimités
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Synchronisation
+																		                                  bancaire
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Suivi de
+																		                                  trésorerie
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Envoie devis et
+																		                                  factures
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Relances
+																		                                  factures impayées
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Attachement
+																		                                  automatique des justificatifs
+																	</li>
+																</ul>
+																<p class="text-center">
+																	<a onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Indépendant' , 'Avec accès logiciel comptable (Basic)', '70' )" class="text-white">
+																		<button class="btn btn-outline-secondary mt-4">
+																			Je Choisi ce pack
+																		</button>
+																	</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 
-          <div class="container p-sm-0 p-md-0">
-            <div class="row">
-              <div class="col-lg-12 m-auto">
-                <div class="container p-sm-0">
-                  <div class="row p-1">
-                    <div
-                      class="col-lg-4 p-2 m-auto "
-                    >
-                      <div class="container-fluid py-3 m-sm-2 m-md-2 border rounded border selectable-box">
-                        <div class="row">
-                          <div class="col-lg-12 m-auto p-sm-0">
-                            <div class="m-1 p-sm-0 p-lg-4 pt-2">
-                              <p class="size-7 fw-bold">
-                                Sans accès logiciel comptable
-                              </p>
-                              <p class="size-5 text-center">
-                                <span class="size-10 text-dark-blue fw-bolder"
-                                  >89</span
-                                ><br />
-                                <span>Euros (TTC/mois)</span>
-                              </p>
-                              <ul class="size-5 no-style  p-sm-0">
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Saisie et
-                                  enregistrement des opérations comptables
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Expert comptable
-                                  dédié
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Bilan comptable
-                                  et liasse fiscale
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Gestion des
-                                  paies et cotisations sociales
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Conseils
-                                  illimités
-                                </li>
-                              </ul>
-                             <p class="text-center">
-                                <a 
-                                onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Société' , 'Sans accès logiciel comptable', '89' )" class="text-white">
-                                  <button class="btn btn-outline-secondary mt-4">
-                                    Je Choisi ce pack
-                                  </button>
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+											<div class="col-lg-4 p-2  my-sm-1 my-md-1 m-lg-auto ">
+												<div class="container-fluid py-3  my-sm-2 my-md-2  border rounded border  selectable-box">
+													<div class="row p-sm-0">
+														<div class="col-lg-12 p-sm-0 m-auto">
+															<div class="m-1 p-sm-0 p-lg-4 pt-2">
+																<p class="size-7 fw-bold d-flex justify-content-lg-center justify-content-sm-center justify-content-md-center text-center">
+																	Avec accès logiciel comptable (Pro)
+																</p>
+																<p class="size-5 text-center">
+																	<span class="size-10 text-dark-blue fw-bolder">99</span><br/>
+																	<span>Euros (TTC/mois)</span>
+																</p>
+																<ul class="size-5 no-style">
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Saisie et
+																		                                  enregistrement des opérations comptables
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Expert comptable
+																		                                  dédié
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Bilan comptable
+																		                                  et liasse fiscale
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Gestion des
+																		                                  paies et cotisations sociales
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Conseils
+																		                                  illimités
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Synchronisation
+																		                                  bancaire
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Suivi de
+																		                                  trésorerie
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Envoie devis et
+																		                                  factures
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Relances
+																		                                  factures impayées
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Attachement
+																		                                  automatique des justificatifs
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Suivi des
+																		                                  revenus et dépenses
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Suivi des ventes
+																		                                  et des taxes de vente
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Numérisation et
+																		                                  organisation des reçus
+																	</li>
+																</ul>
+																<p class="text-center">
+																	<a onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Indépendant' , 'Avec accès logiciel comptable (Pro)', '99' )" class="text-white">
+																		<button class="btn btn-outline-secondary mt-4">
+																			Je Choisi ce pack
+																		</button>
+																	</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                    <div
-                      class="col-lg-4 p-2 m-auto"
-                    >
-                      <div class="container-fluid py-3  m-sm-2 m-md-2 border rounded border selectable-box bg-light selectable-box-selected">
-                        <div class="row">
-                          <div class="col-lg-12 m-auto p-sm-0">
-                            <div class="m-1  p-sm-0 p-lg-4 pt-2">
-                              <p class="size-7 fw-bold">
-                                Avec accès logiciel comptable (Basic)
-                              </p>
-                              <p class="size-5 text-center">
-                                <span class="size-10 text-dark-blue fw-bolder"
-                                  >120</span
-                                ><br />
-                                <span>Euros (TTC/mois)</span>
-                              </p>
-                              <ul class="size-5 no-style">
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Saisie et
-                                  enregistrement des opérations comptables
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Expert comptable
-                                  dédié
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Bilan comptable
-                                  et liasse fiscale
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Gestion des
-                                  paies et cotisations sociales
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Conseils
-                                  illimités
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Synchronisation
-                                  bancaire
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Suivi de
-                                  trésorerie
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Envoie devis et
-                                  factures
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Relances
-                                  factures impayées
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Attachement
-                                  automatique des justificatifs
-                                </li>
-                              </ul>
-                              <p class="text-center">
-                                <a 
-                                onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Société' , 'Avec accès logiciel comptable (Basic)', '120' )" class="text-white">
-                                  <button class="btn btn-outline-secondary mt-4">
-                                    Je Choisi ce pack
-                                  </button>
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+			<!-- SECTION 3 -->
+			<br/>
+			<div class="container-fluid bg-light py-2 d-none" id="societe">
+				<div class="row pt-5">
+					<div class="col-lg-10 m-auto">
+						<div class="container p-sm-0 p-md-0">
+							<div class="row">
+								<div class="col-lg-12">
+									<p class="size-8 font-ubuntu">
+										<b>Choix de l’abonnement Société
+										</b>
+									</p>
+									<p class="size-5">
+										Les meilleurs outils de comptabilité digitale mis à votre
+										                  service par des conseillers proactifs
+									</p>
+								</div>
+							</div>
+						</div>
 
-                    <div
-                      class="col-lg-4 p-2 m-auto  m-sm-2 m-md-2 border rounded border selectable-box"
-                    >
-                      <div class="container-fluid py-3 p-sm-0">
-                        <div class="row p-sm-0">
-                          <div class="col-lg-12 m-auto p-sm-0">
-                            <div class="m-1 p-sm-0 p-lg-4 pt-2">
-                              <p class="size-7 fw-bold">
-                                Avec accès logiciel comptable (Pro)
-                              </p>
-                              <p class="size-5 text-center">
-                                <span class="size-10 text-dark-blue fw-bolder"
-                                  >149</span
-                                ><br />
-                                <span>Euros (TTC/mois)</span>
-                              </p>
-                              <ul class="size-5 no-style">
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Saisie et
-                                  enregistrement des opérations comptables
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Expert comptable
-                                  dédié
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Bilan comptable
-                                  et liasse fiscale
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Gestion des
-                                  paies et cotisations sociales
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Conseils
-                                  illimités
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Synchronisation
-                                  bancaire
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Suivi de
-                                  trésorerie
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Envoie devis et
-                                  factures
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Relances
-                                  factures impayées
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Attachement
-                                  automatique des justificatifs
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Suivi des
-                                  revenus et dépenses
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Suivi des ventes
-                                  et des taxes de vente
-                                </li>
-                                <li class="pb-3">
-                                  <i class="mdi mdi-check"></i> Numérisation et
-                                  organisation des reçus
-                                </li>
-                              </ul>
-                              <p class="text-center">
-                                <a  
-                                onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Société' , 'Avec accès logiciel comptable (Pro)', '149' )" class="text-white">
-                                  <button class="btn btn-outline-secondary mt-4">
-                                    Je Choisi ce pack
-                                  </button>
-                                </a>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+						<div class="container p-sm-0 p-md-0">
+							<div class="row">
+								<div class="col-lg-12 m-auto">
+									<div class="container p-sm-0">
+										<div class="row p-1">
+											<div class="col-lg-4 p-2  my-sm-1 my-md-1 m-lg-auto ">
+												<div class="container-fluid py-3 my-sm-2 my-md-2 border rounded border selectable-box">
+													<div class="row">
+														<div class="col-lg-12 m-auto p-sm-0">
+															<div class="m-1 p-sm-0 p-lg-4 pt-2">
+																<p class="size-7 fw-bold d-flex justify-content-lg-center justify-content-sm-center justify-content-md-center text-center">
+																	Sans accès logiciel comptable
+																</p>
+																<p class="size-5 text-center">
+																	<span class="size-10 text-dark-blue fw-bolder">89</span><br/>
+																	<span>Euros (TTC/mois)</span>
+																</p>
+																<ul class="size-5 no-style  p-sm-0">
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Saisie et
+																		                                  enregistrement des opérations comptables
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Expert comptable
+																		                                  dédié
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Bilan comptable
+																		                                  et liasse fiscale
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Gestion des
+																		                                  paies et cotisations sociales
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Conseils
+																		                                  illimités
+																	</li>
+																</ul>
+																<p class="text-center">
+																	<a onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Société' , 'Sans accès logiciel comptable', '89' )" class="text-white">
+																		<button class="btn btn-outline-secondary mt-4">
+																			Je Choisi ce pack
+																		</button>
+																	</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 
-<script>
-var data = {};
+											<div class="col-lg-4 p-2 my-sm-1 my-md-1 m-lg-auto">
+												<div class="container-fluid py-3  my-sm-2 my-md-2 border rounded border selectable-box bg-light selectable-box-selected">
+													<div class="row">
+														<div class="col-lg-12 m-auto p-sm-0">
+															<div class="m-1  p-sm-0 p-lg-4 pt-2">
+																<p class="size-7 fw-bold d-flex justify-content-lg-center justify-content-sm-center justify-content-md-center text-center">
+																	Avec accès logiciel comptable (Basic)
+																</p>
+																<p class="size-5 text-center">
+																	<span class="size-10 text-dark-blue fw-bolder">120</span><br/>
+																	<span>Euros (TTC/mois)</span>
+																</p>
+																<ul class="size-5 no-style">
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Saisie et
+																		                                  enregistrement des opérations comptables
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Expert comptable
+																		                                  dédié
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Bilan comptable
+																		                                  et liasse fiscale
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Gestion des
+																		                                  paies et cotisations sociales
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Conseils
+																		                                  illimités
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Synchronisation
+																		                                  bancaire
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Suivi de
+																		                                  trésorerie
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Envoie devis et
+																		                                  factures
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Relances
+																		                                  factures impayées
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Attachement
+																		                                  automatique des justificatifs
+																	</li>
+																</ul>
+																<p class="text-center">
+																	<a onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Société' , 'Avec accès logiciel comptable (Basic)', '120' )" class="text-white">
+																		<button class="btn btn-outline-secondary mt-4">
+																			Je Choisi ce pack
+																		</button>
+																	</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-lg-4 p-2  my-sm-1 my-md-1 m-lg-auto border rounded border selectable-box">
+												<div class="container-fluid py-3 p-sm-0">
+													<div class="row p-sm-0">
+														<div class="col-lg-12 m-auto p-sm-0">
+															<div class="m-1 p-sm-0 p-lg-4 pt-2">
+																<p class="size-7 fw-bold d-flex justify-content-lg-center justify-content-sm-center justify-content-md-center text-center" >
+																	Avec accès logiciel comptable (Pro)
+																</p>
+																<p class="size-5 text-center">
+																	<span class="size-10 text-dark-blue fw-bolder">149</span><br/>
+																	<span>Euros (TTC/mois)</span>
+																</p>
+																<ul class="size-5 no-style">
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Saisie et
+																		                                  enregistrement des opérations comptables
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Expert comptable
+																		                                  dédié
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Bilan comptable
+																		                                  et liasse fiscale
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Gestion des
+																		                                  paies et cotisations sociales
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Conseils
+																		                                  illimités
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Synchronisation
+																		                                  bancaire
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Suivi de
+																		                                  trésorerie
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Envoie devis et
+																		                                  factures
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Relances
+																		                                  factures impayées
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Attachement
+																		                                  automatique des justificatifs
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Suivi des
+																		                                  revenus et dépenses
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Suivi des ventes
+																		                                  et des taxes de vente
+																	</li>
+																	<li class="pb-3">
+																		<i class="mdi mdi-check"></i>
+																		Numérisation et
+																		                                  organisation des reçus
+																	</li>
+																</ul>
+																<p class="text-center">
+																	<a onclick="selectPack('/procedure-deleguer-ma-comptabilite', 'Abonnement Société' , 'Avec accès logiciel comptable (Pro)', '149' )" class="text-white">
+																		<button class="btn btn-outline-secondary mt-4">
+																			Je Choisi ce pack
+																		</button>
+																	</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				var data = {};
 function selectStructure(t, a) {
-  (data.Structure = a), togglePack(t);
+(data.Structure = a),
+togglePack(t);
 }
 function selectPack(t, a, c, e) {
-  window.location.href = `${t}/${data.Structure}-${a}-${c}-${e}`;
+window.location.href = `${t}/${
+data.Structure
+}-${a}-${c}-${e}`;
+
 }
- 
-</script>
 
-{% endblock %}
+function showPrevChoice() {
+  document.querySelector('#main-compta-box').classList.remove('d-none')
+  document.querySelector('#new-choice-compta').classList.add('d-none')
+}
 
-{% block footer %}{% endblock %}
+function showNextChoice() {
+  document.querySelector('#main-compta-box').classList.add('d-none')
+  document.querySelector('#new-choice-compta').classList.remove('d-none')
+}
+			</script>
+
+		{% endblock %}
+
+		{% block footer %}{% endblock %}

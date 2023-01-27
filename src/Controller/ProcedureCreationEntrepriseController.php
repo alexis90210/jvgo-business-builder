@@ -50,6 +50,7 @@ class ProcedureCreationEntrepriseController extends AbstractController
             $demande->setTypeAbonnement("");
             $demande->setEntrepriseOrCompta(1); // Pour la creation entreprise
             $demande->setStatus("Non repondu");
+            $demande->setMobile( $data->Mobile);
 
             $orm->persist($demande);
 

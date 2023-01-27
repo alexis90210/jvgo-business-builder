@@ -41,7 +41,7 @@ class DemandesController extends AbstractController
 
         return $this->render('demandes/index.html.twig', [
             'switcher' => $type,
-            'demandes' => $demandes,
+            'demandes' => array_reverse($demandes),
             'count' => count( $demandes ),
         ]);
 

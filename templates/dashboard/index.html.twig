@@ -9,6 +9,7 @@
 		body {
 			overflow: hidden
 		}
+		
 	</style>
 
 	<div class="container-fluid p-0 font-ubuntu overflow-hidden">
@@ -71,7 +72,7 @@
 				<div class="p-0 rounded p-3 py-4">
 					<div class="container-fluid ">
 						<div class="row p-0 m-0">
-							<div class="col-lg-3 is-pointer p-2"  onclick="newPage('/dashboard/demandes/1')">
+							<div class="col-lg-6 is-pointer p-2"  onclick="newPage('/dashboard/demandes/1')">
 								<div class="card text-black p-0 bg-transparent border-blue">
 									<div class="card-body p-2">
 										<div class="card-title d-flex align-items-center justify-content-start">
@@ -89,7 +90,7 @@
 								</div>
 							</div>
 
-							<div class="col-lg-3 is-pointer p-2"  onclick="newPage('/dashboard/demandes/2')">
+							<div class="col-lg-6 is-pointer p-2"  onclick="newPage('/dashboard/demandes/2')">
 								<div class="card p-0 text-black bg-transparent border-blue">
 									<div class="card-body p-2">
 										<div class="card-title d-flex align-items-center justify-content-start">
@@ -107,23 +108,7 @@
 								</div>
 							</div>
 
-							<div class="col-lg-3 is-pointer p-2">
-								<div class="card p-0 bg-transparent border-blue">
-									<div class="card-body p-2">
-										<div class="card-title d-flex align-items-center justify-content-start">
-											<div class="px-2">
-												<i class="mdi mdi-ballot-recount opacity-1 size-11 text-black"></i>
-											</div>
-											<div class="card-text px-2">
-												<p class="m-0 size-10 ">0</p>
-											</div>
-										</div>
-									</div>
-									<div class="card-footer text-white bg-secondary">
-										<p class="m-0 size-5">Fiscalité</p>
-									</div>
-								</div>
-							</div>
+						
 						</div>
 					</div>
 
@@ -136,7 +121,7 @@
 									<span class="is-text-primary">demandes recentes (Entreprise)
 									</span>.</p>
 								<div class=" d-sm-none d-lg-block  d-xl-block">
-									<table class="table table-responsive-sm ">
+									<table  id="DataTable"  class="table table-striped table-responsive-sm ">
 										<thead>
 											<tr>
 												<th class="size-3 text-uppercase">N.</th>
@@ -250,7 +235,11 @@
 
 	
 
-<script src="{{ asset('js/custom/dashboard.js')}}"></script>
+<script src="{{ asset('js/custom/dashboard.min.js')}}"></script>
+<script src="{{ asset('js/lib/jquery.min.js')}}"></script>
+<script src="{{ asset('js/lib/dataTable.min.js')}}"></script>
+<script src="{{ asset('js/lib/initDataTable.js')}}"></script>
+
 
 {% endblock %}
 {% block footer %}{% endblock %}

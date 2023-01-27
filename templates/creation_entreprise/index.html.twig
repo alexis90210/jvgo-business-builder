@@ -9,7 +9,7 @@
 			display: none !important;
 		}
 	</style>
-	{% block div %} {% endblock %}
+	{% block div %}{% endblock %}
 
 	{% block hamburger %}{% endblock %}
 
@@ -37,9 +37,9 @@
 					<p class="size-6 fw-2 my-4 opacity-3">
 						<b>Démarrez la création de votre société</b>
 						en quelques clics et
-																								              nous nous occupons du reste. Toutes les étapes de création de
-																								              votre entreprise, du choix de votre statut juridique jusqu'à la
-																								              rédaction de
+																														              nous nous occupons du reste. Toutes les étapes de création de
+																														              votre entreprise, du choix de votre statut juridique jusqu'à la
+																														              rédaction de
 						<b>votre business plan et plan financier</b>.
 					</p>
 				</div>
@@ -55,116 +55,53 @@
 				<div class="container">
 					<div class="row p-2">
 						<div class="p-2 p-lg-3 col-lg-10 m-sm-auto m-md-auto">
-							<p class="size-8 fs-5 col-sm-11 col-md-11 fw-2 mt-1">
-								<b>Quel sera votre domaine d’activité ?</b>
+							<p class="size-8 fs-5 col-sm-11 col-md-11 fw-2 mt-1 d-flex justify-content-lg-start justify-content-sm-center justify-content-md-center">
+								<b>Forme juridique souhaitée</b>
 							</p>
 
-							<div class="container-fluid p-sm-0">
-								<div class="row">
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Consultants et freelance" class="text-dark">
+							<div class="container-fluid p-sm-0 d-flex justify-content-lg-start justify-content-sm-center justify-content-md-center">
+								<div class="row d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center">
+									<div class="col-md-4 col-sm-4 col-lg-2  grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
+										<a href="/procedure-creation-entreprise/Société à Responsabilité Limitée (SRL)" class="text-dark">
 											<div class="text-center m-1">
 												<img src="{{ asset('images/1.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-3 pt-2">Consultants et freelance</p>
+												<p class="size-3 pt-2">Société à Responsabilité Limitée (SRL)</p>
 											</div>
 										</a>
 									</div>
 
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Construction et travaux" class="text-dark">
+									<div class="col-md-4 col-sm-4 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
+										<a href="/procedure-creation-entreprise/Société Anonyme (SA)" class="text-dark">
 											<div class="text-center m-1">
-												<img src="{{ asset('images/2.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-3 pt-2">Construction et travaux</p>
+												<img src="{{ asset('images/8.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
+												<p class="size-3 pt-2">Société Anonyme (SA)</p>
 											</div>
 										</a>
 									</div>
 
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Automobile et transport" class="text-dark">
-											<div class="text-center m-1">
-												<img src="{{ asset('images/3.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-3 pt-2">Automobile et transport</p>
-											</div>
-										</a>
-									</div>
-
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Vente en ligne" class="text-dark">
-											<div class="text-center m-1">
-												<img src="{{ asset('images/4.svg') }}" alt="" srcset=""/>
-												<p class="size-3 pt-2">Vente en ligne</p>
-											</div>
-										</a>
-									</div>
-
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Commerce" class="text-dark">
-											<div class="text-center m-1">
-												<img src="{{ asset('images/5.svg')}}" class="col-sm-5 col-md-3" alt="" srcset=""/>
-												<p class="size-3 pt-2">Commerce</p>
-											</div>
-										</a>
-									</div>
-
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Coursier à vélo" class="text-dark">
-											<div class="text-center m-1">
-												<img src="{{asset('/images/6.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-3 pt-2">Coursier à vélo</p>
-											</div>
-										</a>
-									</div>
-
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Achat et revente" class="text-dark">
+									<div class="col-md-4 col-sm-4 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
+										<a href="/procedure-creation-entreprise/Société Coopérative (SC)" class="text-dark">
 											<div class="text-center m-1">
 												<img src="{{ asset('images/7.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-3 pt-2">Achat et revente</p>
+												<p class="size-3 pt-2">Société Coopérative (SC)</p>
 											</div>
 										</a>
 									</div>
 
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Services aux entreprises" class="text-dark">
+									<div class="col-md-4 col-sm-4 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
+										<a href="/procedure-creation-entreprise/Société Simple (SS)" class="text-dark">
 											<div class="text-center m-1">
-												<img src="{{ asset('images/8.svg')}}" class="col-sm-5 col-md-3 col-lg-4" alt="" srcset=""/>
-												<p class="size-3 pt-2">Services aux entreprises</p>
+												<img src="{{ asset('images/11.svg') }}" alt="" srcset=""/>
+												<p class="size-3 pt-2">Société Simple (SS)</p>
 											</div>
 										</a>
 									</div>
 
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Services à la personne" class="text-dark">
+									<div class="col-md-4 col-sm-4 grid place-items col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
+										<a href="/procedure-creation-entreprise/Je ne sais pas" class="text-dark">
 											<div class="text-center m-1">
-												<img src="{{ asset('images/9.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-3 pt-2">Services à la personne</p>
-											</div>
-										</a>
-									</div>
-
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Restauration" class="text-dark">
-											<div class="text-center m-1">
-												<img src="{{ asset('images/10.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-33pt-2">Restauration</p>
-											</div>
-										</a>
-									</div>
-
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/SCI" class="text-dark">
-											<div class="text-center m-1">
-												<img src="{{ asset('images/11.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-33pt-2">SCI</p>
-											</div>
-										</a>
-									</div>
-
-									<div class="col-md-3 col-sm-3 col-lg-2 rounded bg-white p-2 p-lg-3 shadow m-1 ">
-										<a href="/procedure-creation-entreprise/Autres" class="text-dark">
-											<div class="text-center m-1">
-												<img src="{{ asset('images/12.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
-												<p class="size-33pt-2">Autres</p>
+												<img src="{{ asset('images/12.svg')}}" class="col-sm-5 col-md-3" alt="" srcset=""/>
+												<p class="size-3 pt-2">Je ne sais pas</p>
 											</div>
 										</a>
 									</div>
@@ -177,5 +114,20 @@
 		</div>
 	</div>
 
+
+	<div class="container-fluid">
+		<div class="row p-2 py-lg-4 py-sm-2 py-md-2 my-lg-1 my-sm-3 my-md-3 ">
+			<div class="col-lg-9 col-sm-11 col-md-11 m-auto">
+				<div class="border rounded p-3 py-lg-4 size-5">
+					<b>Important</b>
+					: Il est important de déterminer la bonne forme juridique de votre société avant de démarrer votre activité, 
+					car cela peut avoir des conséquences importantes sur votre responsabilité financière, votre régime fiscal et votre gestion de l’entreprise.
+					<br>
+					Si vous ne savez pas encore quelle forme choisir, notre juriste expert vous aidera à déterminer la forme juridique la plus adaptée à votre activité.
+				</div>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}
-{% block footer %} {% endblock %}
+{% block footer %}{% endblock %}

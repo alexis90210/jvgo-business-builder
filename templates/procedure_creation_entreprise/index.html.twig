@@ -10,7 +10,7 @@
 			display: none !important;
 		}
 	</style>
-	{% block div %} {% endblock %}
+	{% block div %}{% endblock %}
 
 	{% block hamburger %}{% endblock %}
 
@@ -35,205 +35,223 @@
 				<p class="text-center pb-4 size-5">
 					Categorie :
 					<b id="TypeEntreprise">{{TypeEntreprise}}</b>
-						<p class="text-center size-5 fw-3 alert alert-danger d-none" id="error-display"></p>
-				</p> 			
+				</p>
+				<p class="text-center size-5 fw-3 alert alert-danger d-none" id="error-display"></p>
+			</p>
 
-				<ul class="stepper d-flex no-style justify-content-center">
-					<li class="stepper-active" id="step-1">
-						<div></div>
-					</li>
-					<li id="step-2">
-						<div></div>
-					</li>
-					<li id="step-3">
-						<div></div>
-					</li>
-					<li id="step-4">
-						<div></div>
-					</li>
-				</ul>
+			<ul class="stepper d-flex no-style justify-content-center">
+				<li class="stepper-active" id="step-1">
+					<div></div>
+				</li>
+				<li id="step-2">
+					<div></div>
+				</li>
+				<li id="step-3">
+					<div></div>
+				</li>
+				<li id="step-4">
+					<div></div>
+				</li>
+			</ul>
 
 
-				<div class="container-fluid p-sm-2 p-md-2">
-					<div
-						class="row">
-						<!-- content-step-1 -->
-						<div class="col-lg-6 m-auto" id="content-step-1">
-							<p class="text-dark text-center py-4 size-6 fs-6 fw-4">Dans quel délai souhaitez-vous créer votre société ?</p>
+			<div class="container-fluid p-sm-2 p-md-2">
+				<div
+					class="row">
 
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-lg-5 col-sm-6 col-md-6 m-auto">
-										<div class="m-1 border rounded text-center p-lg-3 p-sm-1 p-md-1 selectable-box" onclick="selectDelai(2 , 'Dès que possible')">
-											<img src="{{ asset('images/13.svg')}}" alt="" srcset="">
-											<p class="pt-2">
-												<b class="text-dark size-3">
-													Dès que possible
-												</b>
-											</p>
-										</div>
+					<!-- content-step-1 -->
+					<div class="col-lg-7 m-auto" id="content-step-1">
+						<p class="navlink" onclick="newPage('/creation-entreprise')">
+							<i class="mdi mdi-chevron-left size-6"></i>
+							<u>Retour</u>
+						</p>
+						<p class="text-dark text-center py-4 pb-2 size-6 fw-4">
+							Si vous avez déjà choisi le nom commercial de votre société</p>
 
-									</div>
-
-									<div class="col-lg-5 col-sm-6 col-md-6 m-auto">
-										<div class="m-1 border rounded text-center p-lg-4 p-sm-2 p-md-2 selectable-box selectable-box-selected" onclick="selectDelai(2 , 'Dand la semaine')">
-											<img src="{{ asset('images/14.svg')}}" alt="" srcset="">
-											<p class="pt-2">
-												<b class="text-dark size-3">
-													Dans la semaine
-												</b>
-											</p>
-										</div>
-									</div>
-
-									<div class="col-lg-5 col-sm-6 col-md-6 m-auto">
-										<div class="m-1 border rounded text-center p-lg-4 p-sm-2 p-md-2 selectable-box" onclick="selectDelai(2 , 'Dans le mois')">
-											<img src="{{ asset('images/14.svg')}}" alt="" srcset="">
-											<p class="pt-2">
-												<b class="text-dark size-3">
-													Dans le mois
-												</b>
-											</p>
-										</div>
-									</div>
-
-									<div class="col-lg-5 col-sm-6 col-md-6 m-auto">
-										<div class="m-1 border rounded text-center p-lg-4 p-sm-2 p-md-2 selectable-box" onclick="selectDelai(2 , 'Je ne sais pas')">
-											<img src="{{ asset('images/15.svg')}}" alt="" srcset="">
-											<p class="pt-2">
-												<b class="text-dark size-3">
-													Je ne sais pas
-												</b>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- content-step-2 -->
-						<div class="col-lg-7 m-auto d-none" id="content-step-2">
-							<p class="navlink" onclick="annulDelai(1)">
-								<i class="mdi mdi-chevron-left size-6"></i>
-								<u>Retour</u>
-							</p>
-							<p class="text-dark text-center py-4 pb-2 size-6 fw-4">
-								Si vous avez déjà choisi le nom commercial de votre société</p>
-
-							<div class="container-fluid  border rounded">
-								<div class="row pt-1">
-									<div class="col-lg-12 m-auto">
-										<div class="m-1 p-4 p-sm-2 p-md-2 pb-2">
-											<p class=" pb-2"></p>
-											<p class="text-dark size-4 m-0 my-3">Renseignez-le ici
-											</p>
-											<input type="text" id="NomEntreprise" class="form-control size-4" placeholder="Ex: jvgo consulting">
+						<div class="container-fluid  border rounded">
+							<div class="row pt-1">
+								<div class="col-lg-12 m-auto">
+									<div class="m-1 p-4 p-sm-2 p-md-2 pb-2">
+										<p class=" pb-2"></p>
+										<p class="text-dark size-4 m-0 my-3">Renseignez-le ici
 										</p>
+										<input type="text" id="NomEntreprise" class="form-control size-4" placeholder="Ex: jvgo consulting">
+									</p>
 
-										<div class="my-4 text-sm-center text-md-center text-lg-start">
-										<br >
-											<a class="button-effect-3 size-4 p-2 p-lg-2  px-5" onclick="selectNomEntreprise(3)">
-												<span>
-													Continuer
-													<i class="mdi mdi-chevron-right"></i>
-												</span>
-											</a>
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-											<span class="text-dark text-center py-lg-4 px-3  pt-2 size-5 navlink p-sm-4" onclick="selectNomEntreprise(3)">
-												Saisir plus tard
+									<div class="my-4 text-sm-center text-md-center text-lg-start">
+										<br>
+										<a class="button-effect-3 size-4 p-2 p-lg-2  px-5" onclick="selectNomEntreprise(2)">
+											<span>
+												Continuer
 												<i class="mdi mdi-chevron-right"></i>
 											</span>
-										</div>
+										</a>
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<span class="text-dark text-center py-lg-4 px-3  pt-2 size-5 navlink p-sm-4" onclick="selectNomEntreprise(2)">
+											Saisir plus tard
+											<i class="mdi mdi-chevron-right"></i>
+										</span>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<!-- content-step-3 -->
-					<div class="col-lg-7 m-auto d-none" id="content-step-3">
-						<p class="navlink" onclick="annulNomEntreprise(2)">
-							<i class="mdi mdi-chevron-left size-8"></i>
-							<u>Retour</u>
-						</p>
-						<p class="text-dark text-center py-2 size-6 fw-4">Vos informations</p>
+				<!-- content-step-2 -->
+				<div class="col-lg-7 m-auto d-none" id="content-step-2">
+					<p class="navlink" onclick="annulNomEntreprise(1)">
+						<i class="mdi mdi-chevron-left size-8"></i>
+						<u>Retour</u>
+					</p>
+					<p class="text-dark text-center py-2 size-6 fw-4">Vos informations</p>
 
-						<div class="container-fluid py-lg-3 border rounded">
-							<div class="row">
-								<div class="col-lg-12 m-auto">
-									<div class="m-1 p-lg-4 pt-2">
+					<div class="container-fluid py-lg-3 border rounded">
+						<div class="row">
+							<div class="col-lg-12 m-auto">
+								<div class="m-1 p-lg-4 pt-2">
 
-										<div class="container-fluid p-0">
-											<div class="row">
+									<div class="container-fluid p-0">
+										<div class="row">
 
-												<div class="col-lg-6 m-auto ">
-													<div class="rounded border pl-4">
-														<div class="form-check px-3 py-2 form-check-inline">
-															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="radioMadame" value="option1">
-															<label class="form-check-label is-pointer" for="radioMadame">Madame</label>
-														</div>
+											<div class="col-lg-6 m-auto ">
+												<div class="rounded border pl-4">
+													<div class="form-check px-3 py-2 form-check-inline">
+														<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="radioMadame" value="option1">
+														<label class="form-check-label is-pointer" for="radioMadame">Madame</label>
 													</div>
 												</div>
-
-
-												<div class="col-lg-6 m-auto ">
-												<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-													<div class="rounded border pl-4">
-														<div class="form-check px-3 py-2 form-check-inline">
-															<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="radioMonsieur" value="option2">
-															<label class="form-check-label is-pointer" for="radioMonsieur">Monsieur</label>
-														</div>
-													</div>
-												</div>
-
 											</div>
+
+
+											<div class="col-lg-6 m-auto ">
+												<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+												<div class="rounded border pl-4">
+													<div class="form-check px-3 py-2 form-check-inline">
+														<input class="form-check-input pl-4" type="radio" name="inlineRadioOptions" id="radioMonsieur" value="option2">
+														<label class="form-check-label is-pointer" for="radioMonsieur">Monsieur</label>
+													</div>
+												</div>
+											</div>
+
 										</div>
-										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre Nom
-										</p>
-										<input type="text" class="form-control size-4" id="Nom">
+									</div>
+									<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre Nom
+									</p>
+									<input type="text" class="form-control size-4" id="Nom">
 
-										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Prenom
-										</p>
-										<input type="text" class="form-control size-4" id="Prenom">
+									<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Prenom
+									</p>
+									<input type="text" class="form-control size-4" id="Prenom">
 
-										<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Email
-										</p>
-										<input type="email" class="form-control size-4" id="Email">
+									<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Email
+									</p>
+									<input type="email" class="form-control size-4" id="Email">
 
-										<div class="text-center mt-4">
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-                                            <a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="selectInfo(4)">
-												<span>
-													Continuer
-													<i class="mdi mdi-chevron-right"></i>
-												</span>
-											</a>
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-										</div>
+									<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Mobile
+									</p>
+									<input type="tel" class="form-control size-4" id="Mobile">
+
+									<div class="text-center mt-4">
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="selectInfo(3)">
+											<span>
+												Continuer
+												<i class="mdi mdi-chevron-right"></i>
+											</span>
+										</a>
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<!-- content-step-4 -->
-					<div class="col-lg-7 m-auto d-none" id="content-step-4">
-						
-						<p class="navlink" onclick="annulInfo(3)">
-							<i class="mdi mdi-chevron-left size-8"></i>
-							<u>Retour</u>
-						</p>
+				<!-- content-step-3 -->
+				<div class="col-lg-7 m-auto d-none" id="content-step-3">
 
-						<center id="loading-indicator">
-							<img src="{{ asset('images/loader.svg')}}" width="200px">
-						</center>
+					<p class="navlink" onclick="annulInfo(2)">
+						<i class="mdi mdi-chevron-left size-8"></i>
+						<u>Retour</u>
+					</p>
 
-						<div class="d-none" id="success-process">
-							<p class="text-dark text-center py-2 size-6 fw-4">Félicitations</p>
+
+					<div class="container-fluid py-3 p-sm-1 border rounded border selectable-box">
+						<div class="row">
+							<div class="col-lg-12 m-auto">
+								<div class="m-1 p-2 p-lg-4 pt-2">
+									<p class="size-7 fw-bold font-merriweather">
+										Ce pack comprend:
+									</p>
+									<ul class="size-5 no-style p-0">
+										<li class="pb-3">
+											<i class="mdi mdi-check"></i>
+											Rédaction des
+																																																							            Statuts de la Société
+										</li>
+										<li class="pb-3">
+											<i class="mdi mdi-check"></i>
+											Étude de
+																																																							            faisabilité
+										</li>
+										<li class="pb-3">
+											<i class="mdi mdi-check"></i>
+											Fourniture d’un plan (cartographie) détaillé du process
+																																																							            d’incorporation de la société
+										</li>
+										<li class="pb-3">
+											<i class="mdi mdi-check"></i>
+											Vérification du
+																																																							            dossier
+										</li>
+										<li class="pb-3">
+											<i class="mdi mdi-check"></i>
+											Etablissement du
+																																																							            plan financier par notre expert comptable
+																																																							            partenaire
+										</li>
+										<li class="pb-3">
+											<i class="mdi mdi-check"></i>
+											Prise de
+																																																							            rendez-vous pour passage de l’acte authentique
+																																																							            devant le notaire
+										</li>
+										<li class="pb-3">
+											<i class="mdi mdi-check"></i>
+											Immatriculation
+																																																							            auprès du greffe
+										</li>
+									</ul>
+									<p class="text-center">
+										<button class="btn btn-outline-dark mt-4" onclick="saveInfo(4)">
+											Continuer
+										</button>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- content-step-4 -->
+				<div class="col-lg-7 m-auto d-none" id="content-step-4">
+
+					<p class="navlink" onclick="annulInfo(3)">
+						<i class="mdi mdi-chevron-left size-8"></i>
+						<u>Retour</u>
+					</p>
+
+					<center id="loading-indicator">
+						<img src="{{ asset('images/loader.svg')}}" width="200px">
+					</center>
+
+					<div class="d-none" id="success-process">
+						<p class="text-dark text-center py-2 size-6 fw-4">Félicitations</p>
 
 						<div class="container-fluid">
 							<div class="row">
@@ -243,138 +261,30 @@
 									</div>
 
 									<div class="text-center mt-4">
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-                                            <a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="newPage('/')">
-												<span>
-													Acceuil
-													<i class="mdi mdi-chevron-right"></i>
-												</span>
-											</a>
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-											<br class="d-sm-block d-md-block d-lg-none d-lg-none">
-										</div>
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="newPage('/')">
+											<span>
+												Acceuil
+												<i class="mdi mdi-chevron-right"></i>
+											</span>
+										</a>
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+									</div>
 
 								</div>
 							</div>
 						</div>
-						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
 </div>
+</div>
 
-<script>
-var data = {};
-function selectDelai(e, o) {
-  (data.Delai = o), suivant(e), console.log(data);
-}
-function annulDelai(e) {
-  (data.Delai = ""), arriere(e), console.log(data);
-}
-function selectNomEntreprise(e) {
-  (data.NomEntreprise = document.querySelector("#NomEntreprise")?.value),
-    suivant(e),
-    console.log(data);
-}
-function annulNomEntreprise(e) {
-  (data.NomEntreprise = ""), arriere(e), console.log(data);
-}
-function selectInfo(e) {
-  const o = document.querySelector("#radioMadame")?.checked,
-    r = document.querySelector("#radioMonsieur")?.checked;
-  return (
-    (data.Civilite = r ? "Monsieur" : o ? "Madame" : ""),
-    (data.Nom = document.querySelector("#Nom")?.value),
-    (data.Prenom = document.querySelector("#Prenom")?.value),
-    (data.Email = document.querySelector("#Email")?.value),
-    1 != o && 1 != r
-      ? (document.querySelector("#error-display").classList.remove("d-none"),
-        (document.querySelector("#error-display").innerText =
-          "Veuillez selectionner la civilité"),
-        document
-          .querySelector("#error-display")
-          .scrollIntoView({ behavior: "smooth", block: "end" }),
-        void setTimeout(() => {
-          document.querySelector("#error-display").classList.add("d-none");
-        }, 4e3))
-      : data.Nom
-      ? data.Prenom
-        ? data.Email
-          ? (axios
-              .post("/save/creation-entreprise", { ...data })
-              .then(function (e) {
-                console.log(e.data);
-                const o = e.data;
-                document
-                  .querySelector("#loading-indicator")
-                  .classList.add("d-none"),
-                  "success" == o.code
-                    ? document
-                        .querySelector("#success-process")
-                        .classList.remove("d-none")
-                    : ((document.querySelector("#error-display").innerText =
-                        o.message),
-                      document
-                        .querySelector("#error-display")
-                        .scrollIntoView({ behavior: "smooth", block: "end" }),
-                      setTimeout(() => {
-                        document
-                          .querySelector("#error-display")
-                          .classList.add("d-none");
-                      }, 8e3));
-              })
-              .catch(function (e) {
-                console.log(e);
-              }),
-            suivant(e),
-            void console.log(data))
-          : (document
-              .querySelector("#error-display")
-              .classList.remove("d-none"),
-            (document.querySelector("#error-display").innerText =
-              "Veuillez renseigner le champ Email"),
-            document
-              .querySelector("#error-display")
-              .scrollIntoView({ behavior: "smooth", block: "end" }),
-            void setTimeout(() => {
-              document.querySelector("#error-display").classList.add("d-none");
-            }, 4e3))
-        : (document.querySelector("#error-display").classList.remove("d-none"),
-          (document.querySelector("#error-display").innerText =
-            "Veuillez renseigner le champ Prenom"),
-          document
-            .querySelector("#error-display")
-            .scrollIntoView({ behavior: "smooth", block: "end" }),
-          void setTimeout(() => {
-            document.querySelector("#error-display").classList.add("d-none");
-          }, 4e3))
-      : (document.querySelector("#error-display").classList.remove("d-none"),
-        (document.querySelector("#error-display").innerText =
-          "Veuillez renseigner le champ Nom"),
-        document
-          .querySelector("#error-display")
-          .scrollIntoView({ behavior: "smooth", block: "end" }),
-        void setTimeout(() => {
-          document.querySelector("#error-display").classList.add("d-none");
-        }, 4e3))
-  );
-}
-function annulInfo(e) {
-  (data.Civilite = ""),
-    (data.Nom = ""),
-    (data.Prenom = ""),
-    (data.Email = ""),
-    arriere(e),
-    console.log(data);
-}
-(data.TypeEntreprise = document.querySelector("#TypeEntreprise")?.innerText),
-  console.log(data);
-
-
-</script>
-
+<script src="{{ asset('js/custom/creation-entreprise.min.js')}}"></script>
 {% endblock %}
-{% block footer %} {% endblock %}
+{% block footer %}{% endblock %}

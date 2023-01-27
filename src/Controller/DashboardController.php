@@ -38,8 +38,8 @@ class DashboardController extends AbstractController
         );
 
         return $this->render('dashboard/index.html.twig', [
-            'entreprise' => $demandes_entreprise,
-            'comptabilite' => $demandes_compta,
+            'entreprise' => array_reverse($demandes_entreprise),
+            'comptabilite' => array_reverse($demandes_compta),
             'count_entreprise' => count( $demandes_entreprise ),
             'count_comptabilite' => count( $demandes_compta )
         ]);

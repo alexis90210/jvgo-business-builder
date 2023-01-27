@@ -55,6 +55,9 @@ class Demandes
     #[ORM\Column(length: 255)]
     private ?string $Status = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Mobile = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -224,6 +227,18 @@ class Demandes
     public function setStatus(string $Status): self
     {
         $this->Status = $Status;
+
+        return $this;
+    }
+
+    public function getMobile(): ?string
+    {
+        return $this->Mobile;
+    }
+
+    public function setMobile(?string $Mobile): self
+    {
+        $this->Mobile = $Mobile;
 
         return $this;
     }

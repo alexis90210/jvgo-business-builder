@@ -106,6 +106,12 @@
 									</p>
 									<input type="email" class="form-control size-4" id="Email">
 
+									<p class="text-dark size-4 m-0 my-1 mt-3">Renseignez votre  Mobile
+									</p>
+									<input type="tel" class="form-control size-4" id="Mobile">
+
+
+
 									<div class="text-center mt-4">
 										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
 										<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="selectInfo()">
@@ -164,123 +170,7 @@
 	</div>
 
 
-<script>
-var data = {};
-function selectInfo() {
-  const e = document.querySelector("#radioMadame")?.checked,
-    o = document.querySelector("#radioMonsieur")?.checked;
-  return (
-    (data.Civilite = o ? "Monsieur" : e ? "Madame" : ""),
-    (data.Nom = document.querySelector("#Nom")?.value),
-    (data.Prenom = document.querySelector("#Prenom")?.value),
-    (data.Email = document.querySelector("#Email")?.value),
-    (data.NomEntreprise = document.querySelector("#NomEntreprise")?.value),
-    1 != e && 1 != o && "Indépendant" == data.typeUser
-      ? (document.querySelector("#error-display").classList.remove("d-none"),
-        (document.querySelector("#error-display").innerText =
-          "Veuillez selectionner la civilité"),
-        document
-          .querySelector("#error-display")
-          .scrollIntoView({ behavior: "smooth", block: "end" }),
-        void setTimeout(() => {
-          document.querySelector("#error-display").classList.add("d-none");
-        }, 4e3))
-      : data.NomEntreprise || "Indépendant" == data.typeUser
-      ? data.Nom
-        ? data.Prenom
-          ? data.Email
-            ? (document.querySelector("#form-demande").classList.add("d-none"),
-              document.querySelector("#informations").classList.add("d-none"),
-              document
-                .querySelector("#loading-indicator")
-                .classList.remove("d-none"),
-              console.log(data),
-              void axios
-                .post("/save/deleguer-ma-comptabilite", { ...data })
-                .then(function (e) {
-                  console.log(e.data);
-                  const o = e.data;
-                  document
-                    .querySelector("#loading-indicator")
-                    .classList.add("d-none"),
-                    "success" == o.code
-                      ? document
-                          .querySelector("#success-process")
-                          .classList.remove("d-none")
-                      : ((document.querySelector("#error-display").innerText =
-                          o.message),
-                        document
-                          .querySelector("#error-display")
-                          .scrollIntoView({ behavior: "smooth", block: "end" }),
-                        setTimeout(() => {
-                          document
-                            .querySelector("#error-display")
-                            .classList.add("d-none");
-                        }, 8e3));
-                })
-                .catch(function (e) {
-                  console.log(e),
-                    document
-                      .querySelector("#form-demande")
-                      .classList.remove("d-none"),
-                    document
-                      .querySelector("#informations")
-                      .classList.remove("d-none"),
-                    document
-                      .querySelector("#loading-indicator")
-                      .classList.add("d-none");
-                }))
-            : (document
-                .querySelector("#error-display")
-                .classList.remove("d-none"),
-              (document.querySelector("#error-display").innerText =
-                "Veuillez renseigner le champ Email"),
-              document
-                .querySelector("#error-display")
-                .scrollIntoView({ behavior: "smooth", block: "end" }),
-              void setTimeout(() => {
-                document
-                  .querySelector("#error-display")
-                  .classList.add("d-none");
-              }, 4e3))
-          : (document
-              .querySelector("#error-display")
-              .classList.remove("d-none"),
-            (document.querySelector("#error-display").innerText =
-              "Veuillez renseigner le champ Prenom"),
-            document
-              .querySelector("#error-display")
-              .scrollIntoView({ behavior: "smooth", block: "end" }),
-            void setTimeout(() => {
-              document.querySelector("#error-display").classList.add("d-none");
-            }, 4e3))
-        : (document.querySelector("#error-display").classList.remove("d-none"),
-          (document.querySelector("#error-display").innerText =
-            "Veuillez renseigner le champ Nom"),
-          document
-            .querySelector("#error-display")
-            .scrollIntoView({ behavior: "smooth", block: "end" }),
-          void setTimeout(() => {
-            document.querySelector("#error-display").classList.add("d-none");
-          }, 4e3))
-      : (document.querySelector("#error-display").classList.remove("d-none"),
-        (document.querySelector("#error-display").innerText =
-          "Veuillez renseigner le champ Nom Entreprise"),
-        document
-          .querySelector("#error-display")
-          .scrollIntoView({ behavior: "smooth", block: "end" }),
-        void setTimeout(() => {
-          document.querySelector("#error-display").classList.add("d-none");
-        }, 4e3))
-  );
-}
-(data.typeUser = document.querySelector("#typeUser")?.innerText),
-  (data.typePack = document.querySelector("#typePack")?.innerText),
-  (data.Prix = document.querySelector("#Prix")?.innerText),
-  (data.TypeAbonnement = document.querySelector("#TypeAbonnement")?.innerText);
-
-</script>
-
+<script src="{{ asset('js/custom/deleguer-ma-compta.min.js')}}"></script>
 
 {% endblock %}
 {% block footer %}{% endblock %}
