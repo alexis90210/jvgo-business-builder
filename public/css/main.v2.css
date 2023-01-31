@@ -359,13 +359,7 @@ a {
 .stepper-active > div {
   background-color: var(--primary) !important;
 }
-.selectable-box:hover {
-  cursor: pointer !important;
-  border-color: var(--primary) !important;
-  color: #fff !important;
-  background-color: #232c47f0 !important;
-  transition: var(--transition);
-}
+
 .selectable-box-selected {
   color: #fff !important;
   background-color: #232c47f0 !important;
