@@ -6,37 +6,44 @@
 
 {% block body %}
 
-	<div class="container-fluid my-3 p-lg-4">
+	<div class="container-fluid px-sm-0 px-md-0 bg-light py-5">
+		<div style="margin-top:8em" class="d-sm-none d-md-block d-lg-block"></div>
+		<div style="margin-top:4em" class="d-sm-block d-lg-none d-xl-none"></div>
 		<div class="row">
-			<div class="col-lg-12 m-auto">
-			
-				<div class="container-fluid mt-2">
-					<div class="row py-3">
-						<div class="col-lg-4 grid place-items">
-							<img src="{{asset('images/optimisation.jpg')}}" class="row-4 rounded" alt="" srcset=""/>
+			<div class="col-11 m-auto">
+				<div class="container-fluid px-sm-0 px-md-0">
+					<div class="row px-sm-3 px-md-3">
+
+						<div class="col-lg-5 p-lg-2">
+							<div style="background: url('/images/optimisation.jpg') center center;border-radius:10px !important; width: 100%; height:100%;  background-repeat: no-repeat; background-size: cover;"></div>
 						</div>
-						<div class="col-lg-8 grid place-items">
-							<div class="">
-								<p class="size-9 font-ubuntu fw-bolder pr-5 mt-2 is-text-primary">SERVICE COMPTABILITE</p>
-								<p class="size-6 opacity-3 m-0 my-1">
-									Notre action comptable améliore vos ratios,<b> facilite votre compréhension</b> des chiffres et devient un outil de gestion efficace.
-												<b>Comptabilité générale</b>, Comptabilité analytique, Organisation, tenue, suivi de comptabilité, Etablissement des comptes annuels, Etablissement des déclarations périodiques,<b> Rattrapage de comptabilité</b>, Audit interne.
 
-								</p>
-								<p class="size-6 opacity-3 m-0 my-4">
-									Dépôt et publication des comptes annuels
-												Nous facilitons votre publication de chiffres à la <b>banque nationale</b>. Nos outils d’analyses bilans évaluent le pouls et les paramètres de votre entreprise.
-								</p>
+						<div class="col-lg-7 m-auto">
+							<div class="p-lg-5">
+								<div class="">
+									<p class="size-9 font-ubuntu fw-bolder pr-5 mt-2 is-text-primary">SERVICE COMPTABILITE</p>
+									<p class="size-6 opacity-3 m-0 my-1">
+										Notre action comptable améliore vos ratios,<b>
+											facilite votre compréhension</b>
+										des chiffres et devient un outil de gestion efficace.
+										<b>Comptabilité générale</b>, Comptabilité analytique, Organisation, tenue, suivi de comptabilité, Etablissement des comptes annuels, Etablissement des déclarations périodiques,<b>
+											Rattrapage de comptabilité</b>, Audit interne.
 
+									</p>
+									<p class="size-6 opacity-3 m-0 my-4">
+										Dépôt et publication des comptes annuels
+																															Nous facilitons votre publication de chiffres à la
+										<b>banque nationale</b>. Nos outils d’analyses bilans évaluent le pouls et les paramètres de votre entreprise.
+									</p>
+
+								</div>
 							</div>
 
 						</div>
 					</div>
 				</div>
-				<br>
 			</div>
 		</div>
 	</div>
-
 
 {% endblock %}

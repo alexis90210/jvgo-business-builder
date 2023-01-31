@@ -5,13 +5,17 @@
 
 {% block body %}
 	<div class="container-fluid mt-1 py-2">
+	<div style="margin-top:8em" class="d-sm-none d-md-block d-lg-block"></div>
+		<div style="margin-top:4em" class="d-sm-block d-lg-none d-xl-none"></div>
 		<div class="row p-2">
 			<div class="col-lg-12 m-auto">
 				<div class="container-fluid ">
 					<div class="row">
 						<div class="col-lg-10 pt-3 m-auto text-center">
 
-                            <p class="size-9 font-ubuntu fw-bolder pr-5 mt-2 is-text-primary"><span class="text-dark">Qui</span> sommes-nous?</p>
+							<p class="size-9 font-ubuntu fw-bolder pr-5 mt-2 is-text-primary">
+								<span class="text-dark">Qui</span>
+								sommes-nous?</p>
 
 							<p class="size-6 mt-3">
 								Notre entreprise, basée à Bruxelles, a pour objectif de vous aider à la création d’entreprise, au coaching d’équipe, à optimiser la fiscalité en vous proposant une délocalisation de vos activités pour vous permettre de payer moins d’impôt légalement et en fonction de la divergence des législations des pays européens.
@@ -24,154 +28,150 @@
 		</div>
 	</div>
 
+	{# section 1 #}
 
-	<div class="container-fluid my-2 p-lg-4 bg-light">
+	<div class="container" style="padding-top:50px; padding-bottom:50px;">
 		<div class="row">
-			<div class="col-lg-12 m-auto">
-				<br>
 
-				<div class="container-fluid ">
-					<div class="row">
-						<div class="col-lg-5 d-lg-block d-xl-block d-md-none d-sm-none">
-						<br> <br>
-							<img src="{{asset('images/about.jpg')}}" class="row-4 rounded" alt="" srcset=""/>
-						</div>
-						<div class="col-lg-7 grid place-items">
-							<div class="">
-							
-                                <p class="size-9 font-ubuntu fw-bolder pr-5 mt-2 is-text-primary"><span class="text-dark">Nos</span> valeurs</p>
+			<div class="col-lg-5 p-lg-2">
+				<div style="background: url('images/about.jpg') center center;border-radius:10px !important; width: 100%; height:100%;  background-repeat: no-repeat; background-size: cover;"></div>
+			</div>
+
+			<div class="col-lg-7 m-auto">
+				<div class="p-lg-5">
+					<div class="">
+
+						<p class="size-10 font-ubuntu fw-bolder pr-5 mt-2 is-text-primary">
+							Nos valeurs</p>
 
 
-								<p class="size-6 opacity-3 mt-3">
-									<span class="">
-										<svg aria-hidden="true" role="img" height="1em" width="1em" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-											<path fill="#9DA1B1" d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-										</svg>
-										<b class="px-2">Transparence</b>
-									</span>
-									: Vous recevez des informations claires et concrètes, dès le début, tant sur la tarification que sur les délais d'exécution. Vous avez accès à votre dossier dont vous pouvez suivre la progression en temps réel.
+						<p class="size-6 opacity-3 mt-3">
+							<span class="">
+								<i class="mdi mdi-check size-7 is-text-primary"></i>
+								<b class="px-2">Transparence</b>
+							</span>
+							: Vous recevez des informations claires et concrètes, dès le début, tant sur la tarification que sur les délais d'exécution. Vous avez accès à votre dossier dont vous pouvez suivre la progression en temps réel.
 
-								</p>
+						</p>
 
-								<p class="size-6 opacity-3 mt-3">
-									<span class="">
-										<svg aria-hidden="true" role="img" height="1em" width="1em" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-											<path fill="#9DA1B1" d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-										</svg>
-										<b class="px-2">Croissance</b>
-									</span>
-									: Nous vous aidons à grandir sur le plan professionnel mais aussi sur le plan personnel. Car un business qui évolue, cela implique des êtres humains prêts à se dépasser et nous chercherons nous-même aussi à progresser.
+						<p class="size-6 opacity-3 mt-3">
+							<span class="">
+								<i class="mdi mdi-check size-7 is-text-primary"></i>
+								<b class="px-2">Croissance</b>
+							</span>
+							: Nous vous aidons à grandir sur le plan professionnel mais aussi sur le plan personnel. Car un business qui évolue, cela implique des êtres humains prêts à se dépasser et nous chercherons nous-même aussi à progresser.
 
-								</p>
+						</p>
 
 
-								<p class="size-6 opacity-3 mt-3">
-									<span class="">
-										<svg aria-hidden="true" role="img" height="1em" width="1em" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-											<path fill="#9DA1B1" d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-										</svg>
-										<b class="px-2">Fidélité</b>
-									</span>
-									: Être fidèle à soi, aux autres, à ses convictions, à ses engagements et à ses désirs profonds est, selon nous, la base indispensable pour créer une relation saine et durable avec toutes les personnes qui nous entourent.
+						<p class="size-6 opacity-3 mt-3">
+							<span class="">
+								<i class="mdi mdi-check size-7 is-text-primary"></i>
+								<b class="px-2">Fidélité</b>
+							</span>
+							: Être fidèle à soi, aux autres, à ses convictions, à ses engagements et à ses désirs profonds est, selon nous, la base indispensable pour créer une relation saine et durable avec toutes les personnes qui nous entourent.
 
-								</p>
-							</div>
-						</div>
+						</p>
 					</div>
 				</div>
-				<br>
+
 			</div>
 		</div>
 	</div>
 
 
-	<div class="container-fluid my-2 p-lg-4">
-		<div class="row p-sm-0 p-md-0">
-			<div class="col-lg-12 m-auto p-sm-0 p-md-0">
-				<div class="container-fluid">
-					<div class="row">
+	{# section 2 #}
 
-						<div class="col-lg-7 grid place-items">
-							<div class="">
-								<p class="size-9 font-ubuntu fw-bolder pr-5 mt-2 is-text-primary"><span class="text-dark">Notre</span> mission</p>
-								<p class="size-6 opacity-3 m-0 my-1">
-									Vous écouter,
-									<b>vous donner des conseils personnalisés</b>
+	<div class="col-12 bg-light">
+	
+		<div class="container" style="padding-top:50px; padding-bottom:50px;">
+		<div class="row">
 
-								</p>
-								<p class="size-6 opacity-3 m-0 my-1">Créer avec vous
-									<b>un business sur mesure qui corresponde à vos valeurs et à vos ambitions
-									</b>
+			<div class="col-lg-7 m-auto">
+				<div class="p-lg-5">
+					<div class="">
+						<p class="size-10 font-ubuntu fw-bolder pr-5 mt-2 is-text-primary">
+							Notre	mission</p>
+						<p class="size-6 opacity-3 m-0 mb-4">
+							Vous écouter, vous donner des conseils personnalisés
 
-								</p>
+						</p>
+						<p class="size-6 opacity-3 m-0 mb-4">Créer avec vous
+																							un business sur mesure qui corresponde à vos valeurs et à vos ambitions
 
-								<p class="size-6 opacity-3 m-0 my-1">
-									<b>Vous accompagner à différents stades de votre business :</b>
-									définir vos objectifs, engager du personnel, gérer une équipe, se développer à l'international
-								</p>
 
-							</div>
+						</p>
 
-						</div>
-						<div class="col-lg-5 d-lg-block d-xl-block d-md-none d-sm-none grid place-items">
-							<img src="{{asset('images/vvv-min.jpg')}}" class="row-4 rounded" alt="" srcset=""/>
-						</div>
+						<p class="size-6 opacity-3 m-0 my-2">
+							Vous accompagner à différents stades de votre business :
+																							définir vos objectifs, engager du personnel, gérer une équipe, se développer à l'international
+						</p>
+
 					</div>
 				</div>
+
+			</div>
+
+			<div class="col-lg-5 p-lg-2">
+				<div style="background: url('images/vvv-min.jpg') center center;border-radius:10px !important; width: 100%; height:100%;  background-repeat: no-repeat; background-size: cover;"></div>
+			</div>
+
+		</div>
+	</div>
+
+	</div>
+
+
+	<div class="container" style="padding-top:50px; padding-bottom:50px;">
+		<div class="row">
+
+			<div class="col-lg-5 p-lg-2">
+				<div style="background: url('images/about.jpg') center center;border-radius:10px !important; width: 100%; height:100%;  background-repeat: no-repeat; background-size: cover;"></div>
+			</div>
+
+			<div class="col-lg-7 m-auto">
+				<div class="p-lg-5">
+					<div class="">
+						<p class="size-10 font-ubuntu fw-bolder pr-5 mt-2 mt-sm-0 mt-md-0 is-text-primary">
+							Notre									vision</p>
+						<p class="size-6 opacity-3 m-0 my-1">
+							Nous voulons
+																des entrepreneurs qui se sentent libres
+																
+																de pouvoir travailler où, quand et comment ils veulent.
+
+						</p>
+						<br>
+						<p class="size-6 opacity-3 m-0 my-1">
+							Un business qui fonctionne bien
+																, cela
+																
+																	rend les gens heureux :
+																clients, employés, employeurs, collaborateurs, investisseurs …
+						</p>
+
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
 
-	<div class="container-fluid my-5 p-lg-4 bg-light">
-		<div class="row">
-			<div class="col-lg-12 m-auto">
-				<br>
-				<div class="container-fluid mt-2">
-					<div class="row py-3 py-sm-0 py-md-0">
-						<div class="col-lg-5 d-lg-block d-xl-block d-md-none d-sm-none grid place-items">
-							<img src="{{asset('images/vvv-min.jpg')}}" class="row-4 rounded" alt="" srcset=""/>
-						</div>
-						<div class="col-lg-7 grid place-items">
-							<div class="">
-								<p class="size-9 font-ubuntu fw-bolder pr-5 mt-2 mt-sm-0 mt-md-0 is-text-primary"><span class="text-dark">Notre</span> vision</p>
-								<p class="size-6 opacity-3 m-0 my-1">
-									Nous voulons
-									<b>des entrepreneurs qui se sentent libres
-									</b>
-									de pouvoir travailler où, quand et comment ils veulent.
 
-								</p>
-								<p class="size-6 opacity-3 m-0 my-1">
-									<b>Un business qui fonctionne bien</b>
-									, cela
-									<b>
-										rend les gens heureux :</b>
-									clients, employés, employeurs, collaborateurs, investisseurs …
-								</p>
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-				<br>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="p-2 container py-5 pt-3 pt-sm-0 pt-md-0">
+	<div class="p-2 container py-5 pt-3 pt-sm-0 pt-md-0" style="padding-top:50px; padding-bottom:50px;">
 		<div class="row">
 
-            	<p class="size-10 font-ubuntu fw-bolder pr-5 pb-4 pb-sm-1 pb-md-1 is-text-primary text-sm-center text-md-center text-lg-start text-xl-start"><span class="text-dark">Notre</span> équipe</p>
+
+			<p class="size-10 font-ubuntu fw-bolder pr-5 pb-4 pb-sm-1 pb-md-1 is-text-primary text-sm-center text-md-center text-lg-start text-xl-start">
+				Notre	équipe</p>
 
 			<div class="col-lg-4 col-sm-10 col-md-4  m-lg-0 m-sm-auto m-md-auto">
 				<div class="rounded border-all p-2 m-2 mb-sm-4 mb-md-4 min-height text-center">
 
 
 					<div class="p-2" style=" background: url('../images/ToudjeJosias.png') center center;
-													  background-repeat: no-repeat;
-													  background-size: cover;height: 300px;"></div>
+																															  background-repeat: no-repeat;
+																															  background-size: cover;height: 300px;"></div>
 
 
 					<div>
@@ -183,10 +183,10 @@
 							(CO-FOUNDER)
 						</p>
 
-                        <div class="">
-								<i class="mdi mdi-facebook size-9 is-text-primary opacity-2 px-2"></i>
-								<i class="mdi mdi-twitter size-9 is-text-primary opacity-2 px-2"></i>
-							</div>
+						<div class="">
+							<i class="mdi mdi-facebook size-9 is-text-primary opacity-2 px-2"></i>
+							<i class="mdi mdi-twitter size-9 is-text-primary opacity-2 px-2"></i>
+						</div>
 
 					</div>
 
@@ -198,8 +198,8 @@
 				<div class="rounded border-all p-2 m-2 min-height text-center">
 
 					<div style=" background: url('../images/ValerieDecoste.jpg') center center;
-												  background-repeat: no-repeat;
-												  background-size: cover;height: 300px;"></div>
+																														  background-repeat: no-repeat;
+																														  background-size: cover;height: 300px;"></div>
 
 
 					<div>
@@ -211,10 +211,10 @@
 							(CO-FOUNDER)
 						</p>
 
-                        <div class="">
-								<i class="mdi mdi-facebook size-9 is-text-primary opacity-2 px-2"></i>
-								<i class="mdi mdi-twitter size-9 is-text-primary opacity-2 px-2"></i>
-							</div>
+						<div class="">
+							<i class="mdi mdi-facebook size-9 is-text-primary opacity-2 px-2"></i>
+							<i class="mdi mdi-twitter size-9 is-text-primary opacity-2 px-2"></i>
+						</div>
 					</div>
 
 				</div>

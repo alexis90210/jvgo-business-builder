@@ -1,24 +1,22 @@
-@import url("./google-fonts.css");
+@import url("./fonts.css");
 @import url("./jvgo.min.css");
 @import url("./mobile.css");
 @import url("./dataTable.min.css");
 :root {
-  --primary: #0b2859;
-  --dark: #0b2859;
+  --primary: rgb(91, 94, 101);
+  --dark: #232c47f0;
   --black: #000000ea;
   --light: #a4a8b7;
   --arial: Arial, sans-serif;
-  --dark-blue: #0b2859;
+  --dark-blue: rgb(160,161,164);
   --ubuntu: "Ubuntu", sans-serif;
   --merriweather: "Merriweather", sans-serif;
   --transition: all 0.3s ease-in;
   --minmax: 250px;
 }
-.font-merriweather {
-  font-family: var(--merriweather);
-}
-.font-ubuntu {
-  font-family: var(--ubuntu);
+
+* {
+  font-family: 'Mukta', 'Ubuntu', Arial;
 }
 body {
   font-family: var(--arial);
@@ -30,15 +28,12 @@ body {
 .is-text-primary {
   color: var(--primary);
 }
-.text-dark {
-  color: var(--dark);
-}
-.text-dark-blue {
-  color: var(--dark-blue);
-}
+.text-dark ,
+.text-dark-blue,
 .text-black {
-  color: var(--black);
+  color: var(--dark) !important;
 }
+
 .text-light {
   color: var(--light);
 }
@@ -51,8 +46,8 @@ body {
 .bg-dark-blue {
   background-color: var(--dark-blue);
 }
-.bg-dark {
-  background-color: var(--dark);
+.bg-darken {
+  background-color: rgb(39,43,53) !important;
 }
 .bg-black {
   background-color: var(--black);
@@ -73,16 +68,12 @@ body {
   font-size: 10px;
 }
 .size-3 {
-  font-size: 12px;
-}
-.size-4 {
-  font-size: 14px;
-}
-.size-5 {
   font-size: 15px;
 }
+.size-4,
+.size-5,
 .size-6 {
-  font-size: 17px;
+  font-size: 16px;
 }
 .size-7 {
   font-size: 19px;
@@ -227,7 +218,7 @@ body {
 }
 .header-bar {
   position: fixed;
-  top: 0px;
+  top: 0px !important;
   z-index: 100;
 }
 .logo {
@@ -237,7 +228,7 @@ body {
   border: 1px solid rgba(200, 191, 191, 0.542);
 }
 .border-bottom {
-  border-bottom: 1px solid rgba(200, 191, 191, 0.542);
+  border-bottom: 1px solid rgba(97, 91, 91, 0.272) !important;
 }
 .border-top {
   border-top: 1px solid rgba(200, 191, 191, 0.542);
@@ -371,12 +362,13 @@ a {
 .selectable-box:hover {
   cursor: pointer !important;
   border-color: var(--primary) !important;
-  color: var(--dark-blue) !important;
-  background-color: #d0d3dc27 !important;
+  color: #fff !important;
+  background-color: #232c47f0 !important;
   transition: var(--transition);
 }
 .selectable-box-selected {
-  background-color: #c9cbd248 !important;
+  color: #fff !important;
+  background-color: #232c47f0 !important;
   border-color: var(--primary) !important;
   transition: var(--transition);
 }
@@ -431,7 +423,7 @@ body {
   width: 70%;
   height: 4px;
   border-radius: 10px;
-  background-color: #0b2859;
+  background-color: rgb(160,161,164);
 }
 .vh-100 {
   height: 100vh;
