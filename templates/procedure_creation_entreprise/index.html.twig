@@ -18,25 +18,26 @@
 	<div class="container-fluid shadow-sm bg-white">
 		<div class="row">
 			<div class="col-12 py-2 d-flex justify-content-center align-items-center">
-				<img src="{{asset('images/jbvo.png')}}" width="220px" class="is-pointer" onclick="newPage('/')" alt="" srcset=""/>
+				<img src="{{asset('images/jbvo.png')}}" width="160px" class="is-pointer" onclick="newPage('/')" alt="" srcset=""/>
 			</div>
 		</div>
 	</div>
 
 
-	<div class="container-fuild section-navigation p-4">
+	<div class="col-12 d-flex justify-content-center" style="padding-top:40px; padding-bottom:30px">
+		<div class="container-fuild section-navigation fv">
 		<div class="row">
 			<div class="col-lg-10 m-auto">
 
-				<p class="is-text-primary text-uppercase text-center size-6 fw-3 mt-4">
+				<h1 class="is-text-primary text-center fs-3 fw-3 mt-4">
 					Création de votre société
 
-				</p>
-				<p class="text-center pb-4 size-5">
+				</h1>
+				<h2 class="text-center pt-3 pb-4 size-5">
 					Categorie :
 					<b id="TypeEntreprise">{{TypeEntreprise}}</b>
-				</p>
-				<p class="text-center size-5 fw-3 alert alert-danger d-none" id="error-display"></p>
+				</h2>
+				
 			</p>
 
 			<ul class="stepper d-flex no-style justify-content-center">
@@ -54,23 +55,24 @@
 				</li>
 			</ul>
 
-
+			<p class="text-center size-5 fw-3 alert alert-danger d-none" id="error-display"></p>
 			<div class="container-fluid p-sm-2 p-md-2">
 				<div
 					class="row">
 
 					<!-- content-step-1 -->
 					<div class="col-lg-7 m-auto" id="content-step-1">
-						<p class="navlink" onclick="newPage('/creation-entreprise')">
+						<p class="navlink pt-4" onclick="newPage('/creation-entreprise')">
 							<i class="mdi mdi-chevron-left size-6"></i>
 							<u>Retour</u>
 						</p>
-						<p class="text-dark text-center py-4 pb-2 size-6 fw-4">
+						<p class="text-dark text-center py-4 size-6 fw-4">
 							Si vous avez déjà choisi le nom commercial de votre société</p>
 
 						<div class="container-fluid  border rounded">
 							<div class="row pt-1">
 								<div class="col-lg-12 m-auto">
+								
 									<div class="m-1 p-4 p-sm-2 p-md-2 pb-2">
 										<p class=" pb-2"></p>
 										<p class="text-dark size-4 m-0 my-3">Renseignez-le ici
@@ -78,10 +80,10 @@
 										<input type="text" id="NomEntreprise" class="form-control size-4" placeholder="Ex: jvgo consulting">
 									</p>
 
-									<div class="my-4 text-sm-center text-md-center text-lg-start">
+									<div class="mt-4 mb-5 text-sm-center text-md-center text-lg-start">
 										<br>
 										<a class="button-effect-3 size-4 p-2 p-lg-2  px-5" onclick="selectNomEntreprise(2)">
-											<span>
+											<span class=" px-3">
 												Continuer
 												<i class="mdi mdi-chevron-right"></i>
 											</span>
@@ -154,10 +156,10 @@
 									</p>
 									<input type="tel" class="form-control size-4" id="Mobile">
 
-									<div class="text-center mt-4">
+									<div class="text-center mt-5 mb-3">
 										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
 										<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="selectInfo(3)">
-											<span>
+											<span class=" px-3">
 												Continuer
 												<i class="mdi mdi-chevron-right"></i>
 											</span>
@@ -228,7 +230,7 @@
 										</li>
 									</ul>
 									<p class="text-center">
-										<button class="btn btn-outline-dark mt-4" onclick="saveInfo(4)">
+										<button class="btn btn-outline-dark mt-4 px-3" onclick="saveInfo(4)">
 											Continuer
 										</button>
 									</p>
@@ -263,7 +265,7 @@
 									<div class="text-center mt-4">
 										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
 										<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="newPage('/')">
-											<span>
+											<span class=" px-3">
 												Acceuil
 												<i class="mdi mdi-chevron-right"></i>
 											</span>
@@ -281,6 +283,7 @@
 
 			</div>
 		</div>
+	</div>
 	</div>
 </div>
 </div>

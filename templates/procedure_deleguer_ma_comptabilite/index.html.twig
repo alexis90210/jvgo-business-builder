@@ -18,22 +18,22 @@
 	<div class="container-fluid shadow-sm bg-white">
 		<div class="row">
 			<div class="col-12 py-2 d-flex justify-content-center align-items-center">
-				<img src="{{asset('images/jbvo.png')}}" width="220px" class="is-pointer" onclick="newPage('/')" alt="" srcset=""/>
+				<img src="{{asset('images/jbvo.png')}}" width="160px" class="is-pointer" onclick="newPage('/')" alt="" srcset=""/>
 			</div>
 		</div>
 	</div>
 
 
-	<div class="container">
+	<div class="container" style="padding-top:30px; padding-bottom:40px">
 		<div
 			class="row">
 			<!-- content-step-3 -->
 			<div class="col-lg-7 m-auto">
 
-				<p class="is-text-primary text-uppercase text-center size-6 fw-3 mt-4">
+				<h1 class="is-text-primary text-center fs-5 fw-3 mt-4">
 					Je veux déléguer ma comptabilité
-				</p>
-				<p class="text-center pb-2 size-5 pb-sm-0 pb-md-0">
+				</h1>
+				<h2 class="text-center py-2 size-5 pb-sm-0 pb-md-0">
 					Categorie :
 					<b id="typeUser">{{typeUser}}</b>
 					<br>
@@ -42,7 +42,7 @@
 						/
 						<b id="TypeAbonnement">{{TypeAbonnement}}</b>/<b id="Prix">{{Prix}}</b>
 					</span>
-				</p>
+				</h2>
 
 
 				<p class="navlink" onclick="pageArriere()">
@@ -113,9 +113,9 @@
 
 
 									<div class="text-center mt-4">
-										<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+										<br>
 										<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="selectInfo()">
-											<span>
+											<span class="px-3 py-2">
 												Valider la souscription
 												<i class="mdi mdi-chevron-right"></i>
 											</span>
@@ -143,9 +143,9 @@
 													</div>
 
 													<div class="text-center mt-4">
-														<br class="d-sm-block d-md-block d-lg-none d-lg-none">
+														<br>
 														<a class="button-effect-3 size-4 p-2 p-lg-2 is-pointer px-5" onclick="newPage('/')">
-															<span>
+															<span class="px-3 py-2">
 																Acceuil
 																<i class="mdi mdi-chevron-right"></i>
 															</span>
@@ -160,7 +160,6 @@
 										</div>
 									</div>
 								</div>
-
 							</div>
 						</div>
 					</div>

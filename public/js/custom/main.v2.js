@@ -11,6 +11,14 @@ try {
     nav = document.querySelector(".section-navigation");
     if(nav) nav.style = `margin-top:${headerWidth}px  !important`;
 
+    window.addEventListener('resize', () => {
+      let headerWidth = document
+      .querySelector(".header-bar")
+      ?.getBoundingClientRect().height,
+    nav = document.querySelector(".section-navigation");
+    if(nav) nav.style = `margin-top:${headerWidth}px  !important`;
+    })
+
   // ----------------------------------------------------------------------------
   // Loader
   // ----------------------------------------------------------------------------

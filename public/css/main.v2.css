@@ -8,7 +8,7 @@
   --black: #000000ea;
   --light: #a4a8b7;
   --arial: Arial, sans-serif;
-  --dark-blue: rgb(160,161,164);
+  --dark-blue: rgb(160, 161, 164);
   --ubuntu: "Ubuntu", sans-serif;
   --merriweather: "Merriweather", sans-serif;
   --transition: all 0.3s ease-in;
@@ -16,7 +16,7 @@
 }
 
 * {
-  font-family: 'Mukta', 'Ubuntu', Arial;
+  font-family: "Mukta", "Ubuntu", Arial;
 }
 body {
   font-family: var(--arial);
@@ -28,7 +28,7 @@ body {
 .is-text-primary {
   color: var(--primary);
 }
-.text-dark ,
+.text-dark,
 .text-dark-blue,
 .text-black {
   color: var(--dark) !important;
@@ -47,14 +47,12 @@ body {
   background-color: var(--dark-blue);
 }
 .bg-darken {
-  background-color: rgb(39,43,53) !important;
+  background-color: rgb(39, 43, 53) !important;
 }
 .bg-black {
   background-color: var(--black);
 }
-.bg-light {
-  background-color: var(--light);
-}
+
 .size-large {
   font-size: 42px;
 }
@@ -220,9 +218,16 @@ body {
   position: fixed;
   top: 0px !important;
   z-index: 100;
+  left: 0;
+}
+
+.footer-main {
+  position: absolute;
+  left: 0;
+  width: 100%;
 }
 .logo {
-  width: 210px;
+  width: 150px;
 }
 .border-all {
   border: 1px solid rgba(200, 191, 191, 0.542);
@@ -257,7 +262,7 @@ body {
 .hoverable:hover {
   cursor: pointer;
   transition: var(--transition);
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 1px solid var(--primary) !important;
 }
 .navigation-bar > li {
   cursor: pointer;
@@ -417,7 +422,7 @@ body {
   width: 70%;
   height: 4px;
   border-radius: 10px;
-  background-color: rgb(160,161,164);
+  background-color: rgb(160, 161, 164);
 }
 .vh-100 {
   height: 100vh;
@@ -429,4 +434,30 @@ div.dataTables_wrapper {
   width: 100%;
   margin: 0 auto;
 }
+
+.body-main {
+  width: 100%;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fv {
+  width: 1250px !important;
+}
+
+.form-control{
+  background:#F2F2F2;
+  border-radius:0px;
+  border:none;
+  padding: 14px;
+}
+
+.is-btn:hover {
+  background-color: transparent;
+  color: var(--dark) !important;
+  border: 1px solid var(--primary);
+  transition: var(--transition);
+}
+
 

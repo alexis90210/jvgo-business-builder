@@ -17,14 +17,15 @@
 	<div class="container-fluid shadow-sm bg-white">
 		<div class="row">
 			<div class="col-12 py-2 d-flex justify-content-center align-items-center">
-				<img src="{{asset('images/jbvo.png')}}" width="220px" class="is-pointer" onclick="newPage('/')" alt="" srcset=""/>
+				<img src="{{asset('images/jbvo.png')}}" width="160px" class="is-pointer" onclick="newPage('/')" alt="" srcset=""/>
 			</div>
 		</div>
 	</div>
 
 
 	<!-- SECTION 1 -->
-	<div class="container-fluid section-1 px-3">
+	<div class="col-12 d-flex justify-content-center">
+		<div class="container-fluid section-1 px-3 fv" style="padding-top:30px; padding-bottom:30px">
 		<div class="row">
 			<div class="col-lg-8 size-10 pt-5 pt-sm-4 pt-md-4 m-auto">
 				<div class="text-center">
@@ -46,13 +47,15 @@
 			</div>
 		</div>
 	</div>
+	</div>
 
 	<!-- SECTION 2 -->
 
-	<div class="container-fluid bg-light py-2 pb-5" id="creer-mon-entreprise">
+	<div class="col-12 bg-light d-flex justify-content-center" style="padding-top:25px; padding-bottom:20px">
+		<div class="container-fluid bg-light py-2 pb-5 fv" id="creer-mon-entreprise">
 		<div class="row">
-			<div class="col-lg-12 m-auto">
-				<div class="container">
+			<div class="col-lg-12 m-auto p-0">
+				<div class="container p-0">
 					<div class="row p-2">
 						<div class="p-2 p-lg-3 col-lg-10 m-sm-auto m-md-auto">
 							<p class="size-8 fs-5 col-sm-11 col-md-11 fw-2 mt-1 d-flex justify-content-lg-start justify-content-sm-center justify-content-md-center">
@@ -61,7 +64,7 @@
 
 							<div class="container-fluid p-sm-0 d-flex justify-content-lg-start justify-content-sm-center justify-content-md-center">
 								<div class="row d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center">
-									<div class="col-md-4 col-sm-4 col-lg-2  grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
+									<div class="col-md-5 col-sm-5 col-lg-2  grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
 										<a href="/procedure-creation-entreprise/Société à Responsabilité Limitée (SRL)" class="text-dark">
 											<div class="text-center m-1">
 												<img src="{{ asset('images/1.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
@@ -70,7 +73,7 @@
 										</a>
 									</div>
 
-									<div class="col-md-4 col-sm-4 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
+									<div class="col-md-5 col-sm-5 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
 										<a href="/procedure-creation-entreprise/Société Anonyme (SA)" class="text-dark">
 											<div class="text-center m-1">
 												<img src="{{ asset('images/8.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
@@ -79,7 +82,7 @@
 										</a>
 									</div>
 
-									<div class="col-md-4 col-sm-4 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
+									<div class="col-md-5 col-sm-5 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
 										<a href="/procedure-creation-entreprise/Société Coopérative (SC)" class="text-dark">
 											<div class="text-center m-1">
 												<img src="{{ asset('images/7.svg')}}" class="col-sm-4 col-md-3" alt="" srcset=""/>
@@ -88,7 +91,7 @@
 										</a>
 									</div>
 
-									<div class="col-md-4 col-sm-4 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
+									<div class="col-md-5 col-sm-5 col-lg-2 grid place-items rounded bg-white p-2 p-lg-3 shadow m-1 ">
 										<a href="/procedure-creation-entreprise/Société Simple (SS)" class="text-dark">
 											<div class="text-center m-1">
 												<img src="{{ asset('images/11.svg') }}" alt="" srcset=""/>
@@ -113,12 +116,14 @@
 			</div>
 		</div>
 	</div>
+	</div>
 
 
-	<div class="container-fluid">
-		<div class="row p-2 py-lg-4 py-sm-2 py-md-2 my-lg-1 my-sm-3 my-md-3 ">
-			<div class="col-lg-9 col-sm-11 col-md-11 m-auto">
-				<div class="border rounded p-3 py-lg-4 size-5">
+	<div class="col-12 d-flex justify-content-center" style="padding-top:40px; padding-bottom:25px">
+		<div class="container fv">
+		<div class="row ">
+			<div class="col-11 m-auto">
+				<div class="p-3 py-lg-4 size-5">
 					<b>Important</b>
 					: Il est important de déterminer la bonne forme juridique de votre société avant de démarrer votre activité, 
 					car cela peut avoir des conséquences importantes sur votre responsabilité financière, votre régime fiscal et votre gestion de l’entreprise.
@@ -127,6 +132,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 {% endblock %}
