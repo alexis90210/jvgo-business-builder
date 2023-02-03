@@ -507,7 +507,7 @@ div.dataTables_wrapper {
   display: none !important;
 }
 .with-background {
-  background: url('../assets/images/latest/3.png') center top -100px;
+  background: url('../assets/images/latest/1.png') center top -100px;
   background-repeat : no-repeat;
   background-size:cover;
   background-attachment:fixed;
