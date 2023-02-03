@@ -15,7 +15,7 @@
   --minmax: 250px;
 }
 body {
-  zoom:99.5% !important;
+  zoom: 99.5% !important;
 }
 
 a {
@@ -453,10 +453,10 @@ div.dataTables_wrapper {
   width: 1250px !important;
 }
 
-.form-control{
-  background:#F2F2F2;
-  border-radius:0px;
-  border:none;
+.form-control {
+  background: #f2f2f2;
+  border-radius: 0px;
+  border: none;
   padding: 14px;
 }
 
@@ -470,15 +470,13 @@ div.dataTables_wrapper {
 .mobile-ham {
   display: none !important;
 }
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .fv {
     width: 100vw !important;
   }
 }
 
-@media screen and (max-width:800px) {
-
-
+@media screen and (max-width: 800px) {
   .border {
     border: none !important;
   }
@@ -486,7 +484,7 @@ div.dataTables_wrapper {
     display: block !important;
   }
 
-  .with-background{
+  .with-background {
     height: 750px !important;
   }
 
@@ -498,30 +496,29 @@ div.dataTables_wrapper {
     padding: 30px;
   }
   .resize-width {
-    width:auto !important
+    width: auto !important;
   }
-  
 }
 
 .swal2-styled.swal2-confirm {
   display: none !important;
 }
 .with-background {
-  background: url('../assets/images/latest/1.png') center top -100px;
-  background-repeat : no-repeat;
-  background-size:cover;
-  background-attachment:fixed;
-  width:100%;
-  height:auto;	
+  background: url("../assets/images/latest/1.png") center top -100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
 }
 
-.with-bg-opacity {	
-  width:100%;
-  background-color: rgb(2,0,36,.5);
+.with-bg-opacity {
+  width: 100%;
+  background-color: rgb(2, 0, 36, 0.5);
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   .with-background {
-  overflow-y:scroll;	}
-  
+    overflow-y: scroll;
+  }
 }
