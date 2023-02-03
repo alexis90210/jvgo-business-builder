@@ -9,11 +9,14 @@
 		</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link rel="shortcut icon" href="{{ asset('images/jvgo_favicon.png') }}" type="image/x-icon"/>
-		<link rel="stylesheet" href="{{ asset('css/materialdesignicons.min.css') }}"/>
-		<link rel="stylesheet" href="{{ asset('css/main.v2.css') }}"/>
 
-		</style>
+
+		{% block mainStyle %}
+			<link rel="shortcut icon" href="{{ asset('images/jvgo_favicon.png') }}" type="image/x-icon"/>
+			<link rel="stylesheet" href="{{ asset('css/materialdesignicons.min.css') }}"/>
+			<link rel="stylesheet" href="{{ asset('css/main.v3.css') }}"/>
+
+		{% endblock %}
 
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
@@ -25,65 +28,66 @@
 		{% endblock %}
 	</head>
 
-	<body class="p-0 m-0">
-		{% block div %}
-			<div class="pt-1 border-bottom d-lg-none d-xl-none d-md-none d-sm-block d-xs-block bg-dark-blue not-immuable-on-mobile">
-				<div class="fv flex align-items justify-content-between py-2">
+	{% block mainView %}
 
-											<i class="mdi mdi-phone text-light size-5 fw-4"></i>
-											<span class="px-2 m-0 size-2 text-light">
-												Contacter un conseiller Jvgo
-												<b>+32 (0)4 775 068 67</b>
-											</span>
+	
+		<body class="p-0 m-0">
 
-										</div>
-			</div>
+			{% block div %}
+				<div class="pt-1 border-bottom d-lg-none d-xl-none d-md-none d-sm-block d-xs-block bg-dark-blue not-immuable-on-mobile">
+					<div class="fv flex align-items justify-content-between py-2">
 
-
-			<!-- HEADER -->
-			<div class="col-12 header-bar is-bg-primary text-light size-3 font-ubuntu d-lg-block d-xl-block d-md-none d-sm-none">
-				<div class="d-flex justify-content-center">
-					<div class="fv py-1 d-flex justify-content-between  align-items">
-
-
-						<div>Contacter un conseiller Jvgo au :
-						</div>
-
-
-						<div class="d-flex justify-content-between">
-							<div class="flex align-items">
-								<i class="mdi mdi-phone has-text-light size-7 fw-4"></i>
-								<div class="p-2 px-4">
-									<p class="p-0 m-0">
-										+32 (0)4 775 068 67
-									</p>
-								</div>
-							</div>
-
-							<div class="flex align-items">
-								<i class="mdi mdi-email-outline has-text-light size-7 fw-4"></i>
-								<div class="p-2 px-4">
-									<p class="p-0 m-0">contact@jvgo.be</p>
-								</div>
-							</div>
-
-							<div class="flex align-items">
-								<i class="mdi mdi-timer has-text-light size-7 fw-4"></i>
-								<div class="p-2 px-4">
-									<p class="p-0 m-0">lu-ve : 9h-19h</p>
-								</div>
-							</div>
-						</div>
-
+						<i class="mdi mdi-phone text-light size-5 fw-4"></i>
+						<span class="px-2 m-0 size-2 text-light">
+							Contacter un conseiller Jvgo
+							<b>+32 (0)4 775 068 67</b>
+						</span>
 
 					</div>
 				</div>
-			</div>
 
-			<!-- NAVIGATION -->
 
-			<div class="d-flex flex-direction-row justify-content-center col-12 pt-1 border-bottom section-navigation bg-white header-bar" >
-				<div class="hide-max-md  fv d-flex justify-content-between flex-nowrap" >
+				<!-- HEADER -->
+				<div class="col-12 header-bar bg-dark text-light size-3 font-ubuntu d-lg-block d-xl-block d-md-none d-sm-none">
+					<div class="d-flex justify-content-center">
+						<div class="fv d-flex justify-content-between  align-items">
+
+
+							<div>
+								<a href="#" class="text-light">Prenez
+									un rdv de 30 minutes pour poser vos questions</a>
+							</div>
+
+
+							<div class="d-flex justify-content-between">
+								<div class="flex align-items">
+									<i class="mdi mdi-phone has-text-light size-7 fw-4"></i>
+									<div class="p-2 px-4">
+										<p class="p-0 m-0">
+											+32 (0)4 775 068 67
+										</p>
+									</div>
+								</div>
+
+								<div class="flex align-items">
+									<i class="mdi mdi-email-outline has-text-light size-7 fw-4"></i>
+									<div class="p-2 px-4">
+										<p class="p-0 m-0">contact@jvgo.be</p>
+									</div>
+								</div>
+
+
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+				<!-- NAVIGATION -->
+
+				<div class="d-flex flex-direction-row justify-content-center col-12 pt-1 section-navigation bg-white  header-bar shadow">
+					<div class="hide-max-md  fv d-flex justify-content-between flex-nowrap">
 						<div>
 							<a href="/">
 								<img src="{{ asset('images/jbvo.png')}}" alt="" srcset="" class="logo"/>
@@ -91,180 +95,188 @@
 						</div>
 
 						<ul class="flex justify-content-end no-style navigation-bar m-1 align-items-center">
-							<li class="p-3 pr-0">
+							<li class="p-2 px-3 pr-0">
 								<div class="py-1 fw-2 no-wrap hoverable">
-									<a href="/creation-entreprise" class="text-dark size-5">Création d’entreprise</a>
+									<a href="/creation-entreprise" class=" fw-2 setLight size-5">Création d’entreprise</a>
 
 								</div>
 
 							</li>
-							<li class="p-3 pr-0">
+							<li class="p-2 px-3 pr-0">
 								<div class="py-1 fw-2 no-wrap hoverable">
-									<a href="/deleguer-ma-comptabilite" class="text-dark size-5">Comptabilité en ligne</a>
+									<a href="/deleguer-ma-comptabilite" class=" fw-2 setLight size-5">Comptabilité en ligne</a>
 
 								</div>
 							</li>
 
-							<li class="p-3 pr-0">
+							<li class="p-2 px-3 pr-0">
 								<div class="py-1 fw-2 no-wrap hoverable">
-									<a href="/blog" class="text-dark size-5">Blog</a>
+									<a href="/blog" class=" fw-2 setLight size-5">Blog</a>
 								</div>
 							</li>
 
-							<li class="p-3 pr-0">
+							<li class="p-2 px-3 pr-0">
 								<div class="py-1 fw-2 no-wrap hoverable">
-									<a href="/services" class="text-dark size-5">Nos services</a>
+									<a href="/services" class=" fw-2 setLight size-5">Nos services</a>
 								</div>
 							</li>
 
-							<li class="p-3 pr-0">
+							<li class="p-2 px-3 pr-0">
 								<div class="py-1 fw-2 no-wrap hoverable">
-									<a href="/apropos" class="text-dark size-5">A-propos</a>
+									<a href="/apropos" class=" fw-2 setLight size-5">A propos</a>
 								</div>
 							</li>
 						</ul>
 					</div>
-				{% block hamburger %}
+					{% block hamburger %}
 
-					<!-- MOBILE HAMBURGER -->
-					<div class="col-12 d-lg-none d-xl-none d-md-block d-sm-block d-xs-block">
-						<div class="px-3 py-1 d-flex justify-content-between align-items-center">
-							<img src="{{asset('images/jbvo.png')}}" width="140px" onclick="newPage('/')" alt="" srcset=""/>
+						<!-- MOBILE HAMBURGER -->
+						<div class="col-12 mobile-ham">
+							<div class="px-3 py-1 d-flex justify-content-between align-items-center">
+								<img src="{{asset('images/jbvo.png')}}" width="140px" onclick="newPage('/')" alt="" srcset=""/>
 
-							<div class="hamburger-btn">
-								<p class="size-9">
-									<i class="mdi mdi-menu"></i>
-									
-								</p>
+								<div class="hamburger-btn">
+									<p class="size-9">
+										<i class="mdi mdi-menu"></i>
+
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
-				{% endblock %}
-			</div>
-
-			<!-- MOBILE NAV FULL -->
-			<div class="container-fluid hamburger-mobile-menu d-none bg-dark p-0">
-				<div class="col-lg-6 p-0">
-					<p class="size-large px-3 text-white navlink d-flex justify-content-end close-hamburger navlink">
-						&times;
-					</p>
-					<div class="mt-4 d-flex flex-column justify-content-start mobile-view-nav">
-
-						<div class="py-3 px-4 fw-3 border-bottom">
-							<a href="/" class="text-white">Acceuil</a>
-						</div>
-
-						<div class="py-3 px-4 fw-3 border-bottom">
-							<a href="/creation-entreprise" class="text-white">Création d’entreprise</a>
-						</div>
-
-						<div class="py-3 px-4 fw-3 border-bottom">
-							<a href="/deleguer-ma-comptabilite" class="text-white">Comptabilité en ligne</a>
-						</div>
-
-
-						<div class="py-3 px-4 fw-3 border-bottom">
-							<a href="/blog" class="text-white">Blog</a>
-						</div>
-
-						<div class="py-3 px-4 fw-3 border-bottom">
-							<a href="/services" class="text-white">Nos services</a>
-						</div>
-
-						<div class="py-3 px-4 fw-3">
-							<a href="/apropos" class="text-white">Apropos</a>
-						</div>
-
-					</div>
+					{% endblock %}
 				</div>
-			</div>
 
-		{% endblock %}
+				<!-- MOBILE NAV FULL -->
+				<div class="container-fluid hamburger-mobile-menu d-none bg-dark p-0">
+					<div class="col-lg-6 p-0">
+						<p class="size-large px-3 text-white navlink d-flex justify-content-end close-hamburger navlink">
+							&times;
+						</p>
+						<div class="mt-4 d-flex flex-column justify-content-start mobile-view-nav">
 
-		{% block body %}{% endblock %}
+							<div class="py-3 px-4 fw-3 border-bottom">
+								<a href="/" class="text-white">Acceuil</a>
+							</div>
 
-		{% block footer %}
+							<div class="py-3 px-4 fw-3 border-bottom">
+								<a href="/creation-entreprise" class="text-white">Création d’entreprise</a>
+							</div>
 
-			<div class=" bg-dark font-ubuntu px-lg-3">
-				<div class="container-fluid p-2 pb-0 p-lg-4 text-light">
-					<div class="row p-2 p-lg-3">
-						<div class="col-lg-4  text-sm-center text-md-center text-lg-left text-xl-left">
-						<br>
-							<img src="{{asset('images/jbvo.png')}}" onclick="newPage('/')" width="160px" alt=""/>
-							<p class="size-5 opacity-2">
-								JVGO vous aide à la création de votre entreprise, au coaching d’équipe, à optimiser votre fiscalité.
-							</p>
+							<div class="py-3 px-4 fw-3 border-bottom">
+								<a href="/deleguer-ma-comptabilite" class="text-white">Comptabilité en ligne</a>
+							</div>
 
-							<div class="d-flex justify-content-lg-center justify-content-sm-center">
-								<p class="rounded p-3 size-9 ">
-									<i class="mdi mdi-facebook"></i>
-								</p>
-								<p class="rounded p-3 size-9 ">
-									<i class="mdi mdi-linkedin"></i>
-								</p>
+
+							<div class="py-3 px-4 fw-3 border-bottom">
+								<a href="/blog" class="text-white">Blog</a>
+							</div>
+
+							<div class="py-3 px-4 fw-3 border-bottom">
+								<a href="/services" class="text-white">Nos services</a>
+							</div>
+
+							<div class="py-3 px-4 fw-3">
+								<a href="/apropos" class="text-white">A propos</a>
 							</div>
 
 						</div>
-						<div class="col-lg-3 p-lg-4 px-sm-4 px-md-4">
-							<p class="font-ubuntu size-6 fw-bold pb-2 pt-3">JVGO</p>
-
-							<p class="m-0 size-5 opacity-2 is-pointer mb-2" onclick="newPage('/apropos')">À propos</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/condition-generale-de-vente')">CGV</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/mentions-legales')">Mentions Légales</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/politique-de-confidentialite')">Politique de confidentialité</p>
-						</div>
-
-
-						<div class="col-lg-2 p-lg-4 px-sm-4 px-md-4">
-
-							<p class="font-ubuntu size-6 pb-2 fw-bold pt-3">NOS SERVICES</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-2" onclick="newPage('/services/creation-entreprise')">Création d'entreprise</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/services/fiscalite')">Optimisation fiscale</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/services/comptabilite')">Comptabilité</p>
-
-						</div>
-
-						<div class="col-lg-3 p-lg-4 px-sm-4 px-md-4">
-
-							<p class="font-ubuntu size-6 fw-bold pb-2 pt-3">CONTACT</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-2">
-								<i class="mdi mdi-map-marker pr-4"></i>
-								207 Avenue Louise, 1050 Bruxelles, BELGIQUE
-							</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-2">
-								<i class="mdi mdi-phone pr-4"></i>
-								Phone:<a class="text-light" href="tel:+32 (0)4 775 068 67">
-									+32 (0)4 775 068 67</a>
-							</p>
-							<p class="m-0 size-5 opacity-2 is-pointer mb-2">
-								<i class="mdi mdi-email pr-4"></i>
-								<a class="text-light" href="mailto:contact@jvgo.be">contact@jvgo.be</a>
-							</p>
-
-
-						</div>
-
 					</div>
 				</div>
-			</div>
 
-		{% endblock %}
+			{% endblock %}
 
-		{% block copyright %}
-			<div class="bg-dark py-4" style="border-top:1px solid rgba(230,200,200,.06)">
-				<center>
-					<p class="text-white opacity-2 font-ubuntu mb-0 size-3">JVGO © Copyright 2023</p>
-				</center>
-			</div>
-		{% endblock %}
+			{% block body %}{% endblock %}
 
-		<!-- Loader -->
-		<div id="loader"></div>
+			{% block footer %}
 
-		<!-- js  -->
-		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		<script src="{{ asset('js/custom/main.v2.js')}}"></script>
-	</body>
+				<div class=" bg-dark font-ubuntu px-lg-3">
+					<div class="container-fluid p-2 pb-0 p-lg-4 text-light">
+						<div class="row p-2 p-lg-3">
+							<div class="col-lg-4  text-sm-center text-md-center text-lg-left text-xl-left">
+								<br>
+								<img src="{{asset('images/jbvo.png')}}" onclick="newPage('/')" width="160px" alt=""/>
+								<p class="size-5 opacity-2">
+									JVGO vous aide à créer votre entreprise, à gérer votre comptabilité
+et à optimiser votre scalité.
+								</p>
+
+								<div class="d-flex justify-content-lg-center justify-content-sm-center">
+									<p class="rounded p-3 size-9 ">
+										<i class="mdi mdi-facebook"></i>
+									</p>
+									<p class="rounded p-3 size-9 ">
+										<i class="mdi mdi-linkedin"></i>
+									</p>
+								</div>
+
+							</div>
+							<div class="col-lg-3 p-lg-4 px-sm-4 px-md-4">
+								<p class="font-ubuntu size-6 fw-bold pb-2 pt-3">JVGO</p>
+
+								<p class="m-0 size-5 opacity-2 is-pointer mb-2" onclick="newPage('/apropos')">À propos</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/condition-generale-de-vente')">CGV</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/mentions-legales')">Mentions Légales</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/politique-de-confidentialite')">Politique de confidentialité</p>
+							</div>
+
+
+							<div class="col-lg-2 p-lg-4 px-sm-4 px-md-4">
+
+								<p class="font-ubuntu size-6 pb-2 fw-bold pt-3">NOS SERVICES</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-2" onclick="newPage('/services/creation-entreprise')">Création d'entreprise</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/services/fiscalite')">Optimisation fiscale</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-1" onclick="newPage('/services/comptabilite')">Comptabilité</p>
+
+							</div>
+
+							<div class="col-lg-3 p-lg-4 px-sm-4 px-md-4">
+
+								<p class="font-ubuntu size-6 fw-bold pb-2 pt-3">CONTACT</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-2">
+									<i class="mdi mdi-map-marker pr-4"></i>
+									207 Avenue Louise, 1050 Bruxelles, BELGIQUE
+								</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-2">
+									<i class="mdi mdi-phone pr-4"></i>
+									Phone:<a class="text-light" href="tel:+32 (0)4 775 068 67">
+										+32 (0)4 775 068 67</a>
+								</p>
+								<p class="m-0 size-5 opacity-2 is-pointer mb-2">
+									<i class="mdi mdi-email pr-4"></i>
+									<a class="text-light" href="mailto:contact@jvgo.be">contact@jvgo.be</a>
+								</p>
+
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			{% endblock %}
+
+			{% block copyright %}
+				<div class="bg-dark py-4" style="border-top:1px solid rgba(230,200,200,.06)">
+					<center>
+						<p class="text-white opacity-2 font-ubuntu mb-0 size-3">JVGO © Copyright 2023</p>
+					</center>
+				</div>
+			{% endblock %}
+
+			<!-- Loader -->
+			<div id="loader"></div>
+
+			<!-- js  -->
+			<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+			<script src="{{ asset('js/custom/main.v2.js')}}"></script>
+		
+			
+		</body>
+
+	{% endblock %}
 </html>
+
+			
+

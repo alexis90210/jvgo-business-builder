@@ -8,11 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class DemandesController extends AbstractController
 {
-    #[Route('/dashboard/demandes/{type}', name: 'app_demandes')]
-    public function index(string $type , ManagerRegistry $doctrine, Request $request): Response
+    #[Route('/dashboard/#demandes-{type}', name: 'app_demandes')]
+    public function index(string $type , ManagerRegistry $doctrine, Request $request, AuthenticationUtils $auth): Response
     {
         $session = $request->getSession();
 
@@ -39,10 +40,12 @@ class DemandesController extends AbstractController
             die('Access refused');
          }
 
-        return $this->render('demandes/index.html.twig', [
+        
+         return $this->render('dashboard/demandes.html.twig', [
             'switcher' => $type,
             'demandes' => array_reverse($demandes),
             'count' => count( $demandes ),
+            'user' => $auth->getLastUsername()
         ]);
 
 

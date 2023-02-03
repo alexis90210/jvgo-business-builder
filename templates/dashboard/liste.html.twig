@@ -1,0 +1,124 @@
+{% extends "dashboard/_base.html.twig" %}
+
+{% block injectedPage %}
+
+	<!-- start page title -->
+	<div class="row">
+		<div class="col-12">
+			<div class="page-title-box d-flex align-items-center justify-content-between">
+				<h4 class="page-title mb-0 font-size-18">Total # {{ demandes | length}}</h4>
+			</div>
+		</div>
+	</div>
+	<!-- end page title -->
+
+	<div class="row">
+
+		<div class="col-xl-12">
+			{% if type == 1 %}
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title mb-4">Les demandes (creation d'entreprise)</h4>
+
+						<div class="table-responsive">
+							<table class="table table-centered">
+								<thead>
+									<tr>
+										<th scope="col">Id no.</th>
+										<th scope="col">Noms & Prenoms</th>
+										<th scope="col">Email</th>
+										<th scope="col" colspan="2">Type/Entreprise</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for demande in demandes %}
+
+
+										<tr>
+											<td>
+												<a href="javascript: void(0);" class="text-body fw-medium">#{{ demande.id }}</a>
+											</td>
+											<td>{{ demande.nom }}
+												{{ demande.prenom }}</td>
+											<td>{{ demande.Email }}</td>
+											<td>
+												<div>{{ demande.TypeEntreprise}}</div>
+												<span class="badge badge-soft-success font-size-12">{{ demande.NomStructure}}</span>
+											</td>
+											<td>
+												<a href="/dashboard/consultion-demandes-{{demande.id}}" class="btn btn-primary btn-sm">Voir</a>
+											</td>
+										</tr>
+
+									{% endfor %}
+
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			{% endif %}
+
+
+			<br>
+
+			{% if type ==2 %}
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title mb-4">Les demandes (déleguer ma Comptabilité)</h4>
+
+						<div class="table-responsive">
+							<table class="table table-centered">
+								<thead>
+									<tr>
+										<th scope="col">Id no.</th>
+										<th scope="col">Noms & Prenoms</th>
+										<th scope="col">Email</th>
+										<th scope="col" colspan="4">Abonnement/Prix</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for demande in demandes %}
+									
+
+											<tr>
+												<td>
+													<a href="javascript: void(0);" class="text-body fw-medium">#{{ demande.id }}</a>
+												</td>
+												<td>{{ demande.nom }}
+													{{ demande.prenom }}</td>
+												<td>{{ demande.Email }}</td>
+												<td>
+													<div>{{ demande.TypeAbonnement}}</div>
+													<span class="badge badge-soft-success font-size-12">
+														€
+														{{ demande.Montant}}</span>
+												</td>
+												<td>
+													<a href="/dashboard/consultion-demandes-{{demande.id}}" class="btn btn-primary btn-sm">Voir</a>
+												</td>
+											</tr>
+
+								
+
+									{% endfor %}
+
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			{% endif %}
+
+		</div>
+
+
+	</div>
+	<!-- end row -->
+
+
+{% endblock %}

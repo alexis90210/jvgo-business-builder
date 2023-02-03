@@ -1,0 +1,120 @@
+{% extends "dashboard/_base.html.twig" %}
+
+{% block injectedPage %}
+
+	<!-- start page title -->
+	<div class="row">
+		<div class="col-12">
+			<div class="page-title-box d-flex align-items-center justify-content-between">
+				<h4 class="page-title mb-0 font-size-18">Consulation</h4>
+			</div>
+		</div>
+	</div>
+	<!-- end page title -->
+
+	<div class="row">
+		<div class="col-lg-8">
+			<div class="card">
+				<div class="card-body">
+					<div class="invoice-title">
+						<h4 class="float-end font-size-16">No. #
+							{{demandes.id}}</h4>
+						<div class="mb-4">
+							<img src="#" alt="" height="20"/>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-6">
+							<strong>
+								<address>
+
+									Nom & Prenoms :<br>
+									Email :
+									<br>
+									Structure :
+									<br>
+									Type :
+									<br>
+									{% if demandes.EntrepriseOrCompta == 2 %}
+										Formule :
+										<br>
+									{% endif %}
+								</address>
+							</strong>
+						</div>
+						<div class="col-6 text-end">
+							<address>
+
+								{{ demandes.nom}}
+								{{ demandes.prenom}}<br>
+								{{ demandes.Email}}<br>
+								{{ demandes.Structure}}<br>
+								{{ demandes.TypeEntreprise}}<br>
+								{% if demandes.EntrepriseOrCompta == 2 %}
+									{{ demandes.Formule}}<br>
+								{% endif %}
+							</address>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6 mt-3">
+							<address>
+								{% if demandes.EntrepriseOrCompta == 2 %}
+									<strong>Montant</strong><br>
+								{% endif %}
+								<strong>Date</strong><br>
+
+							</address>
+						</div>
+						<div class="col-6 mt-3 text-end">
+							<address>
+
+								{% if demandes.EntrepriseOrCompta == 2 %}
+									<h2>€
+										{{ demandes.Montant}}</h2>
+								{% endif %}
+								{{ demandes.DateCreation}}<br><br>
+							</address>
+						</div>
+					</div>
+
+
+					<div class="d-print-none">
+						<div class="float-end">
+							<a href="javascript:window.print()" class="btn btn-success waves-effect waves-light">
+								<i class="fa fa-print"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="card d-flex justify-content-center">
+				{% if demandes.Status != "Repondu" %}
+					<div class="col-lg-10 m-2 mb-5">
+						<p class="pt-4">Reponse a la
+							<span class="is-text-primary">demande</span>.</p>
+
+						<textarea name="" cols="30" id="message-reponse" placeholder="Ecrivez votre message de reponse ici" class="form-control" rows="5"></textarea>
+
+						<center id="loading-indicator" class="d-none">
+							<img src="{{ asset('images/loader.svg')}}" width="100px">
+						</center>
+
+						<a class="btn btn-secondary my-3" href="#">Valider</a>
+
+					</div>
+				{% else %}
+					<p class="alert alert-success my-3">Repondu</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<script>// ----------------------------------------------------------------------------
+// reponse mail
+// ----------------------------------------------------------------------------
+</script>{% endblock %}

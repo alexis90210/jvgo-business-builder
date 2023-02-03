@@ -5,80 +5,79 @@
 
 {% block body %}
 
-	<style>
-		.swal2-styled.swal2-confirm {
-			display: none !important;
-		}
-	</style>
 
 	<!-- SECTION 1 -->
-	<div class="d-flex justify-content-center setpad">
-		<div class="container-fluid p-0 section-1 p-0 pt-lg-3 fv">
+	<div class="d-flex justify-content-center setpad with-background">
+		<div class="with-bg-opacity">
 			<div style="margin-top:8em" class="d-sm-none d-md-block d-lg-block"></div>
 			<div style="margin-top:4em" class="d-sm-block d-lg-none d-xl-none"></div>
-			<div class="row  p-0">
-				<div class="col-lg-7 m-auto p-0">
+			<div class="container-fluid p-0 section-1 p-0 pt-lg-3 fv resize-width">
+				<div class="row  p-0">
+					<div class="col-lg-7 m-auto p-0">
 
 
-					<p class="text-dark fs-3 fw-3 pr-5 p-sm-3 p-md-3 mb-0  row-5">
-						La solution qui vous accompagne dans la gestion économique de votre société  pour que vous restiez concentré sur votre core business.
-					</p>
+						<h1 class="text-light text-center fs-1 fw-3 mb-0 mt-4">
+							Toutes les étapes de la création de votre entreprise
+						</h1>
+						<h4 class="text-light text-center fs-5 mb-0  text-center fw-2">
+							depuis  le
+													choix de votre statut juridique jusqu'à la rédaction de votre business
+													plan et du plan financier.</h4>
 
-					<div
-						class="p-sm-1 p-md-1 ">
+						<div
+							class="p-sm-1 p-md-1 mt-3">
 
-						<!-- ACTIONS -->
+							<!-- ACTIONS -->
 
-						<div class="container-fluid m-0 py-lg-4 pt-5 p-sm-2 p-md-2 pt-sm-2 pt-md-2">
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="button-effect-3 m-1 py-3 py-sm-2 py-md-2">
-										<a href="/creation-entreprise" class="p-1">
-											<span class="no-wrap">
-												<i class="mdi mdi-chevron-right"></i>
-												Créer mon entreprise
-											</span>
-										</a>
+							<div class="container-fluid m-0 p-0 py-lg-4 pt-3 my-3 mb-4">
+								<div class="row">
+									<div class="col-lg-6 col-md-5 m-auto">
+										<center class="pt-5">
+
+											<a href="/creation-entreprise" class="btn btn-secondary px-4 ">
+												<span class="no-wrap">
+													<i class="mdi mdi-chevron-right"></i>
+													Créer mon entreprise
+												</span>
+											</a>
+										</center>
+										<p class="text-center text-light size-4 py-3 px-2 opacity-3">
+											Toutes les étapes de création de votre entreprise, 
+																																																																												du choix de votre statut juridique jusqu'à la rédaction 
+																																																																												de votre business plan et plan financier.
+										</p>
 									</div>
-									<p class="text-center size-7 py-3 px-2 opacity-3">
-										Toutes les étapes de création de votre entreprise, 
-																																																							du choix de votre statut juridique jusqu'à la rédaction 
-																																																							de votre business plan et plan financier.
-									</p>
-								</div>
-								<div class="col-lg-6">
-									<div class="button-effect-3 actived-btn m-1 py-3 py-sm-2 py-md-2">
-										<a href="/deleguer-ma-comptabilite" class="p-1">
-											<span class="no-wrap">
+									<div class="col-lg-6 col-md-5 m-auto border rounded grid place-items">
+										<center class="pt-5">
+											<a href="/deleguer-ma-comptabilite" class="btn btn-secondary px-4">
+												<span class="no-wrap">
 
-												<i class="mdi mdi-chevron-right"></i>
-												Gérer ma comptabilité
-											</span>
-										</a>
+													<i class="mdi mdi-chevron-right"></i>
+													Gérer ma comptabilité
+												</span>
+											</a>
+										</center>
+
+										<p class="text-center text-light size-4 py-3 px-2 opacity-3">
+											Des services de comptabilité et de gestion afin de vous aider à gérer efficacement votre entreprise une fois créée.
+										</p>
+
 									</div>
-
-									<p class="text-center size-7 py-3 px-2 opacity-3">
-										Des services de comptabilité et de gestion afin de vous aider à gérer efficacement votre entreprise une fois créée.
-									</p>
-
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-lg-5 d-lg-block d-xl-block d-md-none d-sm-none m-auto p-0">
-					<img src="{{ asset('images/home.png')}}" class="image1 m-0 p-0 " alt="" srcset=""/>
 				</div>
 			</div>
+			<br>
 		</div>
 	</div>
 
 	<!-- SECTION 2 -->
 
-	<br class="d-sm-none d-md-none d-lg-block d-lg-block">
 
-	<div class="col-12 bg-light d-flex justify-content-center" style="padding-top:80px; padding-bottom:80px">
+	<div class="col-12 d-flex justify-content-center" style="padding-top:80px; padding-bottom:40px">
 		<div class="container-fluid fv p-0">
 			<div class="row p-0 m-0">
 				<div class="col-11 m-auto p-0">
@@ -95,15 +94,17 @@
 									</p>
 									<br>
 									<p class="size-9 fw-5 m-0">
-										Démarrez la création de votre société en quelques clics et nous nous occupons du reste
+										Nos services de comptabilité et de gestion financière vous
+										facilitent la vie et vous permettent de faire fonctionner
+										efficacement votre entreprise.
 									</p>
 									<br>
-									<p class="m-0 my-2  size-7">La solution la plus simple, économique et rapide pour créer votre société
+									<p class="m-0 my-2  size-7">La solution la plus simple, économique et rapide pour créer votre société.
 									</p>
 
-									<p class="m-0 my-2  size-7">Votre société immatriculée en 3 semaine</p>
+									<p class="m-0 my-2  size-7">Votre société immatriculée en 3 semaines .</p>
 
-									<p class="m-0 my-2  size-7">Tarif unique et transparent</p>
+									<p class="m-0 my-2  size-7">Tarif unique et transparent .</p>
 									<br>
 									<br>
 									<div class="d-flex justify-content-lg-start justify-content-sm-center justify-content-md-center">
@@ -126,7 +127,7 @@
 
 
 	<!-- SECTION 3 -->
-	<div class="col-12 d-flex flex-direction-column  justify-content-center" style="padding-top:60px; padding-bottom:60px">
+	<div class="col-12 d-flex flex-direction-column  justify-content-center" style="padding-top:50px; padding-bottom:40px">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-8 text-center m-auto">
@@ -158,42 +159,42 @@
 													Création de votre société
 												</p>
 												<ul class="size-6 no-style p-0">
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Rédaction des
-																																																																																																																										            Statuts de la Société
+																																																																																																																																																						            Statuts de la Société
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Étude de
-																																																																																																																										            faisabilité
+																																																																																																																																																						            faisabilité
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Fourniture d’un plan (cartographie) détaillé du process
-																																																																																																																										            d’incorporation de la société
+																																																																																																																																																						            d’incorporation de la société
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Vérification du
-																																																																																																																										            dossier
+																																																																																																																																																						            dossier
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Etablissement du
-																																																																																																																										            plan financier par notre expert comptable
-																																																																																																																										            partenaire
+																																																																																																																																																						            plan financier par notre expert comptable
+																																																																																																																																																						            partenaire
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Prise de
-																																																																																																																										            rendez-vous pour passage de l’acte authentique
-																																																																																																																										            devant le notaire
+																																																																																																																																																						            rendez-vous pour passage de l’acte authentique
+																																																																																																																																																						            devant le notaire
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Immatriculation
-																																																																																																																										            auprès du greffe
+																																																																																																																																																						            auprès du greffe
 													</li>
 												</ul>
 												<p class="text-center">
@@ -220,28 +221,28 @@
 													Pourquoi choisir votre notre pack compta pour		             votre entreprise?
 												</p>
 												<ol class="size-6 no-style p-0">
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														. Un comptable
-																																																																																																																										            dédié et disponible pour répondre à toutes vos
-																																																																																																																										            sollicitations tout au long de l’année par
-																																																																																																																										            tchat, téléphone et même visioconférence.
+																																																																																																																																																						            dédié et disponible pour répondre à toutes vos
+																																																																																																																																																						            sollicitations tout au long de l’année par
+																																																																																																																																																						            tchat, téléphone et même visioconférence.
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Des conseils
-																																																																																																																										            illimités avec notre juriste fiscalité et vos
-																																																																																																																										            déclarations d’impôt faites en toute sérénité
-																																																																																																																										            et à temps
+																																																																																																																																																						            illimités avec notre juriste fiscalité et vos
+																																																																																																																																																						            déclarations d’impôt faites en toute sérénité
+																																																																																																																																																						            et à temps
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Un logiciel
-																																																																																																																							            comptable intelligent qui vous permet de gérer
-																																																																																																																										            efficacement la comptabilité de votre
-																																																																																																																										            entreprise, de gagner du temps et d'optimiser
-																																																																																																																										            votre travail en automatisant certaines tâches
-																																																																																																																										            fastidieuses et répétitives
+																																																																																																																																																			            comptable intelligent qui vous permet de gérer
+																																																																																																																																																						            efficacement la comptabilité de votre
+																																																																																																																																																						            entreprise, de gagner du temps et d'optimiser
+																																																																																																																																																						            votre travail en automatisant certaines tâches
+																																																																																																																																																						            fastidieuses et répétitives
 													</li>
 												</ol>
 												<p class="text-center">
@@ -263,28 +264,26 @@
 										<div class="col-lg-12 m-auto">
 											<div class="m-1 p-2 p-lg-4 pt-2">
 												<p class="size-7 fw-bold">
-													Création de votre société + Comptabilité
+													Création de votre société + fiscalité
 												</p>
 												<p class="size-6">
-													Bénéficiez avec votre pack création d’une		             réduction exclusive sur nos tarifs de gestion		             comptable et optimisation fiscale comprenant:
+													Bénéficiez, avec votre pack création, d’une réduction exclusive sur
+													nos tarifs de gestion comptable et optimisation fiscale comprenant:
 												</p>
 												<ul class="size-6 no-style p-0">
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
-														Un comptable
-																																																																																																																										            dédié et disponible
+														Un comptable dédié et disponible
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
 														Logiciel
-																																																																																																																										            comptable intelligent
+																																																																																																																																																						            comptable intelligent
 													</li>
-													<li class="pb-3">
+													<li class="pb-3 d-flex justify-content-lg-start gap-2">
 														<i class="mdi mdi-check"></i>
-														Des conseils
-																																																																																																																										            illimités avec notre juriste fiscalité et vos
-																																																																																																																										            déclarations d’impôt faites en toute sérénité
-																																																																																																																										            et à temps
+														Des conseils illimités avec notre juriste fiscaliste et vos
+														déclarations d’impôt faites en toute sérénité et à temps
 													</li>
 												</ul>
 												<p class="text-center">
@@ -306,7 +305,7 @@
 
 	<!-- SECTION 12 -->
 
-	<div class="col-12 bg-light d-flex flex-direction-row  justify-content-center" style="padding-top:60px; padding-bottom:60px">
+	<div class="col-12 bg-light d-flex flex-direction-row  justify-content-center" style="padding-top:40px; padding-bottom:60px">
 		<div class="fv text-center">
 			<p class="size-10 fw-bold">
 				Intéressé(e) par l’un de nos services comptables ?
@@ -317,128 +316,128 @@
 
 			<p class="size-7  text-black mb-2">
 				Vous souhaitez démarrer votre activité ? Déléguer votre compta
-																																																																				  ? Ou contacter un de nos experts pour avoir plus
-																																																																				  d’informations ?
+																																																																												  ? Ou contacter un de nos experts pour avoir plus
+																																																																												  d’informations ?
 			</p>
 
 			<p class="size-7  text-black mb-2">
 				Notre équipe est là pour vous conseiller. Remplissez le
-																																																																				  formulaire et vous recevrez une réponse en moins de 24 heures.
+																																																																												  formulaire et vous recevrez une réponse en moins de 24 heures.
 			</p>
 		</div>
 
-		
+
 	</div>
 
 
 	<div class="col-12 d-flex flex-direction-row  justify-content-center" style="padding-top:20px; padding-bottom:10px">
 		<div class="fv  d-flex justify-content-center">
-		<div class="col-7  col-sm-12 col-md-12" id="contact-form">
-			<div class="p-2 p-lg-4  px-sm-3 px-md-3">
-				<br/>
-				<div class="container-fluid p-sm-0 p-md-0">
-					<div class="row">
-						<div class="col-lg-6">
-							<p class="m-0 mb-1">
-								Je souhaite
-								<span>
-									<sup class="is-text-primary">*</sup>
-								</span>
-							</p>
-							<select class="form-control" id="Motif">
-								<option value="Déléguer ma comptabilité en tant qu'indépendant">
-									Déléguer ma comptabilité en tant qu'indépendant
-								</option>
-								<option value="Déléguer ma comptabilité en tant que société">
-									Déléguer ma comptabilité en tant que société
-								</option>
-								<option value="Devenir indépendant">
-									Devenir indépendant
-								</option>
-								<option value="Créer une entreprise">
-									Créer une entreprise
-								</option>
-								<option value="Autre">Autre</option>
-							</select>
-						</div>
+			<div class="col-7  col-sm-12 col-md-12" id="contact-form">
+				<div class="p-2 p-lg-4  px-sm-3 px-md-3">
+					<br/>
+					<div class="container-fluid p-sm-0 p-md-0">
+						<div class="row">
+							<div class="col-lg-6">
+								<p class="m-0 mb-1">
+									Je souhaite
+									<span>
+										<sup class="is-text-primary">*</sup>
+									</span>
+								</p>
+								<select class="form-control" id="Motif">
+									<option value="Déléguer ma comptabilité en tant qu'indépendant">
+										Déléguer ma comptabilité en tant qu'indépendant
+									</option>
+									<option value="Déléguer ma comptabilité en tant que société">
+										Déléguer ma comptabilité en tant que société
+									</option>
+									<option value="Devenir indépendant">
+										Devenir indépendant
+									</option>
+									<option value="Créer une entreprise">
+										Créer une entreprise
+									</option>
+									<option value="Autre">Autre</option>
+								</select>
+							</div>
 
-					
-						<div class="col-lg-6">
-							<p class="m-0 mb-1">
-								Civilité
-								<span>
-									<sup class="is-text-primary">*</sup>
-								</span>
-							</p>
 
-							<select class="form-control" id="Civilite">
-								<option value=""></option>
-								<option value="Mme.">Madame</option>
-								<option value="Mr.">Monsieur</option>
-							</select>
-						</div>
-					</div>
-				</div>
+							<div class="col-lg-6">
+								<p class="m-0 mb-1">
+									Civilité
+									<span>
+										<sup class="is-text-primary">*</sup>
+									</span>
+								</p>
 
-				<br/>
-
-				<div class="container-fluid p-sm-0 p-md-0">
-					<div class="row">
-						<div class="col-lg-6">
-							<p class="m-0 mb-1">Nom<span>
-									<sup class="is-text-primary">*</sup>
-								</span>
-							</p>
-							<input type="text" class="form-control" id="Nom"/>
-						</div>
-
-						<div class="col-lg-6">
-							<p class="m-0 mb-1">Prénom<span>
-									<sup class="is-text-primary">*</sup>
-								</span>
-							</p>
-							<input type="text" class="form-control" id="Prenom"/>
-						</div>
-
-						<div class="col-lg-6">
-							<p class="m-0 mb-1 mt-2">Email<span>
-									<sup class="is-text-primary">*</sup>
-								</span>
-							</p>
-							<input type="email" class="form-control" id="Email"/>
-						</div>
-
-						<div class="col-lg-6">
-							<p class="m-0 mb-1 mt-2">Téléphone<span>
-									<sup class="is-text-primary">*</sup>
-								</span>
-							</p>
-							<input type="tel" class="form-control" id="Mobile"/>
+								<select class="form-control" id="Civilite">
+									<option value=""></option>
+									<option value="Mme.">Madame</option>
+									<option value="Mr.">Monsieur</option>
+								</select>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="my-5 text-center">
-					<center id="loading-indicator" class="d-none">
-						<img src="{{ asset('images/loader.svg')}}" width="80px">
-					</center>
+					<br/>
 
-					<p class="text-center size-6 mb-4 fw-3 alert alert-danger d-none" id="error-display"></p>
-					
-					<div class="pt-4">
-					<a onclick="selectInfo()" class="button-effect-3 size-6  px-3 py-2">
-						<span class="px-4">
-							Envoyer
-						</span>
-					</a>
+					<div class="container-fluid p-sm-0 p-md-0">
+						<div class="row">
+							<div class="col-lg-6">
+								<p class="m-0 mb-1">Nom<span>
+										<sup class="is-text-primary">*</sup>
+									</span>
+								</p>
+								<input type="text" class="form-control" id="Nom"/>
+							</div>
+
+							<div class="col-lg-6">
+								<p class="m-0 mb-1">Prénom<span>
+										<sup class="is-text-primary">*</sup>
+									</span>
+								</p>
+								<input type="text" class="form-control" id="Prenom"/>
+							</div>
+
+							<div class="col-lg-6">
+								<p class="m-0 mb-1 mt-2">Email<span>
+										<sup class="is-text-primary">*</sup>
+									</span>
+								</p>
+								<input type="email" class="form-control" id="Email"/>
+							</div>
+
+							<div class="col-lg-6">
+								<p class="m-0 mb-1 mt-2">Téléphone<span>
+										<sup class="is-text-primary">*</sup>
+									</span>
+								</p>
+								<input type="tel" class="form-control" id="Mobile"/>
+							</div>
+						</div>
 					</div>
 
+					<div class="my-5 text-center">
+						<center id="loading-indicator" class="d-none">
+							<img src="{{ asset('images/loader.svg')}}" width="80px">
+						</center>
+
+						<p class="text-center size-6 mb-4 fw-3 alert alert-danger d-none" id="error-display"></p>
+
+						<div class="pt-4">
+							<a onclick="selectInfo()" class="button-effect-3 size-6  px-3 py-2">
+								<span class="px-4">
+									Envoyer
+								</span>
+							</a>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		</div>
-		</div>
 	</div>
-	
+
 
 	<script src="{{asset('js/custom/sendmail.min.js')}}"></script>
 
