@@ -514,8 +514,20 @@ div.dataTables_wrapper {
 
 .with-bg-opacity {
   width: 100%;
-  background-color: rgb(2, 0, 36, 0.5);
+  background-color: rgba(2, 0, 36, 0.9);
 }
+
+.btn-secondary-custom {
+  background-color: #fff;
+  color: var(--primary);
+}
+
+.btn-secondary-custom-primary {
+  background-color: rgb(99,124,118);
+  color: #fff
+}
+
+
 
 @media screen and (max-width: 800px) {
   .with-background {
