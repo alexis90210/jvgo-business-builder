@@ -476,7 +476,7 @@ div.dataTables_wrapper {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 910px) {
   .border {
     border: none !important;
   }

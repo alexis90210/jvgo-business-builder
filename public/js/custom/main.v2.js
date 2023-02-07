@@ -53,7 +53,7 @@ try {
       for (let e = 0; e < len; e++) {
         selectableBox[e].classList.remove("selectable-box-selected");
       }
-      l.classList.add("selectable-box-selected");
+      // l.classList.add("selectable-box-selected");
     });
   }
 
