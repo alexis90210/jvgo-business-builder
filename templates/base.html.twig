@@ -10,13 +10,36 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+		{% block meta %}
+			<meta name="title" content="JVGO : Comptabilité, Création d'entreprise, … À Bruxelles">
+			<meta name="description" content="Notre expertise en comptabilité, création d'entreprise et conseil fiscal vous permet de créer, gérer et développer votre entreprise en toute sérénité."/>
+			<link rel="canonical" href="https://jvgo.be/"/>
+			<meta property="og:locale" content="fr_FR"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:title" content="Jvgo"/>
+			<meta property="og:description" content="Notre expertise en comptabilité, création d'entreprise et conseil fiscal vous permet de créer, gérer et développer votre entreprise en toute sérénité."/>
+			<meta property="og:url" content="https://jvgo.be/"/>
+			<meta property="og:site_name" content="Jvgo"/>
+			<meta name="keywords" content="JVGO">
+			<meta name="keywords" content="Comptabilité, Création d'entreprise">
+		{% endblock %}
+
 
 		{% block mainStyle %}
 			<link rel="shortcut icon" href="{{ asset('images/jvgo_favicon.png') }}" type="image/x-icon"/>
 			<link rel="stylesheet" href="{{ asset('css/materialdesignicons.min.css') }}"/>
 			<link rel="stylesheet" href="{{ asset('css/main.v4.css') }}"/>
-
 		{% endblock %}
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZJV42TX50"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-9ZJV42TX50');
+		</script>
 
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
@@ -30,7 +53,7 @@
 
 	{% block mainView %}
 
-	
+
 		<body class="p-0 m-0">
 
 			{% block div %}
@@ -72,7 +95,7 @@
 								<div class="flex align-items">
 									<i class="mdi mdi-email-outline has-text-light size-7 fw-4"></i>
 									<div class="p-2 px-4">
-										<p class="p-0 m-0">contact@jvgo.be</p>
+										<p class="p-0 m-0">info.jvgo@gmail.com</p>
 									</div>
 								</div>
 
@@ -90,7 +113,7 @@
 					<div class="hide-max-md  fv d-flex justify-content-between flex-nowrap">
 						<div>
 							<a href="/">
-								<img src="{{ asset('images/jbvo.png')}}" alt="" srcset="" class="logo"/>
+								<img src="{{ asset('images/jbvo.png')}}" alt="jbvo" srcset="" class="logo"/>
 							</a>
 						</div>
 
@@ -133,7 +156,7 @@
 						<!-- MOBILE HAMBURGER -->
 						<div class="col-12 mobile-ham">
 							<div class="px-3 py-1 d-flex justify-content-between align-items-center">
-								<img src="{{asset('images/jbvo.png')}}" width="140px" onclick="newPage('/')" alt="" srcset=""/>
+								<img src="{{asset('images/jbvo.png')}}" width="140px" onclick="newPage('/')" alt="jvgo" srcset=""/>
 
 								<div class="hamburger-btn">
 									<p class="size-9">
@@ -195,12 +218,19 @@
 						<div class="row p-2 p-lg-3">
 							<div class="col-lg-4  text-sm-center text-md-center text-lg-left text-xl-left">
 								<br>
-								<img src="{{asset('images/jbvo.png')}}" onclick="newPage('/')" width="160px" alt=""/>
+								<img src="{{asset('images/jbvo.png')}}" onclick="newPage('/')" width="160px" alt="jvgo"/>
 								<p class="size-6 opacity-2">
-									JVGO vous aide à créer votre entreprise, <br> à gérer votre comptabilité
-et à optimiser votre fiscalité. <br><br>
-<a href="https://calendly.com/jvgo/appel" class="text-light"><u>Prenez
-									un rdv de 30 minutes pour <br> poser vos questions</u></a>
+									JVGO vous aide à créer votre entreprise,
+									<br>
+									à gérer votre comptabilité
+									et à optimiser votre fiscalité.
+									<br><br>
+									<a href="https://calendly.com/jvgo/appel" class="text-light">
+										<u>Prenez
+																				un rdv de 30 minutes pour
+											<br>
+											poser vos questions</u>
+									</a>
 								</p>
 
 								<div class="d-flex justify-content-lg-center justify-content-sm-center">
@@ -246,7 +276,7 @@ et à optimiser votre fiscalité. <br><br>
 								</p>
 								<p class="m-0 size-6 opacity-2 is-pointer mb-2">
 									<i class="mdi mdi-email pr-4"></i>
-									<a class="text-light" href="mailto:contact@jvgo.be">contact@jvgo.be</a>
+									<a class="text-light" href="mailto:info.jvgo@gmail.com">info.jvgo@gmail.com</a>
 								</p>
 
 
@@ -273,12 +303,9 @@ et à optimiser votre fiscalité. <br><br>
 			<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 			<script src="{{ asset('js/custom/main.v2.js')}}"></script>
-		
-			
+
+
 		</body>
 
 	{% endblock %}
 </html>
-
-			
-
