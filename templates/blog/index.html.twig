@@ -5,7 +5,7 @@
 
 {% block body %}
 	<div class="container-fluid mt-1 py-2" >
-		<div style="margin-top:8em" class="d-sm-none d-md-block d-lg-block"></div>
+		<div style="margin-top:5em" class="d-sm-none d-md-block d-lg-block"></div>
 		<div style="margin-top:2em" class="d-sm-block d-lg-none d-xl-none"></div>
 		<div class="row p-2">
 			<div class="col-lg-12 m-auto">
@@ -79,6 +79,29 @@
 								</div>
 							</a>
 						</div>
+
+						{% for blog in blogs %}
+							<div class="col-lg-4 col-md-12 col-sm-12">
+							<a href="/contenu/actualite/dynamic/{{blog.id}}" class="text-dark">
+								<div class="m-2 bg-light p-2 p-lg-4">
+									{% if blog.image == '' %}
+									
+									<img src="{{asset('uploads/{{blog.image}}')}}" class="row-5 text-center" alt=""/>
+									{% else %}
+										<img src="{{asset('images/act1.jpg')}}" class="row-5 text-center" alt=""/>
+									{% endif %}
+									<p class="size-7 text-black fw-5 m-0 mt-4">
+										<u class="fw-bold is-text-primary">{{ blog.titre}}</u>
+									</p>
+
+									<p class="size-7 mt-2">
+										{{ blog.description}}
+									</p>
+									<p class="opacity-2">{{ blog.publication}}</p>
+								</div>
+							</a>
+						</div>
+						{% endfor %}
 
 
 					</div>

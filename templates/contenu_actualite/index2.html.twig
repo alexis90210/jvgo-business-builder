@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Actualités 1 | JVGO
+{% endblock %}
+
+{% block meta %}
+	<meta name="title" content="{{blog.titre}}">
+	<meta name="description" content="{{blog.titre}}"/>
+	<link rel="canonical" href="https://jvgo.be/"/>
+	<meta property="og:locale" content="fr_FR"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Jvgo"/>
+	<meta property="og:description" content="{{blog.description}}"/>
+	<meta property="og:url" content="https://jvgo.be/"/>
+	<meta property="og:site_name" content="Jvgo"/>
+	<meta name="keywords" content="Comment, créer, entreprise,Belgique ">
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid py-lg-5  p-sm-4 p-md-4 size-7">
+		<div class="row">
+			<div class="col-lg-11 m-auto">
+				<div style="margin-top:5em" class="d-sm-none d-md-block d-lg-block"></div>
+				<div style="margin-top:2em" class="d-sm-block d-lg-none d-xl-none"></div>
+				<p class="fw-3 m-0 opacity-3 font-ubuntu size-9">{{ blog.titre}}
+				</p>
+				<p class="fw-2 m-0 mt-1 mb-4 size-4 opacity-1">Publier le
+					{{blog.publication}}
+					par JVGO
+					<span class="opacity-3 text-primary">(lecture en 10 min)</span>
+
+				</p>
+
+				{{blog.contenu | raw}}
+
+				<p class="is-pointer" onclick="print()" >
+                    <i class="mdi mdi-printer size-5 is-text-primary"></i>
+                    <span class="opacity-2">Imprimer cette page</span>
+                </p>
+
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

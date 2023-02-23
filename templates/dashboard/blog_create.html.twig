@@ -1,0 +1,124 @@
+{% extends "dashboard/_base.html.twig" %}
+
+{% block injectedPage %}
+	<style>
+		#editor-container {
+			height: 375px;
+		}
+	</style>
+	<!-- start page title -->
+	<div class="row">
+		<div class="col-12">
+			<div class="page-title-box d-flex align-items-center justify-content-between">
+				<h4 class="page-title mb-0 font-size-18">Publier un blog</h4>
+			</div>
+		</div>
+	</div>
+	<!-- end page title -->
+
+        <div class="row">
+
+		<div class="col-lg-12">
+			<div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="pt-3">Titre du blog</p>
+                            <input id="blog-title" required maxlength="60" placeholder="Ecrivez votre titre ici" class="form-control"/>
+
+                            <p class="pt-4">Description d'apercu</p>
+                            <textarea  id="blog-description" required maxlength="100" cols="10" placeholder="Ecrivez votre description ici" class="form-control" rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="pt-2">Image de couverture</p>
+                            <input id="blog-image" required type="file" name="" id="" accept=".png,.jpg,.gif,.jpeg" >
+                             
+                            <p class="mt-2">
+                                <img id="blog-image-preview" width="200px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="col-lg-12">
+			<div class="card">
+				<div class="card-body">
+					<p class="pt-3">Contenu du blog</p>
+					<div id="editor-container"></div>
+					<b class="btn btn-secondary my-3" id="blog-submit">Publier</b>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script></script>
+
+{% endblock %}
+
+{% block blogcreation %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // on file input
+        var blog_img = document.querySelector('#blog-image');
+        var image = null;
+
+        blog_img.addEventListener('input', (e) => {
+            image = e.target.files[0]
+            document.querySelector('#blog-image-preview').src = URL.createObjectURL(image);
+        })
+
+        // submit form
+        document.querySelector('#blog-submit').addEventListener('click',(e) => {
+           
+
+            var blog_title = document.querySelector('#blog-title').value;
+            var blog_description = document.querySelector('#blog-description').value;
+            var blog_contenu = quill.root.innerHTML// quill.getContents();
+
+            var form_data = new FormData();
+            form_data.append('image', image);
+            form_data.append('title', blog_title);
+            form_data.append('description', blog_description);
+            form_data.append('contenu', blog_contenu);
+
+
+            fetch('/post/blog', {
+                method:'POST',
+                body: form_data
+            }).then( res => res.json())
+            .then( json=> {
+                console.log(json)
+                if (json.code == "success") {
+                    Swal.fire(
+                              "JVGO Confirmation!",
+                              "Votre blog a bien ete poste",
+                              "success"
+                            )
+
+                document.querySelector('#blog-title').value = "";
+                document.querySelector('#blog-description').value = "";
+                document.querySelector('#blog-image').src=null
+                document.querySelector('#blog-image-preview').src = null
+                quill.setContents();
+                
+                } else {
+                    Swal.fire(
+                              "JVGO Erreur!",
+                              "Votre blog n'a pas ete poste",
+                              "error"
+                            )
+                }
+            })
+
+        })
+
+        
+
+    </script>
+{% endblock %}

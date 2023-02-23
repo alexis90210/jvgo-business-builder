@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Blog;
 use App\Entity\Demandes;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -106,6 +108,42 @@ class DashboardController extends AbstractController
 
 
     }
+
+
+    #[Route('/dashboard/admin-blog', name: 'app_admin_blog')]
+    public function admin_blog(Request $request, AuthenticationUtils $auth): Response
+    {
+            
+        return $this->render('dashboard/blog_create.html.twig',['user' => $auth->getLastUsername()]);
+
+    }
+
+    #[Route('/post/blog', name: 'app_post_blog', methods: ["POST"])]
+    public function post_blog(Request $request , EntityManagerInterface $em): Response
+    {            
+        $data = $request->request->all(); // POST DATA
+        $image = $request->files->get('image'); // GET FILE
+
+        $blog = new Blog();
+        $blog->setTitre( $data['title']);
+        $blog->setContenu( $data['contenu']);
+        $blog->setDescription( $data['description']);
+        $blog->setPublication( date('d/m/Y'));
+
+        if ( !$image) return $this->json(['code' => 'error', 'message' => 'Image obligatoire']);
+
+        $filename = md5(uniqid()) . '.' . $image->guessExtension();
+        $image->move($this->getParameter('image_directory'), $filename);
+
+        $blog->setImage( $filename );
+
+        $em->persist($blog);
+        $em->flush();
+
+        return $this->json(['code' => 'success' , 'message' => 'blog posted']);
+
+    }
+
     #[Route('/reponse-client', name: 'app_reponse_jvgo', methods: ["POST"])]
     public function reponse_client(Request $request, ManagerRegistry $doctrine, MailerInterface $mailer): Response
     {
