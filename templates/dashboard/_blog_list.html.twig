@@ -1,0 +1,64 @@
+{% extends "dashboard/_base.html.twig" %}
+
+{% block injectedPage %}
+
+	<!-- start page title -->
+	<div class="row">
+		<div class="col-12">
+			<div class="page-title-box d-flex align-items-center justify-content-between">
+				<h4 class="page-title mb-0 font-size-18">Mes blogs</h4>
+			</div>
+		</div>
+	</div>
+
+    <div class="row">
+
+		<div class="col-xl-12">
+	
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title mb-4">Mes Blogs ( {{total }} )</h4>
+
+						<div class="table-responsive">
+							<table class="table table-centered">
+								<thead>
+									<tr>
+										<th scope="col">No.</th>
+										<th scope="col">Titre</th>
+										<th scope="col" colspan="2">description</th>
+										<th scope="col">Publie le</th>
+                                        <th scope="col">Voir</th>
+										<th scope="col">supprimer</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for blog in blogs %}
+										<tr>
+											<td>
+												<a href="javascript: void(0);" class="text-body fw-medium">#{{ blog.id }}</a>
+											</td>
+											<td>{{ blog.titre }}</td>
+											<td  colspan="2">{{ blog.description }}</td>
+                                            <td>{{ blog.publication }}</td>										
+											<td>
+												<a href="/dashboard/admin-blog/edit/{{blog.id}}" class="btn btn-primary btn-sm">Voir</a>
+											</td>
+											<td>
+												<a href="/dashboard/admin-blog/delete/{{blog.id}}" class="btn btn-danger btn-sm">supprimer</a>
+											</td>
+										</tr>
+
+									{% endfor %}
+
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div>
+		</div>
+	</div>
+
+
+{% endblock %}

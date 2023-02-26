@@ -110,12 +110,63 @@ class DashboardController extends AbstractController
     }
 
 
-    #[Route('/dashboard/admin-blog', name: 'app_admin_blog')]
-    public function admin_blog(Request $request, AuthenticationUtils $auth): Response
+    #[Route('/dashboard/create-blog', name: 'app_create_blog')]
+    public function create_blog( AuthenticationUtils $auth): Response
     {
             
         return $this->render('dashboard/blog_create.html.twig',['user' => $auth->getLastUsername()]);
 
+    }
+
+    #[Route('/dashboard/admin-blog/edit/{id}', name: 'app_edit_blog')]
+    public function admin_edit_blog(EntityManagerInterface $em,string $id, AuthenticationUtils $auth): Response
+    {
+
+        $blog = $em->getRepository(Blog::class)->find($id);
+
+        return $this->render('dashboard/blog_edit.html.twig',['user' => $auth->getLastUsername() , 'blog' => $blog]);
+
+    }
+
+    #[Route('/dashboard/admin-blog/delete/{id}', name: 'app_delete_blog')]
+    public function admin_delete_blog(EntityManagerInterface $em,string $id, AuthenticationUtils $auth): Response
+    {
+
+        $blog = $em->getRepository(Blog::class)->find($id);
+
+        $em->remove($blog);
+
+        $em->flush();
+
+        return $this->redirectToRoute('app_mes_blogs');
+
+    }
+
+    #[Route('/get/blog', name: 'app_get_blog', methods:['POST'])]
+    public function admin_get_blog(EntityManagerInterface $em,Request $request): Response
+    {
+        $data = json_decode($request->getContent(), false);
+
+        $blog = $em->getRepository(Blog::class)->find($data->id);
+
+        return $this->json([
+            'code' => 'success',
+            'message' => $blog
+        ]);
+
+    }
+
+    #[Route('/dashboard/mes-blogs', name: 'app_mes_blogs')]
+    public function mes_blogs(EntityManagerInterface $em, AuthenticationUtils $auth): Response
+    {
+
+        $blog = $em->getRepository(Blog::class)->findAll();
+
+        return $this->render('dashboard/_blog_list.html.twig', [
+            'blogs' => array_reverse($blog),
+            'total' => count( $blog),
+            'user' => $auth->getLastUsername()
+        ]);
     }
 
     #[Route('/post/blog', name: 'app_post_blog', methods: ["POST"])]
@@ -124,20 +175,34 @@ class DashboardController extends AbstractController
         $data = $request->request->all(); // POST DATA
         $image = $request->files->get('image'); // GET FILE
 
-        $blog = new Blog();
+        if ( !isset( $data['id'])) {
+            $blog = new Blog();
+        } else {
+            $blog = $em->getRepository(Blog::class)->find( $data['id']);
+        }
+        
         $blog->setTitre( $data['title']);
         $blog->setContenu( $data['contenu']);
         $blog->setDescription( $data['description']);
         $blog->setPublication( date('d/m/Y'));
 
-        if ( !$image) return $this->json(['code' => 'error', 'message' => 'Image obligatoire']);
+    
+        if ( !$image && $blog->getImage()) {
+            // No image received but image exists in DB
+        } else {
 
-        $filename = md5(uniqid()) . '.' . $image->guessExtension();
-        $image->move($this->getParameter('image_directory'), $filename);
+            if ( !$image) return $this->json(['code' => 'error', 'message' => 'Image obligatoire']);
 
-        $blog->setImage( $filename );
+            $filename = md5(uniqid()) . '.' . $image->guessExtension();
+            $image->move($this->getParameter('image_directory'), $filename);
 
-        $em->persist($blog);
+            $blog->setImage( $filename );
+        }    
+
+        if ( !isset( $data['id'])) {
+            $em->persist($blog);
+        } 
+        
         $em->flush();
 
         return $this->json(['code' => 'success' , 'message' => 'blog posted']);

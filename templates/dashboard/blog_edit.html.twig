@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="col-12">
 			<div class="page-title-box d-flex align-items-center justify-content-between">
-				<h4 class="page-title mb-0 font-size-18">Publier un blog</h4>
+				<h4 class="page-title mb-0 font-size-18">Voir blog : <b>{{blog.titre}} | {{blog.titre}}</b></h4>
 			</div>
 		</div>
 	</div>
@@ -51,7 +51,7 @@
 				<div class="card-body">
 					<p class="pt-3">Contenu du blog</p>
 					<div id="editor-container"></div>
-					<b class="btn btn-secondary my-3" id="blog-submit">Publier</b>
+					<b class="btn btn-secondary my-3" id="blog-submit">Modifier + Publication</b>
 				</div>
 			</div>
 		</div>
@@ -64,6 +64,29 @@
 {% block blogcreation %}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+
+    window.addEventListener('DOMContentLoaded', () => {
+    
+    fetch('/get/blog', {
+                method:'POST',
+                body: JSON.stringify({
+                    id:'{{blog.id}}'
+                })
+            }).then( res => res.json())
+            .then( json => {
+                if ( json.code == "success") {
+                    document.querySelector("#blog-image-preview").src =  window.location.origin + "/uploads/" + json.message.image
+                    document.querySelector('#blog-title').value = json.message.titre;
+                    document.querySelector('#blog-description').value = json.message.description;
+                    const delta = quill.clipboard.convert(json.message.Contenu)
+
+                    quill.setContents(delta, 'silent')
+
+                }
+            })
+})
+
+    
         // on file input
         var blog_img = document.querySelector('#blog-image');
         var image = null;
@@ -86,6 +109,7 @@
             form_data.append('title', blog_title);
             form_data.append('description', blog_description);
             form_data.append('contenu', blog_contenu);
+            form_data.append('id', "{{blog.id}}");
 
 
             fetch('/post/blog', {
@@ -97,20 +121,14 @@
                 if (json.code == "success") {
                     Swal.fire(
                               "JVGO Confirmation!",
-                              "Votre blog a bien ete poste",
+                              "Votre blog a bien ete mis a jour",
                               "success"
                             )
-
-                document.querySelector('#blog-title').value = "";
-                document.querySelector('#blog-description').value = "";
-                document.querySelector('#blog-image').src=null
-                document.querySelector('#blog-image-preview').src = null
-                quill.setContents();
                 
                 } else {
                     Swal.fire(
                               "JVGO Erreur!",
-                              "Votre blog n'a pas ete poste, Image obligatoire !!!",
+                              "Votre blog n'a pas ete mis a jour",
                               "error"
                             )
                 }

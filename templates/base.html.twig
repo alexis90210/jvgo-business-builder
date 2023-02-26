@@ -31,6 +31,24 @@
 			<link rel="stylesheet" href="{{ asset('css/main.v4.css') }}"/>
 		{% endblock %}
 
+		<style>
+			.bring-top{
+				z-index: 9999;
+			}
+			.set-with-margin {
+				margin-top:36px;
+			}
+
+			@media screen and (max-width:800px) {
+				.bring-top{
+				display:none
+			}
+			.set-with-margin {
+				margin-top:0;
+			}
+			}
+		</style>
+
 		
 
 		<!-- Google tag (gtag.js) -->
@@ -59,21 +77,10 @@
 		<body class="p-0 m-0">
 
 			{% block div %}
-				<div class="pt-1 border-bottom d-lg-none d-xl-none d-md-none d-sm-block d-xs-block bg-dark-blue not-immuable-on-mobile">
-					<div class="fv flex align-items justify-content-between py-2">
-
-						<i class="mdi mdi-phone text-light size-6 fw-4"></i>
-						<span class="px-2 m-0 size-2 text-light">
-							Contacter un conseiller Jvgo
-							<b>+32 (0)46 763 329 2</b>
-						</span>
-
-					</div>
-				</div>
-
+			
 
 				<!-- HEADER -->
-				<div class="col-12 header-bar bg-dark text-light size-3 font-ubuntu d-lg-block d-xl-block d-md-none d-sm-none">
+				<div class="col-12 header-bar bg-dark text-light size-3 font-ubuntu d-lg-block d-xl-block bring-top" >
 					<div class="d-flex justify-content-center">
 						<div class="fv d-flex justify-content-between  align-items">
 
@@ -83,8 +90,7 @@
 									Prenez un rdv de 30 minutes pour poser vos questions</a>
 							</div>
 
-
-							<div class="d-flex justify-content-between">
+							<div class="d-flex justify-content-between" >
 								<div class="flex align-items">
 									<i class="mdi mdi-phone has-text-light size-7 fw-4"></i>
 									<div class="p-2 px-4">
@@ -111,7 +117,7 @@
 
 				<!-- NAVIGATION -->
 
-				<div class="d-flex flex-direction-row justify-content-center col-12 pt-1 section-navigation bg-white  header-bar shadow">
+				<div class="d-flex flex-direction-row justify-content-center col-12 pt-1 section-navigation bg-white  header-bar shadow set-with-margin">
 					<div class="hide-max-md  fv d-flex justify-content-between flex-nowrap">
 						<div>
 							<a href="/">
